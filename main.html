@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/png" href="favicon.png"/>
+<title>Parsifal Prototype</title>
+<!-- Bootstrap -->
+<link href="css/bootstrap.css" rel="stylesheet">
+<!-- Libraries -->
+<link href="css/alarmsEventsVideo.css" rel="stylesheet">
+<link href="css/select2.css" rel="stylesheet">
+<link href="css/dataTables.responsive.css" rel="stylesheet">
+<link href="css/enjoyHint.css" rel="stylesheet">
+<!-- Customized Styles -->
+<link href="css/checkBoxDark.css" rel="stylesheet" id="checkBoxId">
+<link href="css/radioBtnDark.css" rel="stylesheet" id="radioBtnId">
+<link href="css/preferencesDark.css" rel="stylesheet" id="preferencesId">
+<link href="css/select2CustomDark.css" rel="stylesheet" id="select2CustomId">
+<link href="css/stylesDark.css" rel="stylesheet" id="stylesId">
+<link href="css/secBgDark.css" rel="stylesheet" id="sectionBG">
+<!-- VCA Customized -->
+<link href="css/liveStreamDark.css" rel="stylesheet">
+<!-- Bootstrap scripts -->
+<script src="js/jquery-1.6.4.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!-- Libraries -->
+<script src="js/jquery.dataTables.min.js"></script>
+<script src="js/dragArrange.min.js"></script>
+<script src="js/html5lightbox.js"></script>
+<script src="js/select2.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/enjoyHint.js"></script>
+<script src="js/jquery.panzoom.min.js"></script>
+<script src="js/jquery.mousewheel.js"></script>
+</head>
+<body>
+<div id="loader">
+  <video class="videoLoader" autoplay playsinline loop>
+    <source src="imgs/LogoAnimation.mp4" type="video/mp4">
+  </video>
+  <span id="loaderWait">Please wait while loading...</span>
+  <progress value="0" max="300" id="progressBar"></progress>
+</div>
+<header>
+  <section class="containerG2K">
+    <div class="rowG2K">
+      <div id="topHeader">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <div>
+            <div class="logo">
+              <img src="svgs/header/G2KLogo.svg" alt="">
+            </div>
+            <div class="logo">
+              <img src="svgs/header/logo.svg" alt="">
+            </div>
+          </div>
+          <button id="navToggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColl" aria-controls="" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarColl">
+            <ul class="navbar-nav mr-auto scrollNone">
+              <li class="nav-item">
+                <a href="home.html" data-toggle="tooltip" data-placement="right" title="Home">
+                  <i class="headerHome"></i>
+                  <text class="navItemsText">Home</text>
+                </a>
+              </li>
+              <li id="openAppSearch" class="nav-item">
+                <a data-toggle="tooltip" data-placement="right" title="Search">
+                  <i class="headerSearch"></i>
+                  <text class="navItemsText">Search</text>
+                </a>
+              </li>
+              <div id="appSearch">
+                <input id="appSearchInput" class="appSearchInput" type="text" placeholder="Search..">
+                <button id="closeAppSearch">
+                </button>
+                <button id="appSearchFilterBtn">
+                </button>
+              </div>
+              <div id="appSearchFilter">
+                <div class="appSearchFilterSelect">
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Maps</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Alarms</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">BI Dashboards</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Face Recognition</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Video Analytics</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Rack Refill</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Heat Maps</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Onboard</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">OXXO Dashboards</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Planogram</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Parking Management</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Video Monitoring</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Video Based People Counting</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Sensor Based People Counting</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Restricted Area</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Unattended Object</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Crowd Detection</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Retail Data Sources</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Gender ID</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Buying Behaviour</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Queue Length</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Cash Register</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">POS Integration</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Contextual Data</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Pixelization</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Mobile App</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Graffiti Detection</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Camera Tampering</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Intelligent Access Control</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Announcement Integration</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Time in Store</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Vandalism</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="appSearchFilterRow">
+                  <label class="checkC">
+                    <input id="checkallItems" class="checkI headerSearchFilter" type="checkbox">
+                    <span class="checkM"></span>
+                    <span class="appSearchFilterLabel" style="font-size: 14px;">All</span>
+                  </label>
+                  <button class="appSearchFilterBtn" onClick="ClearCheck()" >
+                    Clear
+                  </button>
+                  <button class="appSearchFilterBtn" id="apply-filter">
+                    Apply
+                  </button>
+                </div>
+              </div>
+              <li class="nav-item">
+                <a data-toggle="tooltip" data-placement="right" title="Notifications">
+                  <i class="headerNotification"></i>
+                  <text class="navItemsText">Notifications</text>
+                </a>
+              </li>
+              <li class="nav-item" id="customPreferencesBtn">
+                <a data-toggle="tooltip" data-placement="right" title="Preferences">
+                  <i class="headerPreferences"></i>
+                  <text class="navItemsText">Preferences</text>
+                </a>
+              </li>
+              <div id="customPreferences">
+                <div class="headrePreferenceCol">
+                  <button class="collapseBtn" id="PrefCustomTheme">
+                    Theme Color
+                  </button>
+                  <div class="collcont" id="customTheme">
+                    <div class="collins">
+                      <button id="darkThemeBtn" class="customThemeBtn">
+                        <span class="themeBtnText">Dark</span>
+                      </button>
+                      <button id="lightThemeBtn" class="customThemeBtn">
+                        <span class="themeBtnText">Light</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="headrePreferenceCol">
+                  <button class="collapseBtn" id="PrefAddNewTab">
+                    Add New Tab
+                  </button>
+                  <div id="carouselPreference" class="collcont carousel slide" data-ride="carousel"  data-interval="false">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active rowG2K">
+                        <button class="customPreferencesIcons prefMap" onClick="mapsModuleToggle()">
+                          Maps
+                        </button>
+                        <button class="customPreferencesIcons prefAlarms" onClick="alarmsModuleToggle()">
+                          Alarms & Action Plan
+                        </button>
+                        <button class="customPreferencesIcons prefBiD" onClick="BIDModuleToggle()">
+                          BI Dashboards
+                        </button>
+                        <button class="customPreferencesIcons prefHist" disabled>
+                          Historical Trail
+                        </button>
+                        <button class="customPreferencesIcons prefEvents" disabled>
+                          Events Viewer
+                        </button>
+                        <button class="customPreferencesIcons prefAudit" disabled>
+                          Audit Viewer
+                        </button>
+                        <button class="customPreferencesIcons prefHealth" disabled>
+                          Health Monitoring
+                        </button>
+                        <button class="customPreferencesIcons prefRole" disabled>
+                          Users & Role Management
+                        </button>
+                      </div>
+                      <div class="carousel-item rowG2K">
+                        <button class="customPreferencesIcons prefOccMonitor" disabled>
+                          People Counting
+                        </button>
+                        <button class="customPreferencesIcons prefCIHeatMap" onClick="heatMapsModuleToggle()">
+                          Heat Maps
+                        </button>
+                        <button class="customPreferencesIcons prefHeatM" disabled>
+                          GALP Heat Maps
+                        </button>
+                        <button class="customPreferencesIcons prefVisual" onClick="visualModuleToggle()">
+                          Visualization
+                        </button>
+                        <button class="customPreferencesIcons prefCIDashB" disabled>
+                          Customer Journey Dashboards
+                        </button>
+                        <button class="customPreferencesIcons prefOccDB" disabled>
+                          Occupancy Dashboard
+                        </button>
+                        <button class="customPreferencesIcons prefBuyBe" disabled>
+                          Targeted Offline Advertising
+                        </button>
+                        <button class="customPreferencesIcons prefRack" onClick="rackModuleToggle()">
+                          Shelf Lack & Misplacement
+                        </button>
+                        <button class="customPreferencesIcons prefQLength" disabled>
+                          Automated Queue Management
+                        </button>
+                        <button class="customPreferencesIcons prefCashR" disabled>
+                          Mis-scan Detection
+                        </button>
+                      </div>
+                      <div class="carousel-item rowG2K">
+                        <button class="customPreferencesIcons prefMetco" onClick="metcoModuleToggle()">
+                          Retail Dashboards
+                        </button>
+                        <button class="customPreferencesIcons prefPlano" disabled>
+                          Planogram
+                        </button>
+                        <button class="customPreferencesIcons prefIntAC" disabled>
+                          Access Control
+                        </button>
+                        <button class="customPreferencesIcons prefVand" disabled>
+                          Vandalism Detection
+                        </button>
+                        <button class="customPreferencesIcons prefMask" disabled>
+                          Contactless Mask Detection
+                        </button>
+                        <button class="customPreferencesIcons prefTempChe" disabled>
+                          Contactless Temperature Check
+                        </button>
+                        <button class="customPreferencesIcons prefSignal" disabled>
+                          Automated Access Signaling
+                        </button>
+                        <button class="customPreferencesIcons prefFR" onClick="FRModuleToggle()">
+                          Face Recognition
+                        </button>
+                        <button class="customPreferencesIcons prefVCA" disabled>
+                          Video Analytics
+                        </button>
+                        <button class="customPreferencesIcons prefOnBoard" disabled>
+                          Onboard
+                        </button>
+                      </div>
+                      <div class="carousel-item rowG2K">
+                        <button class="customPreferencesIcons prefECO" onClick="ECOModuleToggle()">
+                          Fan Ecosystem
+                        </button>
+                        <button class="customPreferencesIcons prefParkM" disabled>
+                          Parking Management
+                        </button>
+                        <button class="customPreferencesIcons prefVMS" disabled>
+                          Video Monitoring
+                        </button>
+                        <button class="customPreferencesIcons prefVBPC" disabled>
+                          Video Based P. Counting
+                        </button>
+                        <button class="customPreferencesIcons prefSBPC" disabled>
+                          Sensor Based P. Counting
+                        </button>
+                        <button class="customPreferencesIcons prefRestA" disabled>
+                          Restricted Area
+                        </button>
+                        <button class="customPreferencesIcons prefUnattO" disabled>
+                          Unattended Object
+                        </button>
+                        <button class="customPreferencesIcons prefCrowdD" disabled>
+                          Crowd Detection
+                        </button>
+                        <button class="customPreferencesIcons prefRetail" disabled>
+                          Retail Data Sources
+                        </button>
+                        <button class="customPreferencesIcons prefGenderID" disabled>
+                          Gender ID
+                        </button>
+                      </div>
+                      <div class="carousel-item rowG2K">
+                        <button class="customPreferencesIcons prefPOS" disabled>
+                          POS Integration
+                        </button>
+                        <button class="customPreferencesIcons prefConxD" disabled>
+                          Contextual Data
+                        </button>
+                        <button class="customPreferencesIcons prefPixe" disabled>
+                          Pixelization
+                        </button>
+                        <button class="customPreferencesIcons prefMobApp" disabled>
+                          Mobile App
+                        </button>
+                        <button class="customPreferencesIcons prefGraff" disabled>
+                          Graffiti Detection
+                        </button>
+                        <button class="customPreferencesIcons prefCamT" disabled>
+                          Camera Tampering
+                        </button>
+                        <button class="customPreferencesIcons prefPubAI" disabled>
+                          Announcement Integration
+                        </button>
+                        <button class="customPreferencesIcons prefTimeInS" disabled>
+                          Time in Store
+                        </button>
+                      </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselPreference" role="button" data-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselPreference" role="button" data-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    </a>
+                  </div>
+                </div>
+                <div class="customPreferencesActions">
+                  <button class="preferencesAddToFav preferencesBtns">
+                    Add to favourite
+                  </button>
+                  <button class="preferencesDiscard preferencesBtns">
+                    Discard changes
+                  </button>
+                </div>
+              </div>
+              <li class="nav-item">
+                <a data-toggle="tooltip" data-placement="right" title="EPICs" href="cases.html">
+                  <i class="headerUseCases"></i>
+                  <text class="navItemsText">EPICs</text>
+                </a>
+              </li>
+              <li class="nav-item" id="userGuide">
+                <a data-toggle="tooltip" data-placement="right" title="User Guide">
+                  <i class="headerUserGuide"></i>
+                  <text class="navItemsText">User Guide</text>
+                </a>
+              </li>
+              <li class="nav-item" id="appHeaderHelp">
+                <a data-toggle="tooltip" data-placement="right" title="Help">
+                  <i class="headerHelp"></i>
+                  <text class="navItemsText">Help</text>
+                </a>
+              </li>
+              <div id="appUserHelp" class="appHeaderDropdown help">
+                <div class="appHeaderDropdownRow">
+                  Support
+                </div>
+                <div class="appHeaderDropdownRow">
+                  Online user guide
+                </div>
+                <hr>
+                <div class="appHeaderDropdownRow">
+                  About us
+                </div>
+                <div class="appHeaderDropdownRow">
+                  Versions history
+                </div>
+                <div class="appHeaderDropdownRow">
+                  Copyright
+                </div>
+              </div>
+              <li class="nav-item">
+                <a data-toggle="tooltip" data-placement="right" title="Settings">
+                  <i class="headerSettings"></i>
+                  <text class="navItemsText">Settings</text>
+                </a>
+              </li>
+              <li class="nav-item" id="selectLanguage">
+                <a data-toggle="tooltip" data-placement="right" title="Languages">
+                  <i class="headerLanguages"></i>
+                  <text class="navItemsText">Languages</text>
+                </a>
+              </li>
+              <div id="appLanguages" class="appHeaderDropdown language">
+                <div class="appHeaderDropdownRow">
+                  Deutsch
+                </div>
+                <div class="appHeaderDropdownRow active english">
+                  English
+                </div>
+                <div class="appHeaderDropdownRow">
+                  Español
+                </div>
+                <div class="appHeaderDropdownRow">
+                  Português
+                </div>
+                <div class="appHeaderDropdownRow">
+                  العربية
+                </div>
+              </div>
+              <li class="nav-item" id="appHeaderProfile">
+                <a data-toggle="tooltip" data-placement="right" title="Profile">
+                  <i class="headerProfile"></i>
+                  <text class="navItemsText">Profile</text>
+                </a>
+              </li>
+              <div id="appAccProfile" class="appHeaderDropdown">
+                <div class="appHeaderDropdownRow">
+                  Profile
+                </div>
+                <div class="appHeaderDropdownRow">
+                  Keyboard shortcuts
+                </div>
+                <div class="appHeaderDropdownRow">
+                  Preferences
+                </div>
+                <hr>
+                <div class="appHeaderDropdownRow">
+                  Subscription
+                </div>
+                <a href="index.html">
+                  <div class="appHeaderDropdownRow">
+                    Sign out
+                  </div>
+                </a>
+              </div>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </section>
+</header>
+<section class="containerG2K">
+  <div class="rowG2K">
+    <div id="mainHeader">
+      <div class="moduleTabCol draggableElement" id="moduleTab1" hidden="hidden">
+        <div class="moduleTabBtn moduleTab" onclick="openModuleTab(event,'moduleStyle1')">
+          <i class="mapsModuleIcon"></i> Maps
+        </div>
+        <button class="moduleTabClose" id="mapsModuleClose">
+        </button>
+      </div>
+      <div class="moduleTabCol draggableElement" id="moduleTab2" hidden="hidden">
+        <div class="moduleTabBtn moduleTab" onclick="openModuleTab(event,'moduleStyle2')">
+          <i class="alarmsModuleIcon"></i> Alarms & Action Plan
+        </div>
+        <button class="moduleTabClose" id="alarmsModuleClose">
+        </button>
+      </div>
+      <div class="moduleTabCol draggableElement" id="moduleTab3" hidden="hidden">
+        <div class="moduleTabBtn moduleTab" onclick="openModuleTab(event,'moduleStyle3')">
+          <i class="biDashboardsModuleIcon"></i> BI Dashboards
+        </div>
+        <button class="moduleTabClose" id="BIDModuleClose">
+        </button>
+      </div>
+      <div class="moduleTabCol draggableElement" id="moduleTab10" hidden="hidden">
+        <div class="moduleTabBtn moduleTab" onclick="openModuleTab(event,'moduleStyle10')">
+          <i class="ecoSysModuleIcon"></i> Fan Ecosystem
+        </div>
+        <button class="moduleTabClose" id="ECOModuleClose">
+        </button>
+      </div>
+      <div class="moduleTabCol draggableElement" id="moduleTab4" hidden="hidden">
+        <div class="moduleTabBtn moduleTab" onclick="openModuleTab(event,'moduleStyle4')">
+          <i class="FRModuleIcon"></i> Face Recognition
+        </div>
+        <button class="moduleTabClose" id="FRModuleClose">
+        </button>
+      </div>
+      <div class="moduleTabCol draggableElement" id="moduleTab6" hidden="hidden">
+        <div class="moduleTabBtn moduleTab" onclick="openModuleTab(event,'moduleStyle6')">
+          <i class="rackRefillModuleIcon"></i> Shelf Lack & Misplacement
+        </div>
+        <button class="moduleTabClose" id="rackModuleClose">
+        </button>
+      </div>
+      <div class="moduleTabCol draggableElement" id="moduleTab7" hidden="hidden">
+        <div class="moduleTabBtn moduleTab" onclick="openModuleTab(event,'moduleStyle7')">
+          <i class="heatMapsModuleIcon"></i> Heat Maps
+        </div>
+        <button class="moduleTabClose" id="heatMapsModuleClose">
+        </button>
+      </div>
+      <div class="moduleTabCol draggableElement" id="moduleTab14" hidden="hidden">
+        <div class="moduleTabBtn moduleTab" onclick="openModuleTab(event,'moduleStyle14')">
+          <i class="visualModuleIcon"></i> Visualization
+        </div>
+        <button class="moduleTabClose" id="visualModuleClose">
+        </button>
+      </div>
+      <div class="moduleTabCol draggableElement" id="moduleTab9" hidden="hidden">
+        <div class="moduleTabBtn moduleTab" onclick="openModuleTab(event,'moduleStyle9')">
+          <i class="biDashboardsModuleIcon"></i> Retail Dashboards
+        </div>
+        <button class="moduleTabClose" id="metcoModuleClose">
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Maps Module -->
+<main class="scrollAct moduleStyle" id="moduleStyle1">
+</main>
+<!-- Alarms Module -->
+<main class="scrollAct moduleStyle" id="moduleStyle2">
+</main>
+<!-- BI Dashboards Module -->
+<main class="scrollAct moduleStyle" id="moduleStyle3">
+</main>
+<!-- Face Recognition Module -->
+<main class="scrollAct moduleStyle" id="moduleStyle4">
+</main>
+<!-- Rack Refill Module -->
+<main class="scrollAct moduleStyle" id="moduleStyle6">
+</main>
+<!-- Heat Maps Module -->
+<main class="scrollAct moduleStyle" id="moduleStyle7">
+</main>
+<!-- Metco Dashboards Module -->
+<main class="scrollAct moduleStyle" id="moduleStyle9">
+</main>
+<!-- Fan Ecosystem Module -->
+<main class="scrollAct moduleStyle" id="moduleStyle10">
+</main>
+<!-- Visualization -->
+<main class="scrollAct moduleStyle" id="moduleStyle14">
+</main>
+
+<footer>
+  <div class="containerG2K">
+    <div class="rowG2K">
+      <div id="tempFooter" class="mainFooter">
+        <button data-toggle="tooltip" data-placement="top" title="Information" id="footerTooltip">
+        </button>
+        <div id="sideFooter">
+          <a href="https://g2k.ai" target="_blank">
+            G2K Group GmbH
+          </a>
+          <span>© 2022 • Parsifal</span>
+        </div>
+        <div id="footerAlerts">
+          <img class="imgLoading" src="imgs/loader.gif" alt="" id="footerImgLoading">
+          <span id="footerMessage"></span>
+        </div>
+        <div class="footerControls">
+          <div id="footerZoom">
+            <button id="zoomreset">
+            </button>
+            <button id="zoomout">
+            </button>
+            <button id="zoom">
+            </button>
+            <button id="zoomin">
+            </button>
+          </div>
+          <span id="zoomCounter">100%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Exporting alarm -->
+<section id="alarmModExportAlarm" class="modal modalForm">
+  <div class="exportFormModal">
+    <div class="modalHeadTitle">
+      <text>Select the item(s) to export</text>
+    </div>
+    <form action="#">
+      <div class="exportAlarmRow">
+        <label class="checkC">
+          <input class="checkI" type="checkbox">
+          <span class="checkM"></span>
+          <span class="exportAlarmlabel">Details</span>
+        </label>
+      </div>
+      <div class="exportAlarmRow">
+        <label class="checkC">
+          <input class="checkI" type="checkbox">
+          <span class="checkM"></span>
+          <span class="exportAlarmlabel">Action Plan</span>
+        </label>
+      </div>
+      <div class="exportAlarmRow">
+        <label class="checkC">
+          <input class="checkI" type="checkbox">
+          <span class="checkM"></span>
+          <span class="exportAlarmlabel">SOP</span>
+        </label>
+      </div>
+      <div class="exportAlarmRow">
+        <label class="checkC">
+          <input class="checkI" type="checkbox">
+          <span class="checkM"></span>
+          <span class="exportAlarmlabel">Related Touchpoints</span>
+        </label>
+      </div>
+      <div class="exportAlarmRow">
+        <label class="checkC">
+          <input class="checkI" type="checkbox">
+          <span class="checkM"></span>
+          <span class="exportAlarmlabel">Attachments</span>
+        </label>
+      </div>
+      <div class="exportAlarmRow">
+        <label class="checkC">
+          <input class="checkI" type="checkbox">
+          <span class="checkM"></span>
+          <span class="exportAlarmlabel">History</span>
+        </label>
+      </div>
+      <div class="exportBtnDiv valid-btn-form">
+        <button id="saveExporting" class="exportBtn" onclick="window.history.go(1); return false;" value="Save">
+          Export as
+        </button>
+        <button id="cancelExporting" class="exportBtn" onclick="window.history.go(1); return false;" value="Back">
+          Cancel
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+<!-- Alarms events video -->
+<div id="alarmEventVideoFadeLight" class="alarmEventVideoFadeLight">
+  <a class="boxclose" id="boxclose" onclick="lightbox_close();">
+  </a>
+  <video id="rackAlarmEvent1" width="600" controls>
+    <source src="media/retail1.mp4" type="video/mp4">
+  </video>
+  <video id="rackAlarmEvent2" width="600" controls>
+    <source src="media/retail2.mp4" type="video/mp4">
+  </video>
+  <video id="Alarm31Event1" width="600" controls>
+    <source src="media/airport/wrongDirection.mp4" type="video/mp4">
+  </video>
+  <video id="Alarm29Event1" width="600" controls>
+    <source src="media/airport/removedObject.mp4" type="video/mp4">
+  </video>
+  <video id="fightAlarmEvent1" width="600" controls>
+    <source src="media/fight1.mp4" type="video/mp4">
+  </video>
+  <video id="fightAlarmEvent2" width="600" controls>
+    <source src="media/fight2.mp4" type="video/mp4">
+  </video>
+  <video id="fireAlarmEvent1" width="600" controls>
+    <source src="media/fire.mp4" type="video/mp4">
+  </video>
+  <video id="lprAlarmEvent1" width="600" controls>
+    <source src="media/lpr.mp4" type="video/mp4">
+  </video>
+  <video id="crossLineEvent1" width="600" controls>
+    <source src="media/crossingLine.mp4" type="video/mp4">
+  </video>
+  <video id="grafittiEvent1" width="600" controls>
+    <source src="media/grafitti.mp4" type="video/mp4">
+  </video>
+  <video id="plantedObjectEvent1" width="600" controls>
+    <source src="media/plantedObject.mp4" type="video/mp4">
+  </video>
+  <video id="unattendedObjectEvent1" width="600" controls>
+    <source src="media/unattendedObject.mp4" type="video/mp4">
+  </video>
+  <video id="Alarm33Event1" width="600" controls>
+    <source src="media/airport/fallNdFight.mp4" type="video/mp4">
+  </video>
+  <video id="Alarm34Event1" width="600" controls>
+    <source src="media/airport/loiteringDetection.mp4" type="video/mp4">
+  </video>
+  <video id="Alarm40Event1" width="600" controls>
+    <source src="media/uncountedGoods.mp4" type="video/mp4">
+  </video>
+  <video id="Alarm47Event1" width="600" controls>
+    <source src="media/gunDetected.mp4" type="video/mp4">
+  </video>
+
+  <video id="Alarm52Event1" width="600" controls>
+    <source src="media/stadium/intrusion.mp4" type="video/mp4">
+  </video>
+  <video id="Alarm53Event1" width="600" controls>
+    <source src="media/stadium/object.mp4" type="video/mp4">
+  </video>
+  <video id="Alarm54Event1" width="600" controls>
+    <source src="media/stadium/fire.mp4" type="video/mp4">
+  </video>
+  <video id="Alarm55Event1" width="600" controls>
+    <source src="media/stadium/fight.mp4" type="video/mp4">
+  </video>
+
+  <video id="Alarm14Event1" width="600" controls>
+    <source src="media/DeuBahn/protectedArea.mp4" type="video/mp4">
+  </video>
+  <video id="Alarm19Event1" width="600" controls>
+    <source src="media/DeuBahn/layingPerson.mp4" type="video/mp4">
+  </video>
+  <video id="Alarm20Event1" width="600" controls>
+    <source src="media/DeuBahn/crowdDetection.mp4" type="video/mp4">
+  </video>
+  <video id="Alarm24Event1" width="600" controls>
+    <source src="media/airport/unattendedObject.mp4" type="video/mp4">
+  </video>
+  <video id="Alarm26Event1" width="600" controls>
+    <source src="media/airport/unattendedObject.mp4" type="video/mp4">
+  </video>
+  <video id="Alarm64Event1" width="600" controls>
+    <source src="media/duress.mp4" type="video/mp4">
+  </video>
+  <video id="Alarm78Event1" width="600" controls>
+    <source src="media/wrongDirection.mp4" type="video/mp4">
+  </video>
+</div>
+<div id="alarmEventVideoFade" class="alarmEventVideoFade" onClick="lightbox_close();">
+</div>
+
+<!-- Custom theme -->
+<script src="js/loader.js"></script>
+<script src="js/customTheme.js"></script>
+<!-- Common Scripts -->
+<script src="js/scripts.js"></script>
+<script src="js/icons.js"></script>
+<script src="js/moduleTabs.js"></script>
+<script src="js/appGuide/mainGuide.js"></script>
+<script src="js/headerPreferences.js"></script>
+<script src="js/homeStartApp.js"></script>
+<script src="js/activeModules.js"></script>
+<script src="js/emptyMain.js"></script>
+</body>
+</html>

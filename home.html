@@ -1,0 +1,2733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/png" href="favicon.png"/>
+<title>Parsifal Prototype</title>
+<!-- Bootstrap -->
+<link href="css/bootstrap.css" rel="stylesheet">
+<!-- Libraries -->
+<link href="css/enjoyHint.css" rel="stylesheet">
+<!-- Customized Styles -->
+<link href="css/checkBoxDark.css" rel="stylesheet" id="checkBoxId">
+<link href="css/radioBtnDark.css" rel="stylesheet" id="radioBtnId">
+<link href="css/preferencesDark.css" rel="stylesheet" id="preferencesId">
+<link href="css/select2CustomDark.css" rel="stylesheet" id="select2CustomId">
+<link href="css/stylesDark.css" rel="stylesheet" id="stylesId">
+</head>
+<body>
+<header>
+  <section class="containerG2K">
+    <div class="rowG2K">
+      <div id="topHeader">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <div>
+            <div class="logo">
+              <img src="svgs/header/G2KLogo.svg" alt="">
+            </div>
+            <div class="logo">
+              <img src="svgs/header/logo.svg" alt="">
+            </div>
+          </div>
+          <button id="navToggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColl" aria-controls="" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarColl">
+            <ul class="navbar-nav mr-auto scrollNone">
+              <li class="nav-item clicked">
+                <a href="home.html" data-toggle="tooltip" data-placement="right" title="Home">
+                  <i class="headerHome"></i>
+                  <text class="navItemsText">Home</text>
+                </a>
+              </li>
+              <li id="openAppSearch" class="nav-item">
+                <a data-toggle="tooltip" data-placement="right" title="Search">
+                  <i class="headerSearch"></i>
+                  <text class="navItemsText">Search</text>
+                </a>
+              </li>
+              <div id="appSearch">
+                <input id="appSearchInput" class="appSearchInput" type="text" placeholder="Search..">
+                <button id="closeAppSearch">
+                </button>
+                <button id="appSearchFilterBtn">
+                </button>
+              </div>
+              <div id="appSearchFilter">
+                <div class="appSearchFilterSelect">
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Maps</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Alarms</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">BI Dashboards</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Face Recognition</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Video Analytics</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Rack Refill</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Heat Maps</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Onboard</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">OXXO Dashboards</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Planogram</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Parking Management</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Video Monitoring</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Video Based People Counting</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Sensor Based People Counting</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Restricted Area</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Unattended Object</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Crowd Detection</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Retail Data Sources</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Gender ID</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Buying Behaviour</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Queue Length</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Cash Register</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">POS Integration</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Contextual Data</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Pixelization</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Mobile App</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Graffiti Detection</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Camera Tampering</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Intelligent Access Control</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Announcement Integration</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Time in Store</span>
+                    </label>
+                  </div>
+                  <div class="appSearchFilterRow">
+                    <label class="checkC">
+                      <input class="checkI headerSearchFilter" type="checkbox">
+                      <span class="checkM"></span>
+                      <span class="appSearchFilterLabel">Vandalism</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="appSearchFilterRow">
+                  <label class="checkC">
+                    <input id="checkallItems" class="checkI headerSearchFilter" type="checkbox">
+                    <span class="checkM"></span>
+                    <span class="appSearchFilterLabel" style="font-size: 14px;">All</span>
+                  </label>
+                  <button class="appSearchFilterBtn" onClick="ClearCheck()" >
+                    Clear
+                  </button>
+                  <button class="appSearchFilterBtn" id="apply-filter">
+                    Apply
+                  </button>
+                </div>
+              </div>
+              <li class="nav-item">
+                <a data-toggle="tooltip" data-placement="right" title="Notifications">
+                  <i class="headerNotification"></i>
+                  <text class="navItemsText">Notifications</text>
+                </a>
+              </li>
+              <li class="nav-item" id="customPreferencesBtn">
+                <a data-toggle="tooltip" data-placement="right" title="Preferences">
+                  <i class="headerPreferences"></i>
+                  <text class="navItemsText">Preferences</text>
+                </a>
+              </li>
+              <div id="customPreferences">
+                <div class="headrePreferenceCol">
+                  <button class="collapseBtn" id="PrefCustomTheme">
+                    Theme Color
+                  </button>
+                  <div class="collcont" id="customTheme">
+                    <div class="collins">
+                      <button id="darkThemeBtn" class="customThemeBtn">
+                        <span class="themeBtnText">Dark</span>
+                      </button>
+                      <button id="lightThemeBtn" class="customThemeBtn">
+                        <span class="themeBtnText">Light</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="headrePreferenceCol">
+                  <button class="collapseBtn" id="PrefAddNewTab">
+                    Add New Tab
+                  </button>
+                  <div id="carouselPreference" class="collcont carousel slide" data-ride="carousel"  data-interval="false">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active rowG2K">
+                        <button class="customPreferencesIcons prefMap" onClick="mapsModuleToggle()">
+                          Maps
+                        </button>
+                        <button class="customPreferencesIcons prefAlarms" onClick="alarmsModuleToggle()">
+                          Alarms & Action Plan
+                        </button>
+                        <button class="customPreferencesIcons prefBiD" onClick="BIDModuleToggle()">
+                          BI Dashboards
+                        </button>
+                        <button class="customPreferencesIcons prefHist" disabled>
+                          Historical Trail
+                        </button>
+                        <button class="customPreferencesIcons prefEvents" disabled>
+                          Events Viewer
+                        </button>
+                        <button class="customPreferencesIcons prefAudit" disabled>
+                          Audit Viewer
+                        </button>
+                        <button class="customPreferencesIcons prefHealth" disabled>
+                          Health Monitoring
+                        </button>
+                        <button class="customPreferencesIcons prefRole" disabled>
+                          Users & Role Management
+                        </button>
+                      </div>
+                      <div class="carousel-item rowG2K">
+                        <button class="customPreferencesIcons prefOccMonitor" disabled>
+                          People Counting
+                        </button>
+                        <button class="customPreferencesIcons prefCIHeatMap" onClick="heatMapsModuleToggle()">
+                          Heat Maps
+                        </button>
+                        <button class="customPreferencesIcons prefHeatM" disabled>
+                          GALP Heat Maps
+                        </button>
+                        <button class="customPreferencesIcons prefVisual" onClick="visualModuleToggle()">
+                          Visualization
+                        </button>
+                        <button class="customPreferencesIcons prefCIDashB" disabled>
+                          Customer Journey Dashboards
+                        </button>
+                        <button class="customPreferencesIcons prefOccDB" disabled>
+                          Occupancy Dashboard
+                        </button>
+                        <button class="customPreferencesIcons prefBuyBe" disabled>
+                          Targeted Offline Advertising
+                        </button>
+                        <button class="customPreferencesIcons prefRack" onClick="rackModuleToggle()">
+                          Shelf Lack & Misplacement
+                        </button>
+                        <button class="customPreferencesIcons prefQLength" disabled>
+                          Automated Queue Management
+                        </button>
+                        <button class="customPreferencesIcons prefCashR" disabled>
+                          Mis-scan Detection
+                        </button>
+                      </div>
+                      <div class="carousel-item rowG2K">
+                        <button class="customPreferencesIcons prefMetco" onClick="metcoModuleToggle()">
+                          Retail Dashboards
+                        </button>
+                        <button class="customPreferencesIcons prefPlano" disabled>
+                          Planogram
+                        </button>
+                        <button class="customPreferencesIcons prefIntAC" disabled>
+                          Access Control
+                        </button>
+                        <button class="customPreferencesIcons prefVand" disabled>
+                          Vandalism Detection
+                        </button>
+                        <button class="customPreferencesIcons prefMask" disabled>
+                          Contactless Mask Detection
+                        </button>
+                        <button class="customPreferencesIcons prefTempChe" disabled>
+                          Contactless Temperature Check
+                        </button>
+                        <button class="customPreferencesIcons prefSignal" disabled>
+                          Automated Access Signaling
+                        </button>
+                        <button class="customPreferencesIcons prefFR" disabled>
+                          Face Recognition
+                        </button>
+                        <button class="customPreferencesIcons prefVCA" disabled>
+                          Video Analytics
+                        </button>
+                        <button class="customPreferencesIcons prefOnBoard" disabled>
+                          Onboard
+                        </button>
+                      </div>
+                      <div class="carousel-item rowG2K">
+                        <button class="customPreferencesIcons prefECO" onClick="ECOModuleToggle()">
+                          Fan Ecosystem
+                        </button>
+                        <button class="customPreferencesIcons prefParkM" disabled>
+                          Parking Management
+                        </button>
+                        <button class="customPreferencesIcons prefVMS" disabled>
+                          Video Monitoring
+                        </button>
+                        <button class="customPreferencesIcons prefVBPC" disabled>
+                          Video Based P. Counting
+                        </button>
+                        <button class="customPreferencesIcons prefSBPC" disabled>
+                          Sensor Based P. Counting
+                        </button>
+                        <button class="customPreferencesIcons prefRestA" disabled>
+                          Restricted Area
+                        </button>
+                        <button class="customPreferencesIcons prefUnattO" disabled>
+                          Unattended Object
+                        </button>
+                        <button class="customPreferencesIcons prefCrowdD" disabled>
+                          Crowd Detection
+                        </button>
+                        <button class="customPreferencesIcons prefRetail" disabled>
+                          Retail Data Sources
+                        </button>
+                        <button class="customPreferencesIcons prefGenderID" disabled>
+                          Gender ID
+                        </button>
+                      </div>
+                      <div class="carousel-item rowG2K">
+                        <button class="customPreferencesIcons prefPOS" disabled>
+                          POS Integration
+                        </button>
+                        <button class="customPreferencesIcons prefConxD" disabled>
+                          Contextual Data
+                        </button>
+                        <button class="customPreferencesIcons prefPixe" disabled>
+                          Pixelization
+                        </button>
+                        <button class="customPreferencesIcons prefMobApp" disabled>
+                          Mobile App
+                        </button>
+                        <button class="customPreferencesIcons prefGraff" disabled>
+                          Graffiti Detection
+                        </button>
+                        <button class="customPreferencesIcons prefCamT" disabled>
+                          Camera Tampering
+                        </button>
+                        <button class="customPreferencesIcons prefPubAI" disabled>
+                          Announcement Integration
+                        </button>
+                        <button class="customPreferencesIcons prefTimeInS" disabled>
+                          Time in Store
+                        </button>
+                      </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselPreference" role="button" data-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselPreference" role="button" data-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    </a>
+                  </div>
+                </div>
+                <div class="customPreferencesActions">
+                  <button class="preferencesAddToFav preferencesBtns">
+                    Add to favourite
+                  </button>
+                  <button class="preferencesDiscard preferencesBtns">
+                    Discard changes
+                  </button>
+                </div>
+              </div>
+              <li class="nav-item">
+                <a data-toggle="tooltip" data-placement="right" title="EPICs" href="cases.html">
+                  <i class="headerUseCases"></i>
+                  <text class="navItemsText">EPICs</text>
+                </a>
+              </li>
+              <li class="nav-item" id="userGuide">
+                <a data-toggle="tooltip" data-placement="right" title="User Guide">
+                  <i class="headerUserGuide"></i>
+                  <text class="navItemsText">User Guide</text>
+                </a>
+              </li>
+              <li class="nav-item" id="appHeaderHelp">
+                <a data-toggle="tooltip" data-placement="right" title="Help">
+                  <i class="headerHelp"></i>
+                  <text class="navItemsText">Help</text>
+                </a>
+              </li>
+              <div id="appUserHelp" class="appHeaderDropdown help">
+                <div class="appHeaderDropdownRow">
+                  Support
+                </div>
+                <div class="appHeaderDropdownRow">
+                  Online user guide
+                </div>
+                <hr>
+                <div class="appHeaderDropdownRow">
+                  About us
+                </div>
+                <div class="appHeaderDropdownRow">
+                  Versions history
+                </div>
+                <div class="appHeaderDropdownRow">
+                  Copyright
+                </div>
+              </div>
+              <li class="nav-item">
+                <a data-toggle="tooltip" data-placement="right" title="Settings">
+                  <i class="headerSettings"></i>
+                  <text class="navItemsText">Settings</text>
+                </a>
+              </li>
+              <li class="nav-item" id="selectLanguage">
+                <a data-toggle="tooltip" data-placement="right" title="Languages">
+                  <i class="headerLanguages"></i>
+                  <text class="navItemsText">Languages</text>
+                </a>
+              </li>
+              <div id="appLanguages" class="appHeaderDropdown language">
+                <div class="appHeaderDropdownRow">
+                  Deutsch
+                </div>
+                <div class="appHeaderDropdownRow active english">
+                  English
+                </div>
+                <div class="appHeaderDropdownRow">
+                  Español
+                </div>
+                <div class="appHeaderDropdownRow">
+                  Português
+                </div>
+                <div class="appHeaderDropdownRow">
+                  العربية
+                </div>
+              </div>
+              <li class="nav-item" id="appHeaderProfile">
+                <a data-toggle="tooltip" data-placement="right" title="Profile">
+                  <i class="headerProfile"></i>
+                  <text class="navItemsText">Profile</text>
+                </a>
+              </li>
+              <div id="appAccProfile" class="appHeaderDropdown">
+                <div class="appHeaderDropdownRow">
+                  Profile
+                </div>
+                <div class="appHeaderDropdownRow">
+                  Keyboard shortcuts
+                </div>
+                <div class="appHeaderDropdownRow">
+                  Preferences
+                </div>
+                <hr>
+                <div class="appHeaderDropdownRow">
+                  Subscription
+                </div>
+                <a href="index.html">
+                  <div class="appHeaderDropdownRow">
+                    Sign out
+                  </div>
+                </a>
+              </div>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </section>
+</header>
+<section class="containerG2K">
+  <div class="rowG2K">
+    <div id="homeTopHeader" class="homeTopHeader start">
+      <a href="main.html" id="goToMain">
+        <span class="goToMainText">Start</span>
+        <button class="goToMainBtn">
+        </button>
+      </a>
+    </div>
+    <div id="homeHeader" class="homeBottomShape">
+      <svg viewBox="0 0 171.74 21.2" preserveAspectRatio="none" width="100%" height="100%">
+        <path d="M171.74,0H0Q85.88,42.41,171.74,0Z"/>
+      </svg>
+    </div>
+  </div>
+</section>
+<main class="scrollAct">
+  <div class="rowG2K">
+    <section class="homeContainer">
+      <div class="containerG2K">
+        <div class="rowG2K">
+          <div class="homeCardsContainer">
+            <div class="homeHeader">
+              <img class="homeHeaderIcon" src="svgs/homePage/modulesCat/modules.svg" alt=""/>
+              Main Applications
+            </div>
+            <div class="cardContainer draggableElement" id="MapsHomeCard">
+              <div class="homeCardIcon homeCardIconMap" onClick="mapsModule()">
+                <img src="svgs/modulesIc/maps.svg" alt="">
+                <div class="homeCardIconActive homeCardIconMap">
+                </div>
+              </div>
+              <div class="cardContent">
+                <div class="homeCardTitle draggE">
+                  <div class="homeCardTitleText">
+                    Maps
+                  </div>
+                  <div class="homeCardControls main">
+                    <button id="openMapsModule" class="homeOpenModule homeCardOpenMap" onClick="mapsModule()">
+                    </button>
+                    <button class="homeAddFavModule">
+                    </button>
+                    <button class="homeCloseModule homeCardCloseMap">
+                    </button>
+                  </div>
+                </div>
+                <div class="homeCardList">
+                  <li> GIS Map
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenMap" onClick="mapsModule()">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> Site Map
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenMap" onClick="mapsModule()">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> 3D Map
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenMap" onClick="mapsModule()">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div class="cardContainer draggableElement">
+              <div class="homeCardIcon homeCardIconAlarms" onClick="alarmsModule()">
+                <img src="svgs/modulesIc/alarms.svg" alt="">
+                <div class="homeCardIconActive homeCardIconAlarms">
+                </div>
+              </div>
+              <div class="cardContent">
+                <div class="homeCardTitle draggE">
+                  <div class="homeCardTitleText">
+                    Alarms & Action Plan
+                  </div>
+                  <div class="homeCardControls main">
+                    <button class="homeOpenModule homeCardOpenAlarms" onClick="alarmsModule()">
+                    </button>
+                    <button class="homeAddFavModule">
+                    </button>
+                    <button class="homeCloseModule homeCardCloseAlarms">
+                    </button>
+                  </div>
+                </div>
+                <div class="homeCardList">
+                  <li> Alarm Stack
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenAlarms" onClick="alarmsModule()">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> Action Plan
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenAlarms" onClick="alarmsModule()">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> SOP
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenAlarms" onClick="alarmsModule()">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div class="cardContainer draggableElement">
+              <div class="homeCardIcon homeCardIconBID" onClick="BIDModule()">
+                <img src="svgs/modulesIc/biDashboards.svg" alt="">
+                <div class="homeCardIconActive homeCardIconBID">
+                </div>
+              </div>
+              <div class="cardContent">
+                <div class="homeCardTitle draggE">
+                  <div class="homeCardTitleText">
+                    BI Dashboards
+                  </div>
+                  <div class="homeCardControls main">
+                    <button class="homeOpenModule homeCardOpenBID" onClick="BIDModule()">
+                    </button>
+                    <button class="homeAddFavModule">
+                    </button>
+                    <button class="homeCloseModule homeCardCloseBID">
+                    </button>
+                  </div>
+                </div>
+                <div class="homeCardList">
+                  <li> Live Dashboards
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenBID" onClick="BIDModule()">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> Historical Dashboards
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenBID" onClick="BIDModule()">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> Customized Dashboards
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenBID" onClick="BIDModule()">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div class="cardContainer draggableElement disabled">
+              <div class="homeCardIcon homeCardIconHist">
+                <img src="svgs/modulesIc/historicalTrail.svg" alt="">
+                <div class="homeCardIconActive homeCardIconHist">
+                </div>
+              </div>
+              <div class="cardContent">
+                <div class="homeCardTitle draggE">
+                  <div class="homeCardTitleText">
+                    Historical Trail
+                  </div>
+                  <div class="homeCardControls main">
+                    <button class="homeOpenModule homeCardOpenHist">
+                    </button>
+                    <button class="homeAddFavModule">
+                    </button>
+                    <button class="homeCloseModule homeCardCloseHist">
+                    </button>
+                  </div>
+                </div>
+                <div class="homeCardList">
+                  <li> Browse Alarms
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenHist">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> Reports
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenHist">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> Alarms Investigation
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenHist">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div class="cardContainer draggableElement disabled">
+              <div class="homeCardIcon homeCardIconEventsV">
+                <img src="svgs/modulesIc/eventsViewer.svg" alt="">
+                <div class="homeCardIconActive homeCardIconEventsV">
+                </div>
+              </div>
+              <div class="cardContent">
+                <div class="homeCardTitle draggE">
+                  <div class="homeCardTitleText">
+                    Events Viewer
+                  </div>
+                  <div class="homeCardControls main">
+                    <button class="homeOpenModule homeCardOpenEventsV">
+                    </button>
+                    <button class="homeAddFavModule">
+                    </button>
+                    <button class="homeCloseModule homeCardCloseEventV">
+                    </button>
+                  </div>
+                </div>
+                <div class="homeCardList">
+                  <li> Live & Historical Events
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenEventsV">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> Events Metadata
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenEventsV">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> Events Investigation
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenEventsV">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div class="cardContainer draggableElement disabled">
+              <div class="homeCardIcon homeCardIconEAudit">
+                <img src="svgs/modulesIc/historicalTrail.svg" alt="">
+                <div class="homeCardIconActive homeCardIconEAudit">
+                </div>
+              </div>
+              <div class="cardContent">
+                <div class="homeCardTitle draggE">
+                  <div class="homeCardTitleText">
+                    Audit Viewer
+                  </div>
+                  <div class="homeCardControls main">
+                    <button class="homeOpenModule homeCardOpenAudit">
+                    </button>
+                    <button class="homeAddFavModule">
+                    </button>
+                    <button class="homeCloseModule homeCardCloseAudit">
+                    </button>
+                  </div>
+                </div>
+                <div class="homeCardList">
+                  <li> System Activities
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenAudit">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> Operator Logs
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenAudit">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> Audit Management
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenAudit">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div class="cardContainer draggableElement disabled">
+              <div class="homeCardIcon homeCardIconHealth">
+                <img src="svgs/modulesIc/healthMonitor.svg" alt="">
+                <div class="homeCardIconActive homeCardIconHealth">
+                </div>
+              </div>
+              <div class="cardContent">
+                <div class="homeCardTitle draggE">
+                  <div class="homeCardTitleText">
+                    Health Monitoring
+                  </div>
+                  <div class="homeCardControls main">
+                    <button class="homeOpenModule homeCardOpenHealth">
+                    </button>
+                    <button class="homeAddFavModule">
+                    </button>
+                    <button class="homeCloseModule homeCardCloseHealth">
+                    </button>
+                  </div>
+                </div>
+                <div class="homeCardList">
+                  <li> Touchpoints Status Monitoring
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenHealth">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> System Failures
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenHealth">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> Troubleshooting
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenHealth">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div class="cardContainer draggableElement disabled">
+              <div class="homeCardIcon homeCardIconRole">
+                <img src="svgs/modulesIc/roleManagement.svg" alt="">
+                <div class="homeCardIconActive homeCardIconRole">
+                </div>
+              </div>
+              <div class="cardContent">
+                <div class="homeCardTitle draggE">
+                  <div class="homeCardTitleText">
+                    Users & Role Management
+                  </div>
+                  <div class="homeCardControls main">
+                    <button class="homeOpenModule homeCardOpenRole">
+                    </button>
+                    <button class="homeAddFavModule">
+                    </button>
+                    <button class="homeCloseModule homeCardCloseRole">
+                    </button>
+                  </div>
+                </div>
+                <div class="homeCardList">
+                  <li> List of Users
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenRole">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> List of Groups
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenRole">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> System Permissions
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenRole">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="homeCardsContainer">
+            <div class="homeHeader">
+              <img class="homeHeaderIcon" src="svgs/homePage/modulesCat/add-ons.svg" alt=""/>
+              Add-on Applications
+            </div>
+            <div class="cardContainer draggableElement disabled">
+              <div class="homeCardIcon homeCardIconOccMonitor">
+                <img src="svgs/modulesIc/OccupancyMonitor.svg" alt="">
+                <div class="homeCardIconActive homeCardIconOccMonitor">
+                </div>
+              </div>
+              <div class="cardContent">
+                <div class="homeCardTitle draggE">
+                  <div class="homeCardTitleText">
+                    People Counting
+                  </div>
+                  <div class="homeCardControls main">
+                    <button class="homeOpenModule homeCardOpenOccMonitor">
+                    </button>
+                    <button class="homeAddFavModule">
+                    </button>
+                    <button class="homeCloseModule homeCardCloseOccMonitor">
+                    </button>
+                  </div>
+                </div>
+                <div class="homeCardList">
+                  <li> List of Areas
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenOccMonitor">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> List of Sensors
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenOccMonitor">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> Sensor Readings
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenOccMonitor">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                </div>
+              </div>
+            </div> 
+            <div class="cardContainer draggableElement">
+              <div class="homeCardIcon homeCardIconCIHeatMap" onClick="heatMapsModule()">
+                <img src="svgs/modulesIc/heatMap.svg" alt="">
+                <div class="homeCardIconActive homeCardIconCIHeatMap">
+                </div>
+              </div>
+              <div class="cardContent">
+                <div class="homeCardTitle draggE">
+                  <div class="homeCardTitleText">
+                    Heat Maps
+                  </div>
+                  <div class="homeCardControls main">
+                    <button class="homeOpenModule homeCardOpenCIHeatMap" onClick="heatMapsModule()">
+                    </button>
+                    <button class="homeAddFavModule">
+                    </button>
+                    <button class="homeCloseModule homeCardCloseCIHeatMap">
+                    </button>
+                  </div>
+                </div>
+                <div class="homeCardList">
+                  <li> Camera One View
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenCIHeatMap" onClick="heatMapsModule()">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> Camera Multiple Views
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenCIHeatMap" onClick="heatMapsModule()">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> Map View
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenCIHeatMap" onClick="heatMapsModule()">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div class="cardContainer draggableElement disabled">
+              <div class="homeCardIcon homeCardIconHeatM">
+                <img src="svgs/modulesIc/heatMap.svg" alt="">
+                <div class="homeCardIconActive homeCardIconHeatM">
+                </div>
+              </div>
+              <div class="cardContent">
+                <div class="homeCardTitle draggE">
+                  <div class="homeCardTitleText">
+                    GALP Heat Maps
+                  </div>
+                  <div class="homeCardControls main">
+                    <button class="homeOpenModule homeCardOpenHeatM">
+                    </button>
+                    <button class="homeAddFavModule">
+                    </button>
+                    <button class="homeCloseModule homeCardCloseHeatM">
+                    </button>
+                  </div>
+                </div>
+                <div class="homeCardList">
+                  <li> Live View
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenHeatM">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> Map View
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenHeatM">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> Demographics Heatmap
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenHeatM">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div class="cardContainer draggableElement">
+              <div class="homeCardIcon homeCardIconVisual" onClick="visualModule()">
+                <img src="svgs/modulesIc/visualization.svg" alt="">
+                <div class="homeCardIconActive homeCardIconVisual">
+                </div>
+              </div>
+              <div class="cardContent">
+                <div class="homeCardTitle draggE">
+                  <div class="homeCardTitleText">
+                    Visualization
+                  </div>
+                  <div class="homeCardControls main">
+                    <button class="homeOpenModule homeCardOpenVisual" onClick="visualModule()">
+                    </button>
+                    <button class="homeAddFavModule">
+                    </button>
+                    <button class="homeCloseModule homeCardCloseVisual" onClick="visualModule()">
+                    </button>
+                  </div>
+                </div>
+                <div class="homeCardList">
+                  <li> Trace Map
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenVisual" onClick="visualModule()">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> Heat Map
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenVisual" onClick="visualModule()">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> Dwell Map
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenVisual" onClick="visualModule()">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div class="cardContainer draggableElement disabled">
+              <div class="homeCardIcon homeCardIconCIDashB">
+                <img src="svgs/modulesIc/biDashboards.svg" alt="">
+                <div class="homeCardIconActive homeCardIconCIDashB">
+                </div>
+              </div>
+              <div class="cardContent">
+                <div class="homeCardTitle draggE">
+                  <div class="homeCardTitleText">
+                    Customer Journey Dashboards
+                  </div>
+                  <div class="homeCardControls main">
+                    <button class="homeOpenModule homeCardOpenCIDashB">
+                    </button>
+                    <button class="homeAddFavModule">
+                    </button>
+                    <button class="homeCloseModule homeCardCloseCIDashB">
+                    </button>
+                  </div>
+                </div>
+                <div class="homeCardList">
+                  <li> Footfall
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenCIDashB">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> Customer Demographics
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenCIDashB">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> Monthly Demographics
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenCIDashB">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div class="cardContainer draggableElement disabled">
+              <div class="homeCardIcon homeCardIconOccDB">
+                <img src="svgs/modulesIc/biDashboards.svg" alt="">
+                <div class="homeCardIconActive homeCardIconOccDB">
+                </div>
+              </div>
+              <div class="cardContent">
+                <div class="homeCardTitle draggE">
+                  <div class="homeCardTitleText">
+                    Occupancy Dashboards
+                  </div>
+                  <div class="homeCardControls main">
+                    <button class="homeOpenModule homeCardOpenOccDB">
+                    </button>
+                    <button class="homeAddFavModule">
+                    </button>
+                    <button class="homeCloseModule homeCardCloseOccDB">
+                    </button>
+                  </div>
+                </div>
+                <div class="homeCardList">
+                  <li>Daily Store Capacity
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenOccDB">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> Entrance Gates Capacity
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenOccDB">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> Daily Capacity Reports
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenOccDB">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div class="cardContainer draggableElement disabled">
+              <div class="homeCardIcon homeCardIconBuyBe">
+                <img src="svgs/modulesIc/buyingBehaviour.svg" alt="">
+                <div class="homeCardIconActive homeCardIconBuyBe">
+                </div>
+              </div>
+              <div class="cardContent">
+                <div class="homeCardTitle draggE">
+                  <div class="homeCardTitleText">
+                    Targeted Offline Advertising
+                  </div>
+                  <div class="homeCardControls main">
+                    <button class="homeOpenModule homeCardOpenBuyBe">
+                    </button>
+                    <button class="homeAddFavModule">
+                    </button>
+                    <button class="homeCloseModule homeCardCloseBuyBe">
+                    </button>
+                  </div>
+                </div>
+                <div class="homeCardList">
+                  <li>Female Ads. Set
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenBuyBe">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li>Youth Ads. Set
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenBuyBe">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li>General Targeted Set
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenBuyBe">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div class="cardContainer draggableElement">
+              <div class="homeCardIcon homeCardIconRack" onClick="rackModule()">
+                <img src="svgs/modulesIc/rackRefill.svg" alt="">
+                <div class="homeCardIconActive homeCardIconRack">
+                </div>
+              </div>
+              <div class="cardContent">
+                <div class="homeCardTitle draggE">
+                  <div class="homeCardTitleText">
+                    Shelf Lack & Misplacement
+                  </div>
+                  <div class="homeCardControls main">
+                    <button class="homeOpenModule homeCardOpenRack" onClick="rackModule()">
+                    </button>
+                    <button class="homeAddFavModule">
+                    </button>
+                    <button class="homeCloseModule homeCardCloseRack">
+                    </button>
+                  </div>
+                </div>
+                <div class="homeCardList">
+                  <li> List of Racks
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenRack" onClick="rackModule()">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> List of Products
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenRack" onClick="rackModule()">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> Empty Racks
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenRack" onClick="rackModule()">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div class="cardContainer draggableElement disabled">
+              <div class="homeCardIcon homeCardIconQMgmt">
+                <img src="svgs/modulesIc/queueLength.svg" alt="">
+                <div class="homeCardIconActive homeCardIconQMgmt">
+                </div>
+              </div>
+              <div class="cardContent">
+                <div class="homeCardTitle draggE">
+                  <div class="homeCardTitleText">
+                    Automated Queue Management
+                  </div>
+                  <div class="homeCardControls main">
+                    <button class="homeOpenModule homeCardOpenQMgmt">
+                    </button>
+                    <button class="homeAddFavModule">
+                    </button>
+                    <button class="homeCloseModule homeCardCloseQMgmt">
+                    </button>
+                  </div>
+                </div>
+                <div class="homeCardList">
+                  <li> Queue Length Reports
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenQMgmt">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> Queue Alarms List
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenQMgmt">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> Queue Capacity Thresholds
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenQMgmt">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div class="cardContainer draggableElement disabled">
+              <div class="homeCardIcon homeCardIconCashR">
+                <img src="svgs/modulesIc/cashRegister.svg" alt="">
+                <div class="homeCardIconActive homeCardIconCashR">
+                </div>
+              </div>
+              <div class="cardContent">
+                <div class="homeCardTitle draggE">
+                  <div class="homeCardTitleText">
+                    Mis-scan Detection
+                  </div>
+                  <div class="homeCardControls main">
+                    <button class="homeOpenModule homeCardOpenCashR">
+                    </button>
+                    <button class="homeAddFavModule">
+                    </button>
+                    <button class="homeCloseModule homeCardCloseCashR">
+                    </button>
+                  </div>
+                </div>
+                <div class="homeCardList">
+                  <li> Alarms List
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenCashR">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> Miss-scanned Products
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenCashR">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> Cashiers List
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenCashR">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div class="cardContainer draggableElement">
+              <div class="homeCardIcon homeCardIconMetco" onClick="metcoModule()">
+                <img src="svgs/modulesIc/biDashboards.svg" alt="">
+                <div class="homeCardIconActive homeCardIconMetco">
+                </div>
+              </div>
+              <div class="cardContent">
+                <div class="homeCardTitle draggE">
+                  <div class="homeCardTitleText">
+                    Retail Dashboards
+                  </div>
+                  <div class="homeCardControls main">
+                    <button class="homeOpenModule homeCardOpenMetco" onClick="metcoModule()">
+                    </button>
+                    <button class="homeAddFavModule">
+                    </button>
+                    <button class="homeCloseModule homeCardCloseMetco">
+                    </button>
+                  </div>
+                </div>
+                <div class="homeCardList">
+                  <li> Knowledge
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenMetco" onClick="metcoModule()">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> Prediction
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenMetco" onClick="metcoModule()">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> External Resources
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenMetco" onClick="metcoModule()">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div class="cardContainer draggableElement disabled">
+              <div class="homeCardIcon homeCardIconPlano">
+                <img src="svgs/modulesIc/planogram.svg" alt="">
+                <div class="homeCardIconActive homeCardIconPlano">
+                </div>
+              </div>
+              <div class="cardContent">
+                <div class="homeCardTitle draggE">
+                  <div class="homeCardTitleText">
+                    Planogram
+                  </div>
+                  <div class="homeCardControls main">
+                    <button class="homeOpenModule homeCardOpenPlano">
+                    </button>
+                    <button class="homeAddFavModule">
+                    </button>
+                    <button class="homeCloseModule homeCardClosePlano">
+                    </button>
+                  </div>
+                </div>
+                <div class="homeCardList">
+                  <li> List of Stores
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenPlano">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> List of Spaces
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenPlano">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> Misplaced Products
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenPlano">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div class="cardContainer draggableElement disabled">
+              <div class="homeCardIcon homeCardIconIntAC">
+                <img src="svgs/modulesIc/accessControl.svg" alt="">
+                <div class="homeCardIconActive homeCardIconIntAC">
+                </div>
+              </div>
+              <div class="cardContent">
+                <div class="homeCardTitle draggE">
+                  <div class="homeCardTitleText">
+                    Access Control
+                  </div>
+                  <div class="homeCardControls main">
+                    <button class="homeOpenModule homeCardOpenIntAC">
+                    </button>
+                    <button class="homeAddFavModule">
+                    </button>
+                    <button class="homeCloseModule homeCardCloseIntAC">
+                    </button>
+                  </div>
+                </div>
+                <div class="homeCardList">
+                  <li> Transactions List
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenIntAC">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> Alarms List
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenIntAC">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> Access Gates
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenIntAC">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div class="cardContainer draggableElement disabled">
+              <div class="homeCardIcon homeCardIconVand">
+                <img src="svgs/modulesIc/vandalism.svg" alt="">
+                <div class="homeCardIconActive homeCardIconVand">
+                </div>
+              </div>
+              <div class="cardContent">
+                <div class="homeCardTitle draggE">
+                  <div class="homeCardTitleText">
+                    Vandalism Detection
+                  </div>
+                  <div class="homeCardControls main">
+                    <button class="homeOpenModule homeCardOpenVand">
+                    </button>
+                    <button class="homeAddFavModule">
+                    </button>
+                    <button class="homeCloseModule homeCardCloseVand">
+                    </button>
+                  </div>
+                </div>
+                <div class="homeCardList">
+                  <li> Alarms List
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenVand">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> Recorded Events
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenVand">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> Live Monitoring
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenVand">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div class="cardContainer draggableElement disabled">
+              <div class="homeCardIcon homeCardIconMaskDetec">
+                <img src="svgs/modulesIc/noMask.svg" alt="">
+                <div class="homeCardIconActive homeCardIconMaskDetec">
+                </div>
+              </div>
+              <div class="cardContent">
+                <div class="homeCardTitle draggE">
+                  <div class="homeCardTitleText">
+                    Contactless Mask Detection
+                  </div>
+                  <div class="homeCardControls main">
+                    <button class="homeOpenModule homeCardOpenMaskDetec">
+                    </button>
+                    <button class="homeAddFavModule">
+                    </button>
+                    <button class="homeCloseModule homeCardCloseMaskDetec">
+                    </button>
+                  </div>
+                </div>
+                <div class="homeCardList">
+                  <li> Alarms List
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenMaskDetec">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> Detection Reports
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenMaskDetec">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> Live Monitoring
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenMaskDetec">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div class="cardContainer draggableElement disabled">
+              <div class="homeCardIcon homeCardIconTempCheck">
+                <img src="svgs/modulesIc/feverDetected.svg" alt="">
+                <div class="homeCardIconActive homeCardIconTempCheck">
+                </div>
+              </div>
+              <div class="cardContent">
+                <div class="homeCardTitle draggE">
+                  <div class="homeCardTitleText">
+                    Contactless Temperature Check
+                  </div>
+                  <div class="homeCardControls main">
+                    <button class="homeOpenModule homeCardOpenTempeCheck">
+                    </button>
+                    <button class="homeAddFavModule">
+                    </button>
+                    <button class="homeCloseModule homeCardCloseTempeCheck">
+                    </button>
+                  </div>
+                </div>
+                <div class="homeCardList">
+                  <li> Alarms List
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenTempeCheck">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> Suspected Cases
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenTempeCheck">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> Live Monitoring
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenTempeCheck">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div class="cardContainer draggableElement disabled">
+              <div class="homeCardIcon homeCardIconAccessSignal">
+                <img src="svgs/modulesIc/mask.svg" alt="">
+                <div class="homeCardIconActive homeCardIconAccessSignal">
+                </div>
+              </div>
+              <div class="cardContent">
+                <div class="homeCardTitle draggE">
+                  <div class="homeCardTitleText">
+                    Automated Access Signaling
+                  </div>
+                  <div class="homeCardControls main">
+                    <button class="homeOpenModule homeCardOpenAccessSignal">
+                    </button>
+                    <button class="homeAddFavModule">
+                    </button>
+                    <button class="homeCloseModule homeCardCloseAccessSignal">
+                    </button>
+                  </div>
+                </div>
+                <div class="homeCardList">
+                  <li> Access Transactions
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenAccessSignal">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> Automated Access Permissions
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenAccessSignal">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> Authorized Access List
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenAccessSignal">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div class="cardContainer draggableElement disabled">
+              <div class="homeCardIcon homeCardIconFR">
+                <img src="svgs/modulesIc/faceRecognition.svg" alt="">
+                <div class="homeCardIconActive homeCardIconFR">
+                </div>
+              </div>
+              <div class="cardContent">
+                <div class="homeCardTitle draggE">
+                  <div class="homeCardTitleText">
+                    Face Recognition
+                  </div>
+                  <div class="homeCardControls main">
+                    <button class="homeOpenModule homeCardOpenFR">
+                    </button>
+                    <button class="homeAddFavModule">
+                    </button>
+                    <button class="homeCloseModule homeCardCloseFR">
+                    </button>
+                  </div>
+                </div>
+                <div class="homeCardList">
+                  <li> Time in Store
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenFR">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> Blacklisted
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenFR">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> Gender Analysis
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenFR">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div class="cardContainer draggableElement disabled">
+              <div class="homeCardIcon homeCardIconVCA" onClick="VCAModule()">
+                <img src="svgs/modulesIc/videoAnalytics.svg" alt="">
+                <div class="homeCardIconActive homeCardIconVCA">
+                </div>
+              </div>
+              <div class="cardContent">
+                <div class="homeCardTitle draggE">
+                  <div class="homeCardTitleText">
+                    Video Analytics
+                  </div>
+                  <div class="homeCardControls main">
+                    <button class="homeOpenModule homeCardOpenVCA" onClick="VCAModule()">
+                    </button>
+                    <button class="homeAddFavModule">
+                    </button>
+                    <button class="homeCloseModule homeCardCloseVCA">
+                    </button>
+                  </div>
+                </div>
+                <div class="homeCardList">
+                  <li> Cross Line
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenVCA" onClick="VCAModule()">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> Restricted Area
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenVCA" onClick="VCAModule()">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> Removed Object
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenVCA" onClick="VCAModule()">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div class="cardContainer draggableElement disabled">
+              <div class="homeCardIcon homeCardIconOnBoard" onClick="onBoardModule()">
+                <img src="svgs/modulesIc/onBoard.svg" alt="">
+                <div class="homeCardIconActive homeCardIconOnBoard">
+                </div>
+              </div>
+              <div class="cardContent">
+                <div class="homeCardTitle draggE">
+                  <div class="homeCardTitleText">
+                    Onboard
+                  </div>
+                  <div class="homeCardControls main">
+                    <button class="homeOpenModule homeCardOpenOnBoard" onClick="onBoardModule()">
+                    </button>
+                    <button class="homeAddFavModule">
+                    </button>
+                    <button class="homeCloseModule homeCardCloseOnBoard">
+                    </button>
+                  </div>
+                </div>
+                <div class="homeCardList">
+                  <li> Share your Space
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenOnBoard" onClick="onBoardModule()">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> Registration
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenOnBoard" onClick="onBoardModule()">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> OCR Analysis
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenOnBoard" onClick="onBoardModule()">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div class="cardContainer draggableElement">
+              <div class="homeCardIcon homeCardIconECO" onClick="ECOModule()">
+                <img src="svgs/modulesIc/ecosystem.svg" alt="">
+                <div class="homeCardIconActive homeCardIconECO">
+                </div>
+              </div>
+              <div class="cardContent">
+                <div class="homeCardTitle draggE">
+                  <div class="homeCardTitleText">
+                    Fan Ecosystem
+                  </div>
+                  <div class="homeCardControls main">
+                    <button class="homeOpenModule homeCardOpenECO" onClick="ECOModule()">
+                    </button>
+                    <button class="homeAddFavModule">
+                    </button>
+                    <button class="homeCloseModule homeCardCloseECO">
+                    </button>
+                  </div>
+                </div>
+                <div class="homeCardList">
+                  <li> Ticketing
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenECO" onClick="ECOModule()">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> Parking
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenECO" onClick="ECOModule()">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> Merchandising
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenECO" onClick="ECOModule()">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div class="cardContainer draggableElement disabled">
+              <div class="homeCardIcon homeCardIconParkM">
+                <img src="svgs/modulesIc/parkingManagement.svg" alt="">
+                <div class="homeCardIconActive homeCardIconParkM">
+                </div>
+              </div>
+              <div class="cardContent">
+                <div class="homeCardTitle draggE">
+                  <div class="homeCardTitleText">
+                    Parking Management
+                  </div>
+                  <div class="homeCardControls main">
+                    <button class="homeOpenModule homeCardOpenParkM">
+                    </button>
+                    <button class="homeAddFavModule">
+                    </button>
+                    <button class="homeCloseModule homeCardCloseParkM">
+                    </button>
+                  </div>
+                </div>
+                <div class="homeCardList">
+                  <li> Parking Sites
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenParkM">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> LNPR
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenParkM">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> Parking Spaces
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenParkM">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div class="cardContainer draggableElement disabled">
+              <div class="homeCardIcon homeCardIconVMS">
+                <img src="svgs/modulesIc/videoMonitoring.svg" alt="">
+                <div class="homeCardIconActive homeCardIconVMS">
+                </div>
+              </div>
+              <div class="cardContent">
+                <div class="homeCardTitle draggE">
+                  <div class="homeCardTitleText">
+                    Video Monitoring
+                  </div>
+                  <div class="homeCardControls main">
+                    <button class="homeOpenModule homeCardOpenVMS">
+                    </button>
+                    <button class="homeAddFavModule">
+                    </button>
+                    <button class="homeCloseModule homeCardCloseVMS">
+                    </button>
+                  </div>
+                </div>
+                <div class="homeCardList">
+                  <li> Monitoring
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenVMS">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> List of Cameras
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenVMS">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> Video Bookmarks
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenVMS">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div class="cardContainer draggableElement disabled">
+              <div class="homeCardIcon homeCardIconVBPC">
+                <img src="svgs/modulesIc/vbpCounting.svg" alt="">
+                <div class="homeCardIconActive homeCardIconVBPC">
+                </div>
+              </div>
+              <div class="cardContent">
+                <div class="homeCardTitle draggE">
+                  <div class="homeCardTitleText">
+                    Video Based People Counting
+                  </div>
+                  <div class="homeCardControls main">
+                    <button class="homeOpenModule homeCardOpenVBPC">
+                    </button>
+                    <button class="homeAddFavModule">
+                    </button>
+                    <button class="homeCloseModule homeCardCloseVBPC">
+                    </button>
+                  </div>
+                </div>
+                <div class="homeCardList">
+                  <li> Monitoring
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenVBPC">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> List of People Counting Videos
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenVBPC">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> Video Bookmarks
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenVBPC">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div class="cardContainer draggableElement disabled">
+              <div class="homeCardIcon homeCardIconSBPC">
+                <img src="svgs/modulesIc/sbpCounting.svg" alt="">
+                <div class="homeCardIconActive homeCardIconSBPC">
+                </div>
+              </div>
+              <div class="cardContent">
+                <div class="homeCardTitle draggE">
+                  <div class="homeCardTitleText">
+                    Sensor Based People Counting
+                  </div>
+                  <div class="homeCardControls main">
+                    <button class="homeOpenModule homeCardOpenSBPC">
+                    </button>
+                    <button class="homeAddFavModule">
+                    </button>
+                    <button class="homeCloseModule homeCardCloseSBPC">
+                    </button>
+                  </div>
+                </div>
+                <div class="homeCardList">
+                  <li> List of Areas
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenSBPC">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> List of Sensors
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenSBPC">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> Sensor Readings
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenSBPC">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div class="cardContainer draggableElement disabled">
+              <div class="homeCardIcon homeCardIconRestA">
+                <img src="svgs/modulesIc/restrictedArea.svg" alt="">
+                <div class="homeCardIconActive homeCardIconRestA">
+                </div>
+              </div>
+              <div class="cardContent">
+                <div class="homeCardTitle draggE">
+                  <div class="homeCardTitleText">
+                    Restricted Area
+                  </div>
+                  <div class="homeCardControls main">
+                    <button class="homeOpenModule homeCardOpenRestA">
+                    </button>
+                    <button class="homeAddFavModule">
+                    </button>
+                    <button class="homeCloseModule homeCardCloseRestA">
+                    </button>
+                  </div>
+                </div>
+                <div class="homeCardList">
+                  <li> List of Zones
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenRestA">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> Authorization Zones
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenRestA">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> Restricted Zones
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenRestA">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div class="cardContainer draggableElement disabled">
+              <div class="homeCardIcon homeCardIconUnattO">
+                <img src="svgs/modulesIc/unattendedObject.svg" alt="">
+                <div class="homeCardIconActive homeCardIconUnattO">
+                </div>
+              </div>
+              <div class="cardContent">
+                <div class="homeCardTitle draggE">
+                  <div class="homeCardTitleText">
+                    Unattended Object
+                  </div>
+                  <div class="homeCardControls main">
+                    <button class="homeOpenModule homeCardOpenUnattO">
+                    </button>
+                    <button class="homeAddFavModule">
+                    </button>
+                    <button class="homeCloseModule homeCardCloseUnattO">
+                    </button>
+                  </div>
+                </div>
+                <div class="homeCardList">
+                  <li> List of Objects
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenUnattO">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> List of Cameras
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenUnattO">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> Video Bookmarks
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenUnattO">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div class="cardContainer draggableElement disabled">
+              <div class="homeCardIcon homeCardIconCrowdD">
+                <img src="svgs/modulesIc/crowdDetection.svg" alt="">
+                <div class="homeCardIconActive homeCardIconCrowdD">
+                </div>
+              </div>
+              <div class="cardContent">
+                <div class="homeCardTitle draggE">
+                  <div class="homeCardTitleText">
+                    Crowd Detection
+                  </div>
+                  <div class="homeCardControls main">
+                    <button class="homeOpenModule homeCardOpenCrowdD">
+                    </button>
+                    <button class="homeAddFavModule">
+                    </button>
+                    <button class="homeCloseModule homeCardCloseCrowdD">
+                    </button>
+                  </div>
+                </div>
+                <div class="homeCardList">
+                  <li> List of Areas
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenCrowdD">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> List of Shops
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenCrowdD">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> Crowded Areas Heatmaps
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenCrowdD">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div class="cardContainer draggableElement disabled">
+              <div class="homeCardIcon homeCardIconRetail">
+                <img src="svgs/modulesIc/retailDataSources.svg" alt="">
+                <div class="homeCardIconActive homeCardIconRetail">
+                </div>
+              </div>
+              <div class="cardContent">
+                <div class="homeCardTitle draggE">
+                  <div class="homeCardTitleText">
+                    Retail Data Sources
+                  </div>
+                  <div class="homeCardControls main">
+                    <button class="homeOpenModule homeCardOpenRetail">
+                    </button>
+                    <button class="homeAddFavModule">
+                    </button>
+                    <button class="homeCloseModule homeCardCloseRetail">
+                    </button>
+                  </div>
+                </div>
+                <div class="homeCardList">
+                  <li> Microsoft Dynamics
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenRetail">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> Nielsen
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenRetail">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                  <li> SAP
+                    <div class="homeCardControls">
+                      <button class="homeOpenModule homeCardOpenRetail">
+                      </button>
+                      <button class="homeAddFavModule">
+                      </button>
+                    </div>
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div class="cardContainer draggableElement disabled">
+              <div class="homeCardIcon homeCardIconGender">
+                <img src="svgs/modulesIc/genderID.svg" alt="">
+                <div class="homeCardIconActive homeCardIconGender">
+                </div>
+              </div>
+              <div class="cardContent">
+                <div class="homeCardTitle draggE">
+                  <div class="homeCardTitleText">
+                    Gender ID
+                  </div>
+                  <div class="homeCardControls main">
+                    <button class="homeOpenModule homeCardOpenGender">
+                    </button>
+                    <button class="homeAddFavModule">
+                    </button>
+                    <button class="homeCloseModule homeCardCloseGender">
+                    </button>
+                  </div>
+                </div>
+                <div class="homeCardList">
+                  <li>
+                  </li>
+                  <li>
+                  </li>
+                  <li>
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div class="cardContainer draggableElement disabled">
+              <div class="homeCardIcon homeCardIconPOS">
+                <img src="svgs/modulesIc/posIntegration.svg" alt="">
+                <div class="homeCardIconActive homeCardIconPOS">
+                </div>
+              </div>
+              <div class="cardContent">
+                <div class="homeCardTitle draggE">
+                  <div class="homeCardTitleText">
+                    POS Integration
+                  </div>
+                  <div class="homeCardControls main">
+                    <button class="homeOpenModule homeCardOpenPOS">
+                    </button>
+                    <button class="homeAddFavModule">
+                    </button>
+                    <button class="homeCloseModule homeCardClosePOS">
+                    </button>
+                  </div>
+                </div>
+                <div class="homeCardList">
+                  <li>
+                  </li>
+                  <li>
+                  </li>
+                  <li>
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div class="cardContainer draggableElement disabled">
+              <div class="homeCardIcon homeCardIconConxD">
+                <img src="svgs/modulesIc/contextualData.svg" alt="">
+                <div class="homeCardIconActive homeCardIconConxD">
+                </div>
+              </div>
+              <div class="cardContent">
+                <div class="homeCardTitle draggE">
+                  <div class="homeCardTitleText">
+                    Contextual Data
+                  </div>
+                  <div class="homeCardControls main">
+                    <button class="homeOpenModule homeCardOpenConxD">
+                    </button>
+                    <button class="homeAddFavModule">
+                    </button>
+                    <button class="homeCloseModule homeCardCloseConxD">
+                    </button>
+                  </div>
+                </div>
+                <div class="homeCardList">
+                  <li>
+                  </li>
+                  <li>
+                  </li>
+                  <li>
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div class="cardContainer draggableElement disabled">
+              <div class="homeCardIcon homeCardIconPixe">
+                <img src="svgs/modulesIc/pixilation.svg" alt="">
+                <div class="homeCardIconActive homeCardIconPixe">
+                </div>
+              </div>
+              <div class="cardContent">
+                <div class="homeCardTitle draggE">
+                  <div class="homeCardTitleText">
+                    Pixelization
+                  </div>
+                  <div class="homeCardControls main">
+                    <button class="homeOpenModule homeCardOpenPixe">
+                    </button>
+                    <button class="homeAddFavModule">
+                    </button>
+                    <button class="homeCloseModule homeCardClosePixe">
+                    </button>
+                  </div>
+                </div>
+                <div class="homeCardList">
+                  <li>
+                  </li>
+                  <li>
+                  </li>
+                  <li>
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div class="cardContainer draggableElement disabled">
+              <div class="homeCardIcon homeCardIconMobApp">
+                <img src="svgs/modulesIc/mobileApp.svg" alt="">
+                <div class="homeCardIconActive homeCardIconMobApp">
+                </div>
+              </div>
+              <div class="cardContent">
+                <div class="homeCardTitle draggE">
+                  <div class="homeCardTitleText">
+                    Mobile App
+                  </div>
+                  <div class="homeCardControls main">
+                    <button class="homeOpenModule homeCardOpenMobApp">
+                    </button>
+                    <button class="homeAddFavModule">
+                    </button>
+                    <button class="homeCloseModule homeCardCloseMobApp">
+                    </button>
+                  </div>
+                </div>
+                <div class="homeCardList">
+                  <li>
+                  </li>
+                  <li>
+                  </li>
+                  <li>
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div class="cardContainer draggableElement disabled">
+              <div class="homeCardIcon homeCardIconGraff">
+                <img src="svgs/modulesIc/graffitiDetection.svg" alt="">
+                <div class="homeCardIconActive homeCardIconGraff">
+                </div>
+              </div>
+              <div class="cardContent">
+                <div class="homeCardTitle draggE">
+                  <div class="homeCardTitleText">
+                    Graffiti Detection
+                  </div>
+                  <div class="homeCardControls main">
+                    <button class="homeOpenModule homeCardOpenGraff">
+                    </button>
+                    <button class="homeAddFavModule">
+                    </button>
+                    <button class="homeCloseModule homeCardCloseGraff">
+                    </button>
+                  </div>
+                </div>
+                <div class="homeCardList">
+                  <li>
+                  </li>
+                  <li>
+                  </li>
+                  <li>
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div class="cardContainer draggableElement disabled">
+              <div class="homeCardIcon homeCardIconCamT">
+                <img src="svgs/modulesIc/cameraTampering.svg" alt="">
+                <div class="homeCardIconActive homeCardIconCamT">
+                </div>
+              </div>
+              <div class="cardContent">
+                <div class="homeCardTitle draggE">
+                  <div class="homeCardTitleText">
+                    Camera Tampering
+                  </div>
+                  <div class="homeCardControls main">
+                    <button class="homeOpenModule homeCardOpenCamT">
+                    </button>
+                    <button class="homeAddFavModule">
+                    </button>
+                    <button class="homeCloseModule homeCardCloseCamT">
+                    </button>
+                  </div>
+                </div>
+                <div class="homeCardList">
+                  <li>
+                  </li>
+                  <li>
+                  </li>
+                  <li>
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div class="cardContainer draggableElement disabled">
+              <div class="homeCardIcon homeCardIconPubAI">
+                <img src="svgs/modulesIc/announcementIntegration.svg" alt="">
+                <div class="homeCardIconActive homeCardIconPubAI">
+                </div>
+              </div>
+              <div class="cardContent">
+                <div class="homeCardTitle draggE">
+                  <div class="homeCardTitleText">
+                    Public Announcement Integration
+                  </div>
+                  <div class="homeCardControls main">
+                    <button class="homeOpenModule homeCardOpenPubAI">
+                    </button>
+                    <button class="homeAddFavModule">
+                    </button>
+                    <button class="homeCloseModule homeCardClosePubAI">
+                    </button>
+                  </div>
+                </div>
+                <div class="homeCardList">
+                  <li>
+                  </li>
+                  <li>
+                  </li>
+                  <li>
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div class="cardContainer draggableElement disabled">
+              <div class="homeCardIcon homeCardIconTInS">
+                <img src="svgs/modulesIc/timeInStore.svg" alt="">
+                <div class="homeCardIconActive homeCardIconTInS">
+                </div>
+              </div>
+              <div class="cardContent">
+                <div class="homeCardTitle draggE">
+                  <div class="homeCardTitleText">
+                    Time in Store
+                  </div>
+                  <div class="homeCardControls main">
+                    <button class="homeOpenModule homeCardOpenTInS">
+                    </button>
+                    <button class="homeAddFavModule">
+                    </button>
+                    <button class="homeCloseModule homeCardCloseTInS">
+                    </button>
+                  </div>
+                </div>
+                <div class="homeCardList">
+                  <li>
+                  </li>
+                  <li>
+                  </li>
+                  <li>
+                  </li>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+<footer>
+  <div class="containerG2K">
+    <div class="rowG2K">
+      <div id="tempFooter" class="mainFooter">
+        <button data-toggle="tooltip" data-placement="top" title="Information" id="footerTooltip">
+        </button>
+        <div id="sideFooter">
+          <a href="https://g2k.ai" target="_blank">
+            G2K Group GmbH
+          </a>
+          <span>© 2022 • Parsifal</span>
+        </div>
+        <div id="footerAlerts">
+          <img class="imgLoading" src="imgs/loader.gif" alt="" id="footerImgLoading">
+          <span id="footerMessage"></span>
+        </div>
+        <div class="footerControls">
+          <div id="footerZoom">
+            <button id="zoomreset">
+            </button>
+            <button id="zoomout">
+            </button>
+            <button id="zoom">
+            </button>
+            <button id="zoomin">
+            </button>
+          </div>
+          <span id="zoomCounter">100%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!-- Custom theme -->
+<!--<script src="js/loader.js"></script>-->
+<script src="js/customTheme.js"></script>
+<!-- Libraries -->
+<script src="js/dragArrange.min.js"></script>
+<script src="js/enjoyHint.js"></script>
+<!-- Customized Scripts -->
+<script src="js/scripts.js"></script>
+<script src="js/icons.js"></script>
+<script src="js/moduleTabs.js"></script>
+<script src="js/headerPreferences.js"></script>
+<script src="js/homeStartApp.js"></script>
+<script src="js/activeModules.js"></script>
+<script src="js/appGuide/homeGuide.js"></script>
+</body>
+</html>

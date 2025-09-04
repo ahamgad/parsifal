@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/png" href="favicon.png"/>
+<title>Parsifal Prototype</title>
+<!-- Bootstrap -->
+<link href="css/bootstrap.css" rel="stylesheet">
+<!-- Libraries -->
+<link href="css/enjoyHint.css" rel="stylesheet">
+<!-- Customized Styles -->
+<link href="css/stylesDark.css" rel="stylesheet">
+</head>
+<body>
+<header>
+  <section class="containerG2K">
+    <div class="rowG2K">
+      <div id="topHeader">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <div>
+            <div class="logo">
+              <img src="svgs/header/G2KLogo.svg" alt="">
+            </div>
+            <div class="logo">
+              <img src="svgs/header/logo.svg" alt="">
+            </div>
+          </div>
+          <button id="navToggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColl" aria-controls="" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarColl">
+            <ul class="navbar-nav mr-auto scrollNone">
+              <li class="nav-item">
+                <a href="home.html" data-toggle="tooltip" data-placement="right" title="Home">
+                  <i class="headerHome"></i>
+                  <text class="navItemsText">Home</text>
+                </a>
+              </li>
+              <li id="openAppSearch" class="nav-item">
+                <a data-toggle="tooltip" data-placement="right" title="Search">
+                  <i class="headerSearch"></i>
+                  <text class="navItemsText">Search</text>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a data-toggle="tooltip" data-placement="right" title="Notifications">
+                  <i class="headerNotification"></i>
+                  <text class="navItemsText">Notifications</text>
+                </a>
+              </li>
+              <li class="nav-item" id="customPreferencesBtn" onClick="toggleCPreferences()">
+                <a data-toggle="tooltip" data-placement="right" title="Preferences">
+                  <i class="headerPreferences"></i>
+                  <text class="navItemsText">Preferences</text>
+                </a>
+              </li>
+              <li class="nav-item active">
+                <a data-toggle="tooltip" data-placement="right" title="EPICs" href="cases.html">
+                  <i class="headerUseCases"></i>
+                  <text class="navItemsText">EPICs</text>
+                </a>
+              </li>
+              <li class="nav-item" id="userGuide">
+                <a data-toggle="tooltip" data-placement="right" title="User Guide">
+                  <i class="headerUserGuide"></i>
+                  <text class="navItemsText">User Guide</text>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a data-toggle="tooltip" data-placement="right" title="Help">
+                  <i class="headerHelp"></i>
+                  <text class="navItemsText">Help</text>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a data-toggle="tooltip" data-placement="right" title="Settings">
+                  <i class="headerSettings"></i>
+                  <text class="navItemsText">Settings</text>
+                </a>
+              </li>
+              <li class="nav-item" id="selectLanguage">
+                <a data-toggle="tooltip" data-placement="right" title="Languages">
+                  <i class="headerLanguages"></i>
+                  <text class="navItemsText">Languages</text>
+                </a>
+              </li>
+              <li class="nav-item" id="appHeaderProfile">
+                <a data-toggle="tooltip" data-placement="right" title="Profile">
+                  <i class="headerProfile"></i>
+                  <text class="navItemsText">Profile</text>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </section>
+</header>
+<main id="singleMain" class="scrollAct">
+  <section class="containerG2K">
+    <div class="rowG2K">
+      <div class="useCasesContainer">
+        <div class="rowG2K">
+          <div class="useCasesHeader rowG2K">
+            <div class="useCasesIcon">
+              <img src="svgs/useCases/useCases.svg" alt=""/>
+            </div>
+            <div class="useCaseHeaderText">
+              <h1>
+                Parsifal EPICs
+              </h1>
+            </div>
+          </div>
+          <div class="useCasesIns" id="useCasesCategories">
+            <div class="useCaseTitle">
+              <h4>
+                Select a category to continue
+              </h4>
+            </div>
+            <div class="useCasesContent rowG2K">
+              <a href="home.html">
+                <button class="openUseCases securityCat" id="openSecurityCat">
+                  Security
+                </button>
+              </a>
+              <a href="home.html">
+                <button class="openUseCases retailCat" id="openRetailCat">
+                  Retail
+                </button>
+              </a>
+            </div>
+            <div class="useCasesBtn">
+              <a href="home.html">
+                <button>
+                  Skip
+                </button>
+              </a>
+            </div>
+          </div>
+          <div class="useCasesIns" id="securityUseCases">
+            <div class="useCaseTitle">
+              <h2>
+                Security EPICs
+              </h2>
+            </div>
+            <div class="useCasesContent rowG2K" id="secUseCasesFlex">
+              <div class="subSecBtnContainer">
+                <a href="home.html">
+                  <button class="subCatBtn securityCat" onClick="useCase1()" id="useCase1">
+                    Efficient Security Management
+                  </button>
+                </a>
+                <!-- <span class="subCatInfo" id="openSecSubCat1"></span> -->
+              </div>
+              <!-- <ul class="subCatInfoContainer" id="secSubCat1">
+                <span class="closeSubCatInfo" id="closeSecSubCat1"></span>
+                <li> Permanent control of the operating environment in real time, ensuring maximum security for terrain, buildings, people and goods </li>
+                <li> Automatic alarms and action instructions guaranteeing early detection and quick elimination of threats </li>
+                <li> Retrospective analysis enables rapid forensic investigation of criminal activities </li>
+              </ul> -->
+            </div>
+            <div class="useCasesBtn">
+              <button id="securityUseCasesBack">
+                Back
+              </button>
+              <a href="home.html">
+                <button>
+                  Skip
+                </button>
+              </a>
+            </div>
+          </div>
+          <div class="useCasesIns" id="retailUseCases">
+            <div class="useCaseTitle">
+              <h2>
+                Retail EPICs
+              </h2>
+            </div>
+            <div class="useCasesContent rowG2K" id="retailUseCasesFlex">
+
+
+              <div class="subCatBtnContainer">
+                <a href="home.html">
+                  <button class="subCatBtn retailCat" onClick="useCase2()">
+                    Customer Journey
+                  </button>
+                </a>
+                <!-- <span class="subCatInfo retailSubCatLink" id="openRetailSubCat1" onclick="openRetailSubCat(event,'RetailSubCat1')"></span> -->
+              </div>
+
+
+              <div class="subCatBtnContainer">
+                <a href="home.html">
+                  <button class="subCatBtn retailCat" onClick="useCase3()">
+                    Business Intelligence
+                  </button>
+                </a>
+                <!-- <span class="subCatInfo retailSubCatLink" id="openRetailSubCat2" onclick="openRetailSubCat(event,'RetailSubCat2')"></span> -->
+              </div>
+
+
+              <div class="subCatBtnContainer">
+                <a href="home.html">
+                  <button class="subCatBtn retailCat" onClick="useCase4()" id="useCase4">
+                    Operation Optimization
+                  </button>
+                </a>
+                <!-- <span class="subCatInfo retailSubCatLink" id="openRetailSubCat3" onclick="openRetailSubCat(event,'RetailSubCat3')"></span> -->
+              </div>
+
+
+              <div class="subCatBtnContainer">
+                <a href="home.html">
+                  <button class="subCatBtn retailCat" onClick="useCase5()">
+                    Security Boost
+                  </button>
+                </a>
+                <!-- <span class="subCatInfo retailSubCatLink" id="openRetailSubCat4" onclick="openRetailSubCat(event,'RetailSubCat4')"></span> -->
+              </div>
+
+
+              <div class="subCatBtnContainer">
+                <a href="#">
+                  <button class="subCatBtn retailCat" onClick="useCase6()">
+                    Covid Control
+                  </button>
+                </a>
+                <!-- <span class="subCatInfo retailSubCatLink" id="openRetailSubCat5" onclick="openRetailSubCat(event,'RetailSubCat5')"></span> -->
+              </div>
+
+
+              <!-- <ul class="subCatInfoContainer RetailSubCat" id="RetailSubCat1">
+                <span class="closeSubCatInfo"></span>
+                <li> With this POS model, there is only one queue for any number of POS </li>
+                <li> Recognizing which cash registers are free and directing waiting customers which cash register to go to for payment </li>
+                <li> Automatically alerting employees to open more cash registers if queue reaches critical length </li>
+              </ul>
+              <ul class="subCatInfoContainer RetailSubCat" id="RetailSubCat2">
+                <span class="closeSubCatInfo"></span>
+                <li> Counting customers and classifying them by gender and age </li>
+                <li> Combining this info with an anonymous evaluation of the individual customer groups' routes </li>
+                <li> Visualizing effects of product placement and store construction on customer behavior </li>
+              </ul>
+              <ul class="subCatInfoContainer RetailSubCat" id="RetailSubCat3">
+                <span class="closeSubCatInfo"></span>
+                <li> Automatically alerting operators when products are running low or are incorrectly sorted in retail stores </li>
+                <li> Automatic and predictive re-ordering of products </li>
+                <li> Real-time Sales Analytics allowing to identify and predict regional sales trends and proactively adjust the product range </li>
+              </ul>
+              <ul class="subCatInfoContainer RetailSubCat" id="RetailSubCat4">
+                <span class="closeSubCatInfo"></span>
+                <li> Recognizing faces of people entering the store and synchronizing them in real time with an internal
+                  "
+                  black list
+                  " 
+                  containing known shoplifters </li>
+                <li> Allowing security personnel to monitor them thoroughly or deny them access to the store in order to reduce economic loss and minimize security effort </li>
+              </ul>
+              <ul class="subCatInfoContainer RetailSubCat" id="RetailSubCat5">
+                <span class="closeSubCatInfo"></span>
+                <li> Turning unintelligent buildings into intelligent buildings with automated processes, minimizing reliance on 3rd party facility management services </li>
+                <li> Increasing efficiency, enabling cost reductions and sustainability increase </li>
+                <li> Modern security features ensuring smart identity and access management </li>
+              </ul> -->
+            </div>
+            <div class="useCasesBtn">
+              <button id="retailUseCasesBack">
+                Back
+              </button>
+              <a href="home.html">
+                <button>
+                  Skip
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>
+  <section class="containerG2K">
+    <div class="rowG2K">
+      <div id="tempFooter">
+        <a href="https://g2k.ai" target="_blank">
+          G2K Group GmbH
+        </a>
+        <span> © 2022 • Parsifal</span>
+      </div>
+    </div>
+  </section>
+</footer>
+<!-- Bootstrap -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!-- Libraries -->
+<script src="js/enjoyHint.js"></script>
+<!-- Customized Scripts -->
+<script src="js/useCases.js"></script>
+<script src="js/scripts.js"></script>
+<script src="js/icons.js"></script>
+<script src="js/moduleTabs.js"></script>
+<script src="js/homeStartApp.js"></script>
+<script src="js/activeModules.js"></script>
+<script src="js/appGuide/useCasesGuide.js"></script>
+</body>
+</html>

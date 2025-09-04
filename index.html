@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/png" href="favicon.png"/>
+<title>Parsifal Prototype</title>
+
+<!-- Bootstrap -->
+<link href="css/bootstrap.css" rel="stylesheet">
+<!-- Customized Styles -->
+<link href="css/stylesDark.css" rel="stylesheet">
+<link href="css/checkBoxDark.css" rel="stylesheet">
+</head>
+<body id="loginBody">
+<header>
+	<div class="loginHeaderLogo">
+		<img src="imgs/login/G2K_Logo_White.svg">
+	</div>
+</header>
+<main id="" class="scrollAct singleMain logIn">
+	<div id="" class="singleMainContainer text">
+		<div class="signInTextTitle">Welcome to</div>
+		<img src="imgs/login/LogoRed.svg" class="signInTextImg">
+		<!-- <P class="signInParag">Artificial Intelligence Platform.</P> -->
+		<div class="signInFooter">
+			<a href="https://g2k.ai" target="_blank">
+				G2K Group GmbH
+			</a>
+			<span>© 2022</span>
+		</div>
+	</div>
+	
+	<div id="" class="singleMainContainer">
+		<div class="signIn" id="">
+			<div class="signInRow">
+				<img src="imgs/login/username.svg" class="signInInputIcon">
+				<input type="text" class="inputSignIn" placeholder="Username">
+			</div>
+			<div class="signInRow">
+				<img src="imgs/login/password.svg" class="signInInputIcon">
+				<input type="password" class="inputSignIn" placeholder="Password">
+			</div>
+			<div class="signInRow">
+				<label class="checkC">
+					<input class="checkI" type="checkbox">
+					<span class="checkM"></span> </label>
+					<label class="labelKeepSignIn">Remember me</label>
+				</div>
+				<div class="signInForgotRow">
+					<a href="#"> Forgot username or password? </a>
+				</div>
+				<div class="signInBtn">
+					<a href="home.html">
+						<button id="signINbtn"> Sign in </button>
+					</a>
+					<button id="fingerBtnMobile"> </button>
+				</div>
+			</div>
+			<hr class="signInHR">
+			<div class="signInHRor">or</div>
+			<div class="signInAdd" id="">
+				<button id="" class="signInAddButn face">Face ID</button>
+				<button id="" class="signInAddButn cardID">Card ID</button>
+				<button id="" class="signInAddButn finger">Fingerprint</button>
+			</div>
+		</div>
+
+</main>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/scripts.js"></script>
+<script>
+$(document).ready(function () {
+  sessionStorage.clear();
+});
+</script>
+</body>
+</html>
