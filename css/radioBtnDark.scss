@@ -1,0 +1,71 @@
+$head: #072d30;
+$foot: #042021;
+$inact: #063332;
+$act: #0c6d72;
+$hov: #13a8bc;
+// $curt: #0fdaea;
+$curt: #d26f17;
+$dim: #999;
+$bg: #000a0a;
+$dbg: #021111;
+$cbg: #010707;
+$dan: #e52033;
+$suc: #58e02b;
+//$secbg: #141719;
+//$subsecbg: #0C0C0C;
+
+// The container
+.radioCon {
+  margin-top: -3px;
+  position: relative;
+  padding-left: 25px;
+  margin-right: 30px;
+  cursor: pointer;
+  color: #000;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+// Hide the browser's default radio button
+.radioCon input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+// Create a custom radio button
+.radioCm {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  height: 16px;
+  width: 16px;
+  background: $cbg;
+  border: 1px solid $act;
+  border-radius: 50%;
+  z-index: 3;
+}
+// When the radio button is checked, add background
+.radioCon input:checked ~ .radioCm {
+  background: $dbg;
+  border: 1px solid $hov;
+}
+// Create the indicator (the dot/circle - hidden when not checked)
+.radioCm:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+// Show the indicator (dot/circle) when checked
+.radioCon input:checked ~ .radioCm:after {
+  display: block;
+}
+// Style the indicator (dot/circle)
+.radioCon .radioCm:after {
+  top: 3px;
+  right: 3px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: $hov;
+}

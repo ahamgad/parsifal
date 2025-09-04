@@ -1,0 +1,278 @@
+@font-face {
+  font-family: "light";
+  src: url("../fonts/g2k1Light.ttf");
+}
+
+@font-face {
+  font-family: "reg";
+  src: url("../fonts/g2k2Reg.ttf");
+}
+
+@font-face {
+  font-family: "med";
+  src: url("../fonts/g2k3Med.ttf");
+}
+
+.box-body {
+  display: block;
+}
+
+#imgiframe {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+#mainFrame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+#FrameCam {
+  width: 100%;
+  height: 100%;
+}
+
+#media-player {
+  width: 450px;
+  max-height: 1124px;
+  max-width: 1280px;
+  position: relative;
+  resize: both;
+  background: transparent;
+  border-radius: 20px;
+}
+
+#media-player-normal {
+  box-shadow: 2px 3px 6px -2px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 2px 3px 6px -2px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 2px 3px 6px -2px rgba(0, 0, 0, 0.5);
+  height: 310px;
+  width: 100%;
+  position: relative;
+  resize: both;
+  background: rgba(22, 114, 114, 0.7);
+  margin: auto !important;
+  border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.divtxt {
+  background-color: #C0C0C0;
+  bottom: 0;
+  left: 5%;
+  position: absolute;
+  height: 20px;
+  width: 96%;
+}
+
+.zonecode {
+  left: -10%;
+}
+
+.imgTemb {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.imgMargin {
+  margin: 0px;
+}
+
+.camera {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+}
+
+.camera h4 {
+  box-shadow: 2px 3px 6px -2px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 2px 3px 6px -2px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 2px 3px 6px -2px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 5px 10px;
+  background: #1fa1ad;
+  color: #fff;
+  font-family: "med";
+  font-size: 16px;
+  width: 100%;
+  line-height: 20px;
+}
+
+.camera img {
+  display: none;
+}
+
+.camera canvas {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+
+.camera video {
+  display: none;
+}
+
+.camera.playing {
+  border-radius: 20px;
+  background: none;
+  overflow: hidden;
+  background: #b3b3b3 url(../imgs/loader.gif) no-repeat center;
+  background-size: 40px 40px;
+  border: solid 1px #1fa1ad;
+}
+
+.bottombar {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  padding: 5px;
+  height: 34px;
+  background: rgba(0, 0, 0, 0.5);
+  cursor: default;
+  -moz-transition: bottom 0.5s, padding 0.5s;
+  -webkit-transition: bottom 0.5s, padding 0.5s;
+  -o-transition: bottom 0.5s, padding 0.5s;
+  -ms-transtion: bottom 0.5s, padding 0.5s;
+  transition: bottom 0.5s, padding 0.5s;
+  display: none;
+}
+
+.bottombar .btn {
+  width: 34px;
+  height: 34px;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  -moz-transition: width 0.5s, opacity 0.5s;
+  -webkit-transition: width 0.5s, opacity 0.5s;
+  -o-transition: width 0.5s, opacity 0.5s;
+  -ms-transtion: width 0.5s, opacity 0.5s;
+  transition: width 0.5s, opacity 0.5s;
+}
+
+.bottombar .pauseButton {
+  position: relative;
+  float: left;
+  background-image: none;
+  z-index: 1;
+}
+
+.bottombar .pauseButton:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: url(imgs/arrowRight.svg) no-repeat center center transparent;
+  background-size: auto 17px;
+  opacity: 0.5;
+}
+
+.bottombar.onPause .pauseButton:after {
+  background: url(imgs/arrowLeft.svg) no-repeat center center transparent;
+}
+
+.videoControls .bottombar .btn.pauseButton.hidden,
+.videoControls .bottombar .btn.pauseButton.featureDisabled {
+  display: block !important;
+  width: 34px !important;
+  opacity: 1 !important;
+}
+
+.bottombar .playbackBarButtons {
+  position: absolute;
+  white-space: nowrap;
+  left: 50%;
+  opacity: 1;
+  z-index: 0;
+  width: 70%;
+  -webkit-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+  -moz-transition: left 0.5s, opacity 0.5s;
+  -webkit-transition: left 0.5s, opacity 0.5s;
+  -o-transition: left 0.5s, opacity 0.5s;
+  -ms-transtion: left 0.5s, opacity 0.5s;
+  transition: left 0.5s, opacity 0.5s;
+}
+
+.bottombar .playbackBarButtons .playBackButton {
+  display: inline-block;
+  background-image: url(imgs/playBackwards.svg);
+  background-size: auto 20px;
+  float: left;
+}
+
+.bottombar .playbackBarButtons .playForwardButton {
+  display: inline-block;
+  background-image: url(imgs/playForwards.svg);
+  background-size: auto 20px;
+  float: right;
+}
+
+.bottombar .playbackBarButtons .playTimeIndex {
+  display: inline-block;
+  width: auto;
+  height: 30px;
+  margin: 0 10px 0 41px;
+  font-size: 12px;
+  line-height: 30px;
+  vertical-align: top;
+  color: white;
+}
+
+.VCAMediaPlayerBtn {
+  box-shadow: 2px 3px 6px -2px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 2px 3px 6px -2px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 2px 3px 6px -2px rgba(0, 0, 0, 0.5);
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: #1fa1ad;
+  position: absolute;
+  fill: #fff;
+  cursor: pointer;
+  padding: 3px;
+}
+
+.VCAMediaPlayerBtn.closex {
+  top: 15%;
+  right: 2%;
+}
+
+.VCAMediaPlayerBtn.fullscreen {
+  top: 30%;
+  right: 2%;
+}
+
+.VCAMediaPlayerBtn.play {
+  top: 45%;
+  right: 2%;
+}
+
+.VCAMediaPlayerBtn.pause {
+  top: 60%;
+  right: 2%;
+}
+
+.VCAMediaPlayerBtn.snap {
+  top: 75%;
+  right: 2%;
+}
+
+.VCAMediaPlayerBtn:hover {
+  background: #0dc5d3;
+}
+/*# sourceMappingURL=liveStreamLight.css.map */

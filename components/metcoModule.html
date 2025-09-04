@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<div class="rowG2K">
+  <section class="containerG2K">
+    <div class="rowG2K">
+      <section class="sideIcons">
+        <button class="sideIconBtn openNav closeNav" data-toggle="tooltip" data-placement="right" title="Menu" id="openMetcoSideNav">
+        </button>
+        <div><button class="sideIconBtn openChat" data-toggle="tooltip" data-placement="right" title="Chat">
+        </button>
+        <button class="sideIconBtn openCall" data-toggle="tooltip" data-placement="right" title="Call">
+        </button>
+        <button class="sideIconBtn openShortcuts" data-toggle="tooltip" data-placement="right" title="Shortcuts">
+        </button></div>
+      </section>
+    </div>
+  </section>
+  <section class="mainGenContainer">
+    <div id="metcoSideNav" class="sideNav scrollNone pinned">
+      <div class="sideNavHeader">
+        <div class="sideNavHead filterOpened">
+          <div class="metcoSideNavControls">
+            <label class="checkC">
+              <input class="checkI selectThisMetcoDB" type="checkbox" id="selectAllMetcoDB">
+              <span class="checkM metcoHeader"></span>
+              <span class="radioCmLabel metcoHeader metcoAdvancedFilter">All</span>
+            </label>
+            <button onClick="ClearMetcoBIDCheck()" class="navAdvancedFilterBtn metco">
+              <i class="clearSelectedMetcoDB"></i> Clear
+            </button>
+          </div>
+          <button class="sideNavTogglePin" id="pinMetcoSideNav" style="display: none;">
+            Pin
+          </button>
+          <button class="sideNavTogglePin unpin sideNavToggleUnpin" id="unpinMetcoSideNav" style="display: block;">
+            Unpin
+          </button>
+        </div>
+      </div>
+      <div id="metcoDBStack" class="sideNavContent metco">
+        <label class="checkC metcoSideNavRow">
+          <input class="checkI selectThisMetcoDB" type="checkbox" name="metcoCheckB" value="3" id="metcoCheckVal3">
+          <span class="checkM metco"></span>
+          <span class="radioCmLabel"><i class="metcoAllDashboard"></i>External Resources</span>
+        </label>
+        <label class="checkC metcoSideNavRow">
+          <input class="checkI selectThisMetcoDB" type="checkbox" name="metcoCheckB" value="2" id="metcoCheckVal2">
+          <span class="checkM metco"></span>
+          <span class="radioCmLabel"><i class="metcoPredictionDashboard"></i>Prediction</span>
+        </label>
+        <label class="checkC metcoSideNavRow">
+          <input class="checkI selectThisMetcoDB" type="checkbox" name="metcoCheckB" value="1" id="metcoCheckVal1">
+          <span class="checkM metco"></span>
+          <span class="radioCmLabel"><i class="metcoAnalysisDashboard"></i>Knowledge</span>
+        </label>
+      </div>
+    </div>
+    <section class="containerG2K">
+      <div class="rowG2K">
+        <div class="moduleSection" id="metcoDashboardsContainer">
+          <div id="metcoDashboardsHeader" class="moduleSectionHeader tabs">
+
+            <div class="subModuleTabCol metcoDashboard metcoDashboardExterRes" id="Dashboard15" hidden="hidden">
+              <div class="subModuleTabBtn metcoDashboardTab" onclick="openMetcoDashboardTab(event,'metcoDashboardStyle15')">
+                <i class="genMetcoDashboard"></i> Data Sources
+              </div>
+            </div>
+
+            <div class="subModuleTabCol metcoDashboard metcoDashboardPrediction" id="Dashboard11" hidden="hidden">
+              <div class="subModuleTabBtn metcoDashboardTab" onclick="openMetcoDashboardTab(event,'metcoDashboardStyle11')">
+                <i class="genMetcoDashboard"></i> Sell out Amount
+              </div>
+            </div>
+            <div class="subModuleTabCol metcoDashboard metcoDashboardPrediction" id="Dashboard12" hidden="hidden">
+              <div class="subModuleTabBtn metcoDashboardTab" onclick="openMetcoDashboardTab(event,'metcoDashboardStyle12')">
+                <i class="genMetcoDashboard"></i> Measures
+              </div>
+            </div>
+            <div class="subModuleTabCol metcoDashboard metcoDashboardPrediction" id="Dashboard13" hidden="hidden">
+              <div class="subModuleTabBtn metcoDashboardTab" onclick="openMetcoDashboardTab(event,'metcoDashboardStyle13')">
+                <i class="genMetcoDashboard"></i> Sell out Amount
+              </div>
+            </div>
+            <div class="subModuleTabCol metcoDashboard metcoDashboardPrediction" id="Dashboard14" hidden="hidden">
+              <div class="subModuleTabBtn metcoDashboardTab" onclick="openMetcoDashboardTab(event,'metcoDashboardStyle14')">
+                <i class="genMetcoDashboard"></i> Sell out Overtime
+              </div>
+            </div>
+
+            <div class="subModuleTabCol metcoDashboard metcoDashboardKnowledge" id="Dashboard1" hidden="hidden">
+              <div class="subModuleTabBtn metcoDashboardTab" onclick="openMetcoDashboardTab(event,'metcoDashboardStyle1')">
+                <i class="genMetcoDashboard"></i> Products Sales
+              </div>
+            </div>
+            <div class="subModuleTabCol metcoDashboard metcoDashboardKnowledge" id="Dashboard2" hidden="hidden">
+              <div class="subModuleTabBtn metcoDashboardTab" onclick="openMetcoDashboardTab(event,'metcoDashboardStyle2')">
+                <i class="genMetcoDashboard"></i> Overview (Sell in)
+              </div>
+            </div>
+            <div class="subModuleTabCol metcoDashboard metcoDashboardKnowledge" id="Dashboard3" hidden="hidden">
+              <div class="subModuleTabBtn metcoDashboardTab" onclick="openMetcoDashboardTab(event,'metcoDashboardStyle3')">
+                <i class="genMetcoDashboard"></i> Clients (Sell in)
+              </div>
+            </div>
+            <!-- <div class="subModuleTabCol metcoDashboard metcoDashboardKnowledge" id="Dashboard4" hidden="hidden">
+              <div class="subModuleTabBtn metcoDashboardTab" onclick="openMetcoDashboardTab(event,'metcoDashboardStyle4')">
+                <i class="genMetcoDashboard"></i> Salesman Performance (Sell in)
+              </div>
+            </div> -->
+            <div class="subModuleTabCol metcoDashboard metcoDashboardKnowledge" id="Dashboard5" hidden="hidden">
+              <div class="subModuleTabBtn metcoDashboardTab" onclick="openMetcoDashboardTab(event,'metcoDashboardStyle5')">
+                <i class="genMetcoDashboard"></i> Brands (Sell out)
+              </div>
+            </div>
+            <div class="subModuleTabCol metcoDashboard metcoDashboardKnowledge" id="Dashboard6" hidden="hidden">
+              <div class="subModuleTabBtn metcoDashboardTab" onclick="openMetcoDashboardTab(event,'metcoDashboardStyle6')">
+                <i class="genMetcoDashboard"></i> Clients (Sell out)
+              </div>
+            </div>
+            <div class="subModuleTabCol metcoDashboard metcoDashboardKnowledge" id="Dashboard7" hidden="hidden">
+              <div class="subModuleTabBtn metcoDashboardTab" onclick="openMetcoDashboardTab(event,'metcoDashboardStyle7')">
+                <i class="genMetcoDashboard"></i> Competitors (Nielsen)
+              </div>
+            </div>
+            <div class="subModuleTabCol metcoDashboard metcoDashboardKnowledge" id="Dashboard8" hidden="hidden">
+              <div class="subModuleTabBtn metcoDashboardTab" onclick="openMetcoDashboardTab(event,'metcoDashboardStyle8')">
+                <i class="genMetcoDashboard"></i> Commercial Chains
+              </div>
+            </div>
+            <div class="subModuleTabCol metcoDashboard metcoDashboardKnowledge" id="Dashboard9" hidden="hidden">
+              <div class="subModuleTabBtn metcoDashboardTab" onclick="openMetcoDashboardTab(event,'metcoDashboardStyle9')">
+                <i class="genMetcoDashboard"></i> Products Sales
+              </div>
+            </div>
+            <!-- <div class="subModuleTabCol metcoDashboard metcoDashboardKnowledge" id="Dashboard10" hidden="hidden">
+              <div class="subModuleTabBtn metcoDashboardTab" onclick="openMetcoDashboardTab(event,'metcoDashboardStyle10')">
+                <i class="genMetcoDashboard"></i> Product to Product Analysis
+              </div>
+            </div> -->
+
+            <!-- <div class="subModuleTabCol metcoDashboard metcoDashboardExterRes" id="Dashboard16" hidden="hidden">
+              <div class="subModuleTabBtn metcoDashboardTab" onclick="openMetcoDashboardTab(event,'metcoDashboardStyle16')">
+                <i class="genMetcoDashboard"></i> Sugar Prices
+              </div>
+            </div> -->
+            <div class="containerControls">
+              <button class="containerControlsBtn minimizeScreen">
+              </button>
+              <button class="containerControlsBtn fullScreen" id="metcoFullScreenBtn">
+              </button>
+            </div>
+          </div>
+          <div id="metcoSectionContent" class="moduleSectionContent scrollAct inside biDashboard">
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+</div>
+<script src="js/components/metcoModule/icons.js"></script>
+<script src="js/components/metcoModule/scripts.js"></script>
+<script src="js/components/metcoModule/metcoModule.js"></script>

@@ -1,0 +1,273 @@
+@font-face {font-family: "light";
+	src: url("../fonts/g2k1Light.ttf"); }
+@font-face {font-family: "reg";
+	src: url("../fonts/g2k2Reg.ttf"); }
+@font-face {font-family: "med";
+  src: url("../fonts/g2k3Med.ttf"); }
+
+$head: #072d30;
+$foot: #042021;
+$inact: #063332;
+$act: #0c6d72;
+$hov: #13a8bc;
+// $curt: #0fdaea;
+$curt: #d26f17;
+$dim: #999;
+$bg: #000a0a;
+$dbg: #021111;
+$cbg: #010707;
+$dan: #e52033;
+$suc: #58e02b;
+//$secbg: #141719;
+//$subsecbg: #0C0C0C;
+
+@mixin shadow {
+	box-shadow: 2px 3px 6px -2px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 2px 3px 6px -2px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 2px 3px 6px -2px rgba(0, 0, 0, 0.5);
+}
+
+// Live Streaming
+.box-body {
+	display: block;
+}
+#imgiframe {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+#mainFrame {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+// child
+#FrameCam {
+	width: 100%;
+	height: 100%;
+}
+
+// parrent
+#media-player {
+	width: 450px;
+	max-height:1124px;
+	max-width:1280px;
+	position: relative;
+	resize: both;
+	background: transparent;
+	border-radius: 20px;
+
+}
+#media-player-normal {
+	@include shadow;
+	height: 310px;
+	width: 100%;
+	position: relative;
+	resize: both;
+	background: rgba($inact, .7);
+	margin: auto!important;
+	border-radius: 20px;
+	display:flex;
+	justify-content:center;
+}
+
+.divtxt {
+	background-color: #C0C0C0;
+	bottom: 0;
+	left: 5%;
+	position: absolute;
+	height: 20px;
+	width: 96%;
+}
+.zonecode {
+	left: -10%;
+}
+.imgTemb {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+.imgMargin {
+	margin: 0px;
+}
+
+// MileStone
+.camera {
+	display: inline-block;
+	cursor: pointer;
+	position: relative;
+}
+.camera h4{
+	@include shadow;
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0;
+	padding: 5px 10px;
+	background: $act;
+	color: #fff;
+	font-family: "med";
+	font-size: 16px;
+	width: 100%;
+	line-height: 20px;
+}
+.camera img{
+	display: none;
+}
+.camera canvas{
+	width: 100%;
+	height: 100%;
+	border-radius: 20px;
+}
+.camera video{
+	display: none;
+}
+.camera.playing {
+	border-radius: 20px;
+	background: none;
+	overflow: hidden;
+	background: $bg url(../imgs/loader.gif) no-repeat center;
+	background-size: 40px 40px;
+	border: solid 1px $act;
+}
+
+.bottombar {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	padding: 5px;
+	height: 34px;
+	background: rgba(0, 0, 0, 0.5);
+	cursor: default;
+	-moz-transition: bottom 0.5s, padding 0.5s;
+	-webkit-transition: bottom 0.5s, padding 0.5s;
+	-o-transition: bottom 0.5s, padding 0.5s;
+	-ms-transtion: bottom 0.5s, padding 0.5s;
+	transition: bottom 0.5s, padding 0.5s;
+	display: none;
+}
+
+.bottombar .btn {
+	width: 34px;
+	height: 34px;
+	background-position: center;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	-moz-transition: width 0.5s, opacity 0.5s;
+	-webkit-transition: width 0.5s, opacity 0.5s;
+	-o-transition: width 0.5s, opacity 0.5s;
+	-ms-transtion: width 0.5s, opacity 0.5s;
+	transition: width 0.5s, opacity 0.5s;
+}
+
+.bottombar .pauseButton {
+	position: relative;
+	float: left;
+	background-image: none;
+	z-index: 1;
+}
+                
+.bottombar .pauseButton:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background: url(imgs/arrowRight.svg) no-repeat center center transparent;
+	background-size: auto 17px;
+	opacity: 0.5;
+}
+
+.bottombar.onPause .pauseButton:after {
+	background: url(imgs/arrowLeft.svg) no-repeat center center transparent;
+}
+
+.videoControls .bottombar .btn.pauseButton.hidden,
+.videoControls .bottombar .btn.pauseButton.featureDisabled {
+	display: block !important;
+	width: 34px !important;
+	opacity: 1 !important;
+}
+
+.bottombar .playbackBarButtons {
+	position: absolute;
+  white-space: nowrap;
+	left: 50%;
+	opacity: 1;
+	z-index: 0;
+  width: 70%;
+  -moz-transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+  -o-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+  -moz-transition: left 0.5s, opacity 0.5s;
+  -webkit-transition: left 0.5s, opacity 0.5s;
+  -o-transition: left 0.5s, opacity 0.5s;
+  -ms-transtion: left 0.5s, opacity 0.5s;
+  transition: left 0.5s, opacity 0.5s;
+}
+
+.bottombar .playbackBarButtons .playBackButton {
+  display: inline-block;
+  background-image: url(imgs/playBackwards.svg);
+  background-size: auto 20px;
+  float: left;
+}
+
+.bottombar .playbackBarButtons .playForwardButton {
+	display: inline-block;
+	background-image: url(imgs/playForwards.svg);
+	background-size: auto 20px;
+	float: right;
+}
+
+.bottombar .playbackBarButtons .playTimeIndex {
+	display: inline-block;
+	width: auto;
+	height: 30px;
+	margin: 0 10px 0 41px;
+	font-size: 12px;
+	line-height: 30px;
+	vertical-align: top;
+	color: white;
+}
+
+// Player buttons
+.VCAMediaPlayerBtn {
+	@include shadow;
+	width: 30px;
+	height: 30px;
+	border-radius: 15px;
+	background-color: $act;
+	position: absolute;
+	fill: #fff;
+	cursor: pointer;
+	padding: 3px;
+	&.closex {
+		top: 15%;
+    right: 2%;
+	}
+	&.fullscreen {
+		top: 30%;
+    right: 2%;
+	}
+	&.play {
+		top: 45%;
+    right: 2%;
+	}
+	&.pause {
+		top: 60%;
+    right: 2%;
+	}
+	&.snap {
+		top: 75%;
+    right: 2%;
+	}
+	&:hover {
+		background: $hov;
+	}
+}

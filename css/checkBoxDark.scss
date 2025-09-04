@@ -1,0 +1,100 @@
+@font-face {font-family: "light";
+	src: url(../fonts/g2k1light.ttf); }
+@font-face {font-family: "reg";
+	src: url(../fonts/g2k2reg.ttf); }
+@font-face {font-family: "med";
+	src: url(../fonts/g2k3med.ttf); }
+
+$head: #072d30;
+$foot: #042021;
+$inact: #063332;
+$act: #0c6d72;
+$hov: #13a8bc;
+// $curt: #0fdaea;
+$curt: #d26f17;
+$dim: #999;
+$bg: #000a0a;
+$dbg: #021111;
+$cbg: #010707;
+$dan: #e52033;
+$suc: #58e02b;
+//$secbg: #141719;
+//$subsecbg: #0C0C0C;
+
+@mixin shadow {
+	box-shadow: 2px 3px 6px -2px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 2px 3px 6px -2px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 2px 3px 6px -2px rgba(0, 0, 0, 0.5);
+}
+
+// The container
+.checkC {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+// Hide the browser's default checkbox
+.checkI {
+  position: absolute;
+  cursor: pointer;
+  opacity: 0;
+}
+// Create a custom checkbox
+.checkI:disabled ~ .checkM, .CheckC {
+	cursor: default;
+	border: 1px solid $inact;
+}
+.checkI:disabled ~ span{
+	color: $dim;
+	cursor: default;
+}
+.checkM {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 16px;
+  width: 16px;
+  background: $foot;
+  border: 1px solid $act;
+  border-radius: 4px;
+  &.metco {
+    top: 17px!important;
+    left: 10px;
+  }
+  &.metcoHeader {
+    top: 4px!important;
+//    left: 10px;
+  }
+}
+// When the checkbox is checked, add a blue background
+.checkC .checkI:checked ~ .checkM {
+  @include shadow;
+  background: $curt;
+  border: hidden;
+}
+// Create the checkmark/indicator (hidden when not checked)
+.checkM:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+// Show the checkmark when checked
+.checkC .checkI:checked ~ .checkM:after {
+  display: block;
+}
+// Style the checkmark/indicator
+.checkC .checkM:after {
+  left: 5px;
+  top: .5px;
+  width: 6px;
+  height: 13px;
+  border: solid #fff;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}

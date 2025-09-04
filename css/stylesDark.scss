@@ -1,0 +1,5963 @@
+@font-face {font-family: "light";
+	src: url("../fonts/g2k1Light.ttf"); }
+@font-face {font-family: "reg";
+	src: url("../fonts/g2k2Reg.ttf"); }
+@font-face {font-family: "med";
+  src: url("../fonts/g2k3Med.ttf"); }
+@font-face {font-family: "arReg";
+  src: url("../fonts/arabicReg.ttf"); }
+@font-face {font-family: "arMed";
+  src: url("../fonts/arabicMed.ttf"); }
+
+$head: #072d30;
+$foot: #042021;
+$inact: #063332;
+$act: #0c6d72;
+$hov: #13a8bc;
+// $curt: #0fdaea;
+$curt: #d26f17;
+$dim: #999;
+$bg: #000a0a;
+$dbg: #021111;
+$cbg: #010707;
+$dan: #e52033;
+$suc: #58e02b;
+$text: #fff;
+//$secbg: #141719;
+//$subsecbg: #0C0C0C;
+
+$topHeaderHeight: 50px;
+$mainHeaderHeight: 30px;
+  $headerHeight: calc( #{$topHeaderHeight} + #{$mainHeaderHeight} );
+// $topPathHeight: 30px;
+$topPathHeight: 0px;
+$footerHeight: 30px;
+$mainContentHeader: 30px;
+
+// calc var for main
+$mainHeight: calc(100vh - #{$headerHeight} - #{$footerHeight} );
+// calc var for mainContainer (20px for top & bottom margins)
+$mainContainerHeight: calc(100vh - #{$headerHeight} - #{$topPathHeight} - #{$footerHeight} - 30px);
+// calc var for single main container
+$singleMain: calc(100vh - #{$topHeaderHeight} - #{$footerHeight} );
+// calc var for sections content height, (2px for top & bottom borders)
+$sectionContentHeight: calc( #{$mainContainerHeight} - #{$mainContentHeader} - 2px);
+
+// calc for alarms stack
+$alarmsStack: calc( #{$mainContainerHeight} - 12px - 160px );
+
+// Alarms module - Alarm top section height
+$alarmTopSectionHeight: 450px;
+
+*{ box-sizing: border-box; }
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+  box-sizing: border-box;
+	font-family: inherit!important;
+	font-size: inherit!important;
+  
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+}
+
+.containerG2K {
+	position: relative;
+  width: 100%;
+  margin: auto;
+	padding: 0;
+}
+.rowG2K {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  display: flex;
+  padding: 0;
+}
+.rowG2K:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+input {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+  -webkit-outline: none;
+  -moz-outline: none;
+  box-sizing: none;
+  -webkit-box-sizing: none;
+  -moz-box-sizing: none;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+  -webkit-box-shadow: 0 0 0 30px $inact inset !important;
+  -webkit-text-fill-color: #fff !important;
+}
+textarea {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+  -webkit-outline: none;
+  -moz-outline: none;
+  box-sizing: none;
+  -webkit-box-sizing: none;
+  -moz-box-sizing: none;
+}
+button {
+  outline: none!important;
+  border: none!important;
+}
+a:hover {
+  text-decoration: none!important;
+}
+iframe {
+  border: hidden;
+  outline: none;
+}
+
+.scrollNone::-webkit-scrollbar {
+  width: 0px;
+}
+.scrollNone::-webkit-scrollbar-track {
+  background: none;
+}
+.scrollNone::-webkit-scrollbar-thumb {
+  background: none;
+}
+.scrollNone::-webkit-scrollbar-thumb:hover {
+  background: none;
+}
+
+.scrollAct::-webkit-scrollbar {
+  width:15px;
+  background-color: rgba(255,255,255,0);
+}
+.scrollAct::-webkit-scrollbar-track,
+.scrollAct::-webkit-scrollbar-thumb {
+  border: 5px solid rgba(255,255,255,0);
+  background-clip: padding-box!important;
+}
+.scrollAct::-webkit-scrollbar-track {
+  background-color: rgba(255,255,255,0);
+}
+.scrollAct::-webkit-scrollbar-thumb {
+  background-color: $act;
+  border-radius: 20px;
+  &:hover {
+    background-color: $hov;
+  }
+}
+.scrollAct {
+	&.inside {
+		&::-webkit-scrollbar {
+			width:10px;
+		}
+		&::-webkit-scrollbar-track {
+			margin-bottom: 10px;
+			border: 3px solid rgba(255,255,255,0);
+		}
+		&::-webkit-scrollbar-thumb {
+			margin-bottom: 10px;
+			border: 3px solid rgba(255,255,255,0);
+		}
+	}
+	&.insideSec {
+		&::-webkit-scrollbar {
+			width:10px;
+		}
+		&::-webkit-scrollbar-track {
+			margin-top: 5px;
+			margin-bottom: 5px;
+			border: 3px solid rgba(255,255,255,0);
+		}
+		&::-webkit-scrollbar-thumb {
+			margin-top: 5px;
+			margin-bottom: 5px;
+			border: 3px solid rgba(255,255,255,0);
+		}
+	}
+}
+.dataTables_scrollBody::-webkit-scrollbar {
+	width:10px;
+	background-color: rgba(255,255,255,0);
+}
+.dataTables_scrollBody::-webkit-scrollbar-track,
+.dataTables_scrollBody::-webkit-scrollbar-thumb {
+	border: 3px solid rgba(255,255,255,0);
+	background-clip: padding-box!important;
+}
+.dataTables_scrollBody::-webkit-scrollbar-track {
+	background-color: rgba(255,255,255,0);
+}
+.dataTables_scrollBody::-webkit-scrollbar-thumb {
+	border: 3px solid rgba(255,255,255,0);
+  background-color: $hov;
+  border-radius: 20px;
+  &:hover {
+    background-color: $hov;
+  }
+}
+
+body {
+  display: flex;
+  margin: 0;
+  max-height: 100vh;
+  flex-direction: column;
+  line-height: inherit!important;
+  background: $bg;
+}
+canvas {
+  outline: none!important;
+  border: hidden!important;
+}
+#loginBody {
+  background: #000 url("../imgs/indexLoginBg.png");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+main {
+  position: relative;
+  margin: $headerHeight 0 $footerHeight;
+  padding: 0;
+  flex: 1;
+  min-height: $mainHeight;
+  overflow: auto;
+}
+#singleMain {
+  flex: unset!important;
+  height: $singleMain;
+  margin-top: $topHeaderHeight!important;
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.singleMain {
+  flex: unset!important;
+  height: $singleMain;
+  // margin-top: $topHeaderHeight!important;
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  &.logIn {
+    margin-top: calc( #{$topHeaderHeight} + #{$footerHeight} )!important;
+  }
+}
+.loginHeaderLogo {
+  height: 80px;
+  display: flex;
+  align-items: flex-end;
+  padding-left: 100px;
+  img {
+    height: 40px;
+  }
+}
+
+// Common styles
+@mixin inputLabel {
+  text-align: left;
+  font-family: "reg";
+  font-size: 16px;
+}
+@mixin regInput {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  outline: none;
+  font-size: 14px;
+  font-family: "reg";
+}
+@mixin flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin genBtn {
+//	@include flex;
+  height: 35px;
+  font-size: 16px;
+  font-family: "reg";
+  background: $act;
+  color: #fff;
+  border-radius: 17.5px;
+  cursor: pointer;
+  &:hover {
+    background: $hov;
+  }
+}
+@mixin shadow {
+	box-shadow: 2px 3px 6px -2px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 2px 3px 6px -2px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 2px 3px 6px -2px rgba(0, 0, 0, 0.5);
+}
+
+// Loading screen
+#loader {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 99999999;
+	// background: #000a0a 50% 50% no-repeat;
+	background: #000 50% 50% no-repeat;
+	// background-size: 300px 300px;
+ @include flex;
+ flex-direction: column;
+}
+.videoLoader {
+  width: 400px;
+  height: auto;
+}
+
+#loaderWait {
+  // @include shadow;
+	color: #f00;
+  font-family: "reg";
+  font-size: 21px;
+  margin-top: -40px;
+  letter-spacing: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  animation-name: flashLoading;
+	animation-duration: 3s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+
+	//Safari 3-4
+	-moz-animation-name: flashLoading;
+	-moz-animation-duration: 3s;
+	-moz-animation-timing-function: ease-in-out;
+	-moz-animation-iteration-count: infinite;
+}
+#progressBar {
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
+}
+progress {
+  border: none;
+  width: 250px;
+  height: 10px;
+  @include shadow;
+  // background: crimson;
+}
+
+progress {
+  color: $head;
+  border-radius: 5px !important;
+}
+
+progress::-moz-progress-bar {
+  background: #111;
+  border-radius: 5px !important;
+}
+progress::-webkit-progress-bar {
+  background: #111;
+  border-radius: 5px !important;
+}
+
+progress::-webkit-progress-value {
+  background: #f00;
+  border-radius: 5px !important;
+}
+
+//@keyframes flashLoading {
+//  0% { opacity: 1.0; }
+//  50% { opacity: .1; }
+//  100% { opacity: 1.0; }
+//}
+//
+////Safari 3-4
+//@-moz-keyframes flashLoading {
+//  0% { opacity: 1.0; }
+//  50% { opacity: .1; }
+//  100% { opacity: 1.0; }
+//}
+
+// Header
+header {
+  position: relative;
+  height: auto;
+  width: 100%;
+  position: fixed;
+  top: 0;
+	z-index: 9999992;
+}
+#topHeader {
+  min-height: $topHeaderHeight;
+  width: 100%;
+  background: $foot;
+  padding: 0 20px;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.navbar {
+  width: 100%!important;
+}
+.indexLogosContainer {
+  margin-top: 4px;
+}
+.logo {
+  float: left;
+  position: relative;
+  img {
+    height: 20px;
+  }
+  &:last-child {
+    margin-left: 10px;
+    padding-left: 15px;
+    &::before {
+      content: '';
+      border-left: 2px solid #fd2807;
+      position: absolute;
+      height: 100%;
+      left: 0px;
+//      top: 20%;
+    }
+  }
+}
+#mainHeader {
+	height: $mainHeaderHeight;
+	width: 100%;
+	background: $head;
+	padding: 2px 55px 0 5px;
+  position: fixed;
+  top: $topHeaderHeight;
+  z-index: 999;
+	display: flex;
+  align-items: stretch;
+}
+.topHeaderIcon {
+	position: relative;
+  fill: #fff;
+  min-height: 25px;
+	max-height: 35px;
+  max-width: 35px;
+  align-self: center;
+}
+.navItemsText {
+	color: $dim;
+	text-align: left;
+	font: {
+		size: 15px;
+		family: "reg";
+	}
+	margin-left: 5px;
+	display: none;
+}
+// Bootstrap nav styles 
+nav {
+	padding: 0!important;
+	margin-bottom: 0!important;
+}
+.nav-item {
+  margin-left: 10px;
+	display: flex;
+	// flex-direction: row;
+  align-items: center!important;
+  justify-content: center;
+	vertical-align: middle;
+  // line-height: 28px;
+  background: $inact;
+  width: 40px;
+  height: 40px;
+  // @include flex;
+  // @include shadow;
+  border-radius: 20px;
+	cursor: pointer;
+	&:hover {
+    background: $hov;
+		.topHeaderIcon {
+			fill: #fff;
+		}
+		.navItemsText {
+			color: #fff;
+		}
+	}
+	&.clicked {
+    background: $curt;
+		.topHeaderIcon {
+			fill: #fff;
+		}
+		.navItemsText {
+			color: $curt;
+		}
+	}
+}
+.nav-item.active {
+	.topHeaderIcon {
+		fill: #fff;
+	}
+	.navItemsText {
+		color: #fff;
+	}
+}
+.mr-auto, .mx-auto {
+	margin-right: unset!important;
+	margin-left: auto!important;
+}
+.navbar-toggler {
+	width: 40px;
+  padding: 0!important;
+  font-size: 1.25rem;
+  line-height: 1;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+}
+.navbar-toggler-icon {
+  display: inline-block;
+  width: 38px!important;
+  height: 28px!important;
+  vertical-align: middle;
+  content: "";
+  background: no-repeat center center;
+}
+.navbar-light .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-width='1.5' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  background-size: 40px 38px;
+}
+
+@media only screen and (max-width: 991px) {
+	.navbar-collapse {
+		border-top: solid 1px $dim;
+		padding-top: 10px;
+    margin-top: 10px;
+	}
+	.nav-item {
+		line-height: 24px!important;
+		margin-bottom: 10px;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	.topHeaderIcon {
+		max-height: 20px;
+		width: 24px;
+	}
+	.navItemsText {
+		display: inline-block;
+	}
+	.navbar-nav {
+		max-height: calc(100vh - #{$topHeaderHeight} - 10px)!important;
+		overflow: auto;
+	}
+}
+// Header Search
+#appSearch {
+	height: 40px;
+	width: 350px;
+	float: right;
+	position: relative;
+	margin: auto 0 auto 10px;
+	display: none;
+}
+.appSearchInput {
+	width: 100%;
+	height: 40px;
+	border-radius: 20px;
+	background: $cbg;
+	border: 1px solid $act;
+	font-family: "reg";
+	font-size: 14px;
+	line-height: 40px;
+	text-align: left;
+	padding: 0 80px 0 10px;
+	color: #fff;
+	&::placeholder {
+		color: $dim;
+	}
+}
+#closeAppSearch {
+	width: 50px;
+	height: 40px;
+	cursor: pointer;
+	border: hidden;
+	background: url("../svgs/header/closeSearch.svg") no-repeat center;
+	background-size: 30px 30px;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+#appSearchFilterBtn {
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+	border: hidden;
+	background: url("../svgs/header/searchFilterDim.svg") no-repeat center;
+	background-size: 22px 20px !important;
+	position: absolute;
+	right: 40px;
+	top: 5px;
+}
+#appSearchFilter {
+	display: none;
+	width: 260px;
+	height: 220px;
+	position: absolute;
+	border-top: 1px solid $curt;
+	border-radius: 0 0 20px 20px;
+	background: $foot;
+	right: 430px;
+	top: 45px;
+	padding: 10px;
+	z-index: 9999;
+}
+#appSearchFilterBtn.active {
+	background: url("../svgs/header/searchFilterAct.svg") no-repeat center;
+}
+@media only screen and (max-width: 991px) {
+  #appSearchFilterBtn, #appSearchFilter {
+    display: none!important;
+  }
+	#appSearch {
+		width: 100%;
+		margin-bottom: 10px!important;
+	}
+}
+
+.appSearchFilterSelect {
+	position: relative;
+	width: 100%;
+	overflow: auto;
+	max-height: 175px;
+	background: $dbg;
+	padding-bottom: 7px;
+  @include shadow;
+  border-radius: 10px;
+}
+.appSearchFilterSelect::-webkit-scrollbar {
+	width: 3px;
+}
+.appSearchFilterSelect::-webkit-scrollbar-track {
+  margin: 5px 0;
+	background: none;
+}
+.appSearchFilterSelect::-webkit-scrollbar-thumb {
+  margin: 5px 0;
+	background: $hov;
+	border-radius: 1.5px;
+}
+.appSearchFilterRow {
+	text-align: left;
+	position: relative;
+	float: left;
+	width: 100%;
+	padding: 5px;
+	margin: 5px 0;
+}
+.appSearchFilterLabel {
+	color: #fff;
+	position: absolute;
+	font-family: "reg";
+	font-size: 14px;
+	left: 22px;
+	top: 1px;
+}
+.appSearchFilterBtn {
+	float: right;
+	background: none;
+	border: hidden;
+	color: $dim;
+	font-family: "reg";
+	font-size: 14px;
+	cursor: pointer;
+	margin-top: -10px;
+	&:hover {
+    color: #fff;
+	}
+}
+
+// Header Preferences
+.carousel-control-prev, .carousel-control-next {
+  opacity: 0.25;
+}
+#customPreferences {
+  @include shadow;
+  display: none;
+  width: 800px;
+  height: auto;
+  position: absolute;
+  border-radius: 0 0 20px 20px;
+  background: $foot;
+  border-top: solid 1px $curt;
+  right: 0;
+  top: 45px;
+  padding: 5px 10px;
+  z-index: 9999;
+}
+@media only screen and (max-width: 991px) {
+  #customPreferences {
+    position: relative;
+    width: 100%;
+    top: unset;
+    right: unset;
+    margin-bottom: 10px;
+    background: rgba($head, .5);
+  }
+}
+#carouselPreference, #customTheme {
+  padding: 25px 0 10px;
+  min-height: 110px;
+  display: none;
+}
+#carouselPreference {
+	padding: 15px 0 10px!important;
+}
+.headrePreferenceCol {
+  @include shadow;
+  margin: 10px 0 0;
+  position: relative;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.collapseBtn {
+  background: $inact;
+  color: #fff;
+  cursor: pointer;
+  height: 30px;
+  line-height: 30px;
+  width: 100%;
+  border: none;
+  border-radius: 15px;
+  text-align: left;
+  padding: 0 15px;
+  font-size: 14px;
+  font-family: "reg";
+  &:after {
+		content: '\002B';
+		color: #fff;
+		font-size: 20px;
+		font-weight: bolder;
+		float: right;
+	}
+  &:hover {
+		background: $act;
+	}
+}
+.activecoll {
+  background: $act;
+  border-radius: 15px 15px 0 0;
+  &:after {
+		content: "\2212";
+	}
+}
+.collcont {
+  padding: 0 5px;
+  max-height: auto;
+  border-radius: 0 0 15px 15px;
+  border-top: 2px solid $cbg;
+  overflow: hidden;
+  transition: 0.1s ease-out;
+  background: $dbg;
+}
+.collins {
+  @include flex;
+  width: 100%;
+  padding: 10px 0;
+  background: none;
+  text-align: center;
+}
+.customThemeBtn {
+  @include shadow;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+  width: 60px;
+  height: 60px;
+  color: #fff;
+  font-size: 14px;
+  font-family: "reg";
+  border: hidden;
+  cursor: pointer;
+  margin-top: -20px;
+}
+#darkThemeBtn {
+  background: #072d30;
+}
+#lightThemeBtn {
+  background: #ccc;
+  margin-left: 30px;
+}
+.themeBtnText {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 60px;
+  text-align: center;
+}
+.carousel-item {
+  display: none;
+  height: 0px!important;
+}
+.carousel-item.active {
+  @include flex;
+  justify-content: flex-start;
+  padding: 0 15px;
+  width: 100%;
+  height: auto!important;
+}
+.carousel-control-prev, .carousel-control-next {
+  color: $act!important;
+  width: 30px!important;
+  background: $dbg;
+}
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  width: 15px!important;
+  height: 28px!important;
+}
+.carousel-control-prev-icon {
+  background-image: url("../svgs/preferences/controls/sliderBack.svg");
+}
+.carousel-control-next-icon {
+  background-image: url("../svgs/preferences/controls/sliderNext.svg");
+}
+.customPreferencesIcons {
+  width: 140px;
+  height: 80px;
+  cursor: pointer;
+  border: hidden;
+  position: relative;
+  color: $dim;
+  font-family: "reg";
+  font-size: 12px;
+  background-size: 60px 80px;
+  padding-top: 30px;
+  margin: 10px 5px;
+  &:disabled {
+    cursor: default !important;
+  }
+}
+.customPreferencesIcons.active {
+  color: #fff;
+}
+.customPreferencesActions {
+  position: relative;
+  width: 100%;
+  height: 20px;
+  margin: 10px 0 5px;
+  line-height: 20px;
+  text-align: right;
+}
+.preferencesBtns {
+  height: 20px;
+  width: auto;
+  cursor: pointer;
+  border: hidden;
+  color: #fff;
+  font-family: "reg";
+  font-size: 14px;
+  line-height: 20px;
+  text-align: left;
+  background-size: 20px 20px;
+  padding-left: 25px;
+  &:hover {
+    color: $curt;
+  }
+}
+.preferencesAddToFav {
+  background: url("../svgs/preferences/controls/addToFavDim.svg") no-repeat left;
+  &:hover {
+    background-image: url("../svgs/preferences/controls/addToFavAct.svg");
+  }
+}
+.preferencesDiscard {
+  background: url("../svgs/preferences/controls/discardDim.svg") no-repeat left;
+  &:hover {
+    background-image: url("../svgs/preferences/controls/discardAct.svg");
+  }
+}
+// Header Languages
+.appHeaderDropdown {
+  @include shadow;
+  flex-direction: column;
+	width: auto;
+  height: auto;
+	position: absolute;
+	border-radius: 0 0 20px 20px;
+	background: $foot;
+  border-top: solid 1px $curt;
+	right: 0;
+	top: 45px;
+	padding: 5px;
+	z-index: 9999;
+  display: none;
+  &.language {
+    right: 50px;
+  }
+  &.help {
+    right: 150px;
+  }
+  hr {
+    width: calc(100% - 10px);
+    border: solid 1px $inact;
+    margin: 5px auto;
+  }
+}
+.appHeaderDropdownRow {
+  width: 100%;
+  font-family: "reg", "arReg";
+  font-size: 15px;
+  color: #fff;
+  cursor: pointer;
+  text-align: left;
+  line-height: 20px;
+  margin: 7px 0;
+  padding: 0 5px;
+  &:hover {
+    color: $hov;
+  }
+  &.active {
+    color: $curt;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .appHeaderDropdown {
+    right: unset;
+	  top: unset;
+    position: relative;
+    margin-bottom: 10px;
+    background: rgba($head, .5);
+  }
+}
+
+// Login Page
+.singleMainContainer {
+	@include shadow;
+  position: relative;
+  width: auto;
+  min-height: 380px;
+	background: $dbg;
+  // margin: 20px auto;
+  padding: 30px 20px;
+  border: solid 1px $dbg;
+  border-radius: 40px;
+  overflow: hidden;
+  // background: $dbg;
+  &.text {
+    background: none;
+    border: hidden;
+  }
+}
+.signInTextTitle {
+  color: #fff;
+  font-size: 40px;
+  font-family: "med";
+}
+.signInTextImg {
+  height: 50px;
+  margin: 30px 0 20px;
+}
+.signInParag {
+  margin-top: 30px;
+  color: #fff;
+  font-size: 25px;
+  font-family: "med";
+}
+.signInFooter {
+  margin-top: -7px;
+	font-family: "light";
+	font-size: 12px;
+	color: #fff;
+	a {
+		color: #fff;
+		cursor: pointer;
+		&:hover {
+			color: $hov;
+			text-decoration: underline;
+		}
+	}
+}
+.signIn {
+  float: left;
+  // width: 50%;
+  // height: 380px;
+  // border-left: 1px solid $cbg;
+  // border-bottom: hidden;
+  padding: 0 20px;
+  position: relative;
+  &:first-child {
+    border: none;
+  }
+}
+.signInAdd {
+  @include flex;
+  width: 100%;
+  justify-content: space-evenly;
+  flex-direction: row;
+  margin-top: 20px;
+}
+.signInRow {
+  position: relative;
+  width: 100%;
+  margin: 0 0 30px;
+}
+.labelSignIn {
+  @include inputLabel;
+  color: #fff;
+  font-family: "med"!important;
+  margin-bottom: -10px;
+}
+.inputSignIn {
+  @include regInput;
+  background: $bg;
+  color: #fff;
+  border: solid 1px $act;
+  height: 40px;
+  width: 400px;
+  border-radius: 20px;
+  padding-left: 50px;
+  &::placeholder {
+    color: $dim;
+  }
+  &:focus {
+    border: 1px solid $curt;
+    outline: none;
+  }
+}
+.signInInputIcon {
+  position: absolute;
+  left: 20px;
+  // width: 30px;
+  max-height: 22px;
+  top: 9px;
+  height: auto;
+}
+.labelKeepSignIn {
+  position: relative;
+  text-align: left;
+  font-family: "reg";
+  font-size: 14px;
+  line-height: 16px;
+  margin: 0 0 0 30px!important;
+  color: #fff;
+  top: -1px;
+}
+.signInForgotRow {
+  position: relative;
+  width: 100%;
+  margin: 40px 0 60px;
+  text-align: center;
+}
+.signInForgotRow a {
+  font-family: "reg";
+  font-size: 14px;
+  margin: auto;
+  cursor: pointer;
+  color: $hov;
+  text-decoration: underline;
+  &:hover {
+    color: $curt;
+  }
+}
+.signInBtn {
+	@include flex;
+  width: 100%;
+  margin-bottom: 60px;
+}
+.signInHR {
+  border: solid 1px $inact;
+  width: calc(100% - 100px);
+  position: relative;
+  overflow: auto;
+  margin: auto;
+}
+.signInHRor {
+  width: 50px;
+  height: 30px;
+  margin:  auto;
+  color: #fff;
+  background: $inact;
+  // @include shadow;
+  font-size: 14px;
+  font-family: "reg";
+  @include flex;
+  position: relative;
+  top: -15px;
+}
+.signInBtn button:first-child {
+  @include genBtn;
+  width: 140px;
+  background-color: $hov;
+}
+.signInFinger {
+  @include flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  text-align: center;
+  h {
+		position: relative;
+    font-family: "med";
+    font-size: 16px;
+    color: #fff;
+    margin-top: 30px;
+    &:last-child {
+    font-size: 14px;
+    margin-top: 10px;
+    }
+  }
+}
+#backToRegularSignIn {
+  @include genBtn;
+  display: none;
+  position: relative;
+  margin: auto;
+  bottom: 35px;
+  width: 120px;
+}
+.signInAddButn {
+  width: 120px;
+  height: 120px;
+  border-radius: 20px;
+  background-size: 60px 90px !important;
+  background-position: center top !important;
+  cursor: pointer;
+  padding-top: 70px;
+  position: relative;
+  color: #fff;
+  font-family: "reg";
+  font-size: 15px;
+  background-color: $inact!important;
+  @include shadow;
+  &:hover {
+    background-color: $hov !important;
+  }
+  &.finger {
+    background-size: 50px 90px !important;
+    background: url("../svgs/finger.svg") no-repeat;
+  }
+  &.face {
+    background: url("../svgs/faceID.svg") no-repeat;
+  }
+  &.cardID {
+    background: url("../svgs/cardID.svg") no-repeat;
+  }
+}
+#fingerBtnMobile {
+  display: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 17.5px;
+  background: $act url("../svgs/finger.svg") no-repeat center;
+  background-size: 25px 25px;
+  cursor: pointer;
+  padding: 2.5px;
+  position: relative;
+  margin-left: 10px;
+  &:hover {
+    background-color: $hov;
+  }
+}
+@media only screen and (max-width: 991px) {
+  #singleMainContainer {
+    min-width: 70%;
+  }
+  .signIn {
+    min-width: 100%!important;
+    border: hidden;
+  }
+  #fingerBtnMobile {
+    display: inline-block;
+  }
+  #signInFinger {
+    display: none;
+  }
+  #backToRegularSignIn {
+    display: block;
+  }
+}
+@media only screen and (min-width: 991px) {
+  #signInRegular, #signInFinger {
+    display: inline-block!important;
+  }
+}
+
+// Use cases page
+.useCasesContainer {
+  @include shadow;
+  flex-direction: column;
+  position: relative;
+  width: 860px;
+  min-height: 500px;
+	background: $dbg;
+  margin: 20px auto;
+  border-radius: 20px;
+  text-align: center;
+  overflow: hidden;
+}
+@media only screen and (max-width: 991px) {
+  .useCasesContainer {
+    width: calc(100% - 20px);
+  }
+}
+
+.useCasesHeader {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+	height: 40px;
+  width: 100%;
+  position: relative;
+  background: $inact;
+  padding: 0 10px;
+  border-bottom: solid 2px $act;
+}
+.useCasesIcon {
+  width: auto;
+  height: 22px;
+  float: left;
+  position: relative;
+  margin: 0 5px;
+  img {
+    height: 100%;
+    width: auto;
+  }
+}
+.useCaseHeaderText {
+  float: left;
+  position: relative;
+  color: #fff;
+  font-family: "med";
+  margin: 0 5px;
+  text-align: left;
+  h1 {
+    font-size: 18px;
+		line-height: 16px;
+		margin: 0!important;
+  }
+}
+.useCasesIns {
+  @include flex;
+  flex-direction: column;
+  float: left;
+  width: 100%;
+  min-height: 550px;
+}
+.useCaseTitle {
+	position: absolute;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	float: left;
+	top: 60px;
+	color: #fff;
+	h2 {
+		font-family: "med";
+		font-size: 20px;
+		margin: 0!important;
+	}
+	h4 {
+		font-family: "reg";
+		font-size: 18px;
+		margin: 0!important;
+	}
+}
+.useCasesContent {
+  @include flex;
+  width: 100%;
+  position: relative;
+  text-align: center;
+	min-height: 100%;
+	padding: 50px 0;
+	&.subCat {
+		justify-content: center!important;
+		padding: 70px 0 0;
+		align-items: flex-start!important;
+	}
+}
+.useCasesBtn {
+  float: left;
+  margin: auto;
+  position: absolute;
+  bottom: 10px;
+  text-align: center;
+  button {
+    @include genBtn;
+    width: 120px;
+  }
+}
+.openUseCases {
+  background-color: $act!important;
+  background-size: 70px 110px!important;
+  text-align: center;
+  width: 140px;
+  height: 140px;
+  border: hidden;
+  padding-top: 110px;
+  color: #fff;
+  font-size: 18px;
+  font-family: "reg";
+  border-radius: 20px;
+  margin: 20px;
+  cursor: pointer;
+  position: relative;
+  &:hover {
+    background-color: $hov!important;
+  }
+}
+.securityCat {
+  background: url("../svgs/useCases/security.svg") no-repeat top;
+}
+.retailCat {
+  background: url("../svgs/useCases/retail.svg") no-repeat top;
+}
+#securityUseCases, #retailUseCases {
+	display: none;
+}
+.subCatBtnContainer, .subSecBtnContainer {
+	width: auto;
+	height: auto;
+	position: relative;
+	&.inActive {
+		transform: scale(.8);
+	}
+}
+.subCatBtn {
+	background-color: $act!important;
+	background-size: 60px 95px;
+	text-align: center;
+	width: 150px;
+	height: 150px;
+	border: hidden;
+	padding-top: 80px;
+	color: #fff;
+	font-size: 15px;
+	line-height: 22px;
+	font-family: "reg";
+	border-radius: 20px;
+	margin: 10px;
+	cursor: pointer;
+	position: relative;
+	&:hover {
+		background-color: $hov!important;
+	}
+	&:disabled {
+		background-color: rgba($act, .3)!important;
+		cursor: default;
+		color: $dim;
+	}
+}
+.subCatInfo {
+	@include shadow;
+	background: url(../svgs/useCases/tooltip.svg) no-repeat center;
+	background-size: 24px 24px;
+	background-color: $inact;
+	width: 24px;
+	height: 24px;
+	cursor: default;
+	background-color: none;
+	outline: hidden;
+	border-radius: 11px;
+	position: absolute;
+	right: 15px;
+	top: 15px;
+	&:hover, &.active {
+		background-color: $hov;
+		background-size: 26px 26px;
+		width: 26px;
+		height: 26px;
+		right: 14px;
+		top: 14px;
+	}
+}
+.subCatInfoContainer {
+	@include shadow;
+	background: rgba($act, .3);
+	width: calc(100% - 40px);
+	min-height: 150px;
+	position: relative;
+	bottom: 10px;
+	border-radius: 10px;
+	padding: 15px 27px 15px 15px;
+	text-align: left;
+	font-family: "reg";
+	font-size: 15px;
+	color: #fff;
+	display: none;
+	margin: 10px 20px 50px;
+	li {
+		margin-bottom: 5px;
+		margin-left: 15px;
+		line-height: 22px;
+		list-style: disc;
+	}
+}
+.closeSubCatInfo {
+	background: url(../svgs/close.svg) no-repeat center;
+	background-size: 12px 12px;
+	cursor: pointer;
+	width: 12px;
+	height: 12px;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+// Home page
+#homeHeader {
+  z-index: 999;
+	display: none;
+  position: fixed;
+	top: $headerHeight;
+}
+.homeTopHeader {
+  top: $topHeaderHeight;
+  height: $mainHeaderHeight;
+	width: 100%;
+	background: $head;
+	padding-top: 5px;
+	z-index: 9991;
+	position: fixed;
+}
+.homeBottomShape {
+	position: relative;
+	left: 0;
+	right: 0;
+	height: 45px;
+	width: 100%;
+	svg {
+		fill: $head;
+    display: block;
+	}
+}
+#goToMain {
+	@include shadow;
+  position: relative;
+  background: $cbg;
+  width: 70px;
+  height: 70px;
+  border-radius: 35px;
+	display: none;
+	justify-content: center;
+	align-items: center;
+//	border: solid 1px $act;
+  margin: auto;
+}
+.goToMainText {
+  color: #fff;
+  font-family: "reg";
+  font-size: 18px;
+  text-align: center;
+  margin: auto;
+  z-index: 1;
+  position: absolute;
+}
+.goToMainBtn {
+  position: relative;
+  @include shadow;
+	background: $curt;
+  width: 100%;
+  height: 100%;
+  border-radius: 40px;
+	cursor: pointer;
+	
+	animation-name: flash;
+	animation-duration: 6s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+
+	//Safari 3-4
+	-moz-animation-name: flash;
+	-moz-animation-duration: 6s;
+	-moz-animation-timing-function: linear;
+	-moz-animation-iteration-count: infinite;
+}
+
+@keyframes flash {
+  0% { opacity: 1.0; }
+  75% { opacity: 0.8; }
+  100% { opacity: 1.0; }
+}
+
+//Safari 3-4
+@-moz-keyframes flash {
+  0% { opacity: 1.0; }
+  75% { opacity: 0.8; }
+  100% { opacity: 1.0; }
+}
+
+.homeContainer {
+  width: 100%;
+  float: left;
+  // margin: 0 10px 20px 55px;
+  margin: 0 auto 20px;
+  position: relative;
+}
+.homeHeader {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  color: #fff;
+  font-family: "med";
+  font-size: 18px;
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 2px solid $act;
+  text-align: left;
+	padding-left: 20px;
+  background: $inact;
+  float: left;
+}
+.homeHeaderIcon {
+  width: auto;
+  height: 20px;
+  float: left;
+  position: relative;
+  margin-right: 5px;
+}
+.homeCardsContainer {
+	@include shadow;
+  width: 95%;
+  height: auto;
+  margin: 40px auto 0;
+	padding-bottom: 15px;
+  position: relative;
+	background: rgba($dbg, .5);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+	border-radius: 20px;
+	overflow: hidden;
+	&.homeStart {
+		margin-top: 75px;
+	}
+}
+.cardContainer {
+  width: auto;
+  height:auto;
+  border-radius: 10px;
+  position: relative;
+  float: left;
+  margin: 30px 15px -35px 35px;
+  &.disabled {
+    .homeCardIcon {
+      cursor: default !important;
+      img {
+        opacity: 0.5;
+      }
+    }
+    .homeCardTitle {
+      background-color: $foot;
+    }
+    .homeCardTitleText{
+      color: $dim !important;
+    }
+    .homeCardList {
+      border-color: $foot;
+    }
+    .homeCardList li {
+      color: $dim !important;
+    }
+    .homeOpenModule, .homeAddFavModule {
+      cursor: default !important;
+      opacity: 0;
+    }
+  }
+}
+.cardContent {
+  width: 320px;
+  height: 245px;
+  border-radius: 10px;
+  position: relative;
+  float: left;
+}
+.homeCardIcon {
+  width: 70px;
+  height: 70px;
+  border-radius: 35px;
+  background: $head;
+  border: hidden;
+  position: relative;
+  vertical-align: middle;
+	border-bottom: solid 2px $dbg;
+  margin: auto;
+  z-index: 1;
+  cursor: pointer;
+  img {
+    width: 44px;
+    height: 44px;
+    top: 13px;
+    left: 13px;
+    position: relative;
+    z-index: 1;
+  }
+}
+.homeCardIconActive {
+  width: 72px;
+  height: 72px;
+  border-radius: 36px;
+  background: none;
+  border: hidden;
+  position: relative;
+  margin-top: -44px;
+  vertical-align: middle;
+}
+.homeCardIconActive.active {
+  border-top: 3px solid $curt;
+  border-bottom: 3px solid $curt;
+  background: $curt;
+  animation: spin 2s linear infinite;
+  transition: ease;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  90% { transform: rotate(280deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media only screen and (max-width: 991px) {
+	.cardContent {
+		display: none;
+	}
+  .cardContainer {
+    position: relative;
+    float: left;
+    margin: 30px 10px 0!important;
+  }
+	.homeContainer {
+		margin: 0 10px 20px;
+	}
+}
+
+.homeCardTitle {
+  @include shadow;
+  height: 90px;
+  width: 100%;
+  background: $inact;
+  text-align: center;
+  margin-top: -35px;
+  border-radius: 20px 20px 0 0;
+  padding: 0 15px;
+}
+.homeCardTitle.draggE {
+  cursor: move;
+}
+.homeCardTitleText {
+  text-align: center;
+  width: 100%;
+  font-family: "med";
+  position: relative;
+  top: 50px;
+  margin: auto;
+  font-size: 17px;
+  line-height: 22px;
+  color: #fff;
+}
+.homeCardList {
+  @include shadow;
+  width: 100%;
+  height: 140px;
+//  background: $dbg;
+  background: rgba($inact, .3);
+	border: solid 1px $inact;
+  bottom: 0;
+  border-radius: 0 0 20px 20px;
+  padding: 4px 15px;
+  li {
+    height: 44px;
+		width: 100%;
+		list-style: none;
+		border-bottom: 1px solid $inact;
+		padding: 0;
+		margin: 0;
+		line-height: 40px;
+		color: #fff;
+		font-size: 16px;
+		font-family: "reg";
+    &:last-child {
+      border-bottom: hidden;
+    }
+	}
+}
+.homeCardControls {
+  float: right;
+  width: auto;
+  height: 20px;
+  margin-top: 12px;
+	button {
+		margin-left: 5px;
+		&:first-child {
+			margin-right: 0;
+		}
+	}
+}
+.homeCardControls.main {
+  margin-top: -10px;
+}
+.homeOpenModule {
+  width: 20px;
+  height: 20px;
+  float: left;
+  cursor: pointer;
+  background: url("../svgs/modulesIc/controls/open.svg") no-repeat center;
+  background-size: 20px 20px;
+  border: hidden;
+}
+.homeAddFavModule {
+  width: 20px;
+  height: 20px;
+  float: left;
+  cursor: pointer;
+  background: url("../svgs/modulesIc/controls/addToFav.svg") no-repeat center;
+  background-size: 20px 20px;
+  border: hidden;
+}
+.homeCloseModule {
+	display: none;
+  width: 20px;
+  height: 20px;
+  float: left;
+  cursor: pointer;
+  background: url("../svgs/modulesIc/controls/close.svg") no-repeat center;
+  background-size: 20px 20px;
+  border: hidden;
+}
+
+// Side icons
+.sideIcons {
+  // @include flex;
+  flex-direction: column;
+  position: fixed;
+  left: 5px;
+  // top: calc( 50vh - #{$headerHeight} );
+  min-height: $mainContainerHeight;
+
+  min-height: $mainContainerHeight;
+  margin: 20px 0 0;
+  width: 40px;
+  float: left;
+  z-index: 9999995;
+  display: flex;
+  // align-items: center!important;
+  align-items: flex-start;
+  justify-content: space-between;
+  float: left;
+  padding: 10px 0 20px;
+}
+.sideIconBtn {
+  width: 30px;
+  height: 30px;
+  border: hidden;
+  cursor: pointer!important;
+  border-radius: 20px;
+  vertical-align: middle;
+  text-align: center;
+  margin-bottom: 10px;
+  background-size: 20px 20px!important;
+  &:first-child {
+    margin-top: 10px;
+  }
+  &:last-child {
+    margin-bottom: 0!important;
+  }
+  &:hover {
+    background-color: $hov!important;
+  }
+	&.inActive {
+		float: left;
+		width: 30px;
+		height: 30px;
+		background-size: 20px 20px!important;
+	}
+}
+.openNav {
+  background: $act url("../svgs/sideIcons/openNav.svg") no-repeat center;
+}
+.closeNav {
+  background: url("../svgs/sideIcons/closeNav.svg") no-repeat center;
+  background-color: $curt!important;
+  &:hover {
+    background-color: $curt!important;
+  }
+}
+.openChat {
+  background: $act url("../svgs/sideIcons/chat.svg") no-repeat center;
+}
+.openCall {
+  background: $act url("../svgs/sideIcons/call.svg") no-repeat center;
+}
+.openShortcuts {
+  background: $act url("../svgs/sideIcons/shortcuts.svg") no-repeat center;
+}
+
+// Site footer
+footer {
+  position: fixed;
+  width: 100%;
+  min-height: $footerHeight;
+  bottom: 0;
+  z-index: 999;
+	background: $foot;
+}
+#tempFooter {
+  width: 100%;
+  background: $head;
+  text-align: center;
+  line-height: $footerHeight;
+  font-family: "light";
+  font-size: 14px;
+  color: #fff;
+
+  a {
+		color: #fff;
+    &:hover {
+      cursor: pointer;
+      color: $curt;
+      text-decoration: underline!important;
+    }
+	}
+}
+.tempFooter {
+  &.logIn {
+    background: none!important;
+    height: 50px;
+  }
+}
+.mainFooter {
+	background: $foot!important;
+}
+#footerTooltip {
+	@include shadow;
+	float: left;
+	height: 30px;
+	width: 30px;
+	cursor: pointer;
+	border: hidden;
+	text-align: center;
+	background: $inact url("../svgs/footer/tooltip.svg") no-repeat center;
+	background-size: 25px 25px;
+	position: relative;
+  z-index: 999;
+}
+#sideFooter {
+	position: relative;
+	display: none;
+	float: left;
+	width: 240px;
+	background: $head;
+	text-align: center;
+	line-height: 30px;
+	font-family: "light";
+	font-size: 14px;
+	color: #fff;
+	z-index: 999;
+	a {
+		color: #fff;
+		cursor: pointer;
+		&::hover {
+			color: $hov;
+			text-decoration: underline;
+		}
+	}
+}
+#footerAlerts {
+	display: flex;
+	align-items: center;
+	max-width: 100%;
+	max-height: 30px;
+	position: relative;
+	color: $curt;
+	font-family: "med";
+	font-size: 14px;
+	text-align: left;
+	overflow: hidden;
+}
+.imgLoading {
+	display: none;
+	position: relative;
+	width: 22px;
+	height: 22px;
+	margin: 0 5px 0 10px;
+}
+.footerControls {
+	display: block;
+	position: absolute;
+	float: right;
+	right: 0;
+	bottom: 0;
+}
+#footerZoom {
+	@include shadow;
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	float: right;
+	right: 90px;
+	background: $inact;
+	width: 200px;
+	height: 30px;
+	padding: 0 10px;
+}
+#zoomCounter {
+	position: absolute;
+	font-family: "med";
+	font-size: 14px;
+	line-height: 30px;
+	color: $act;
+	text-align: center;
+	width: 90px;
+	float: right;
+	right: 0!important;
+  }
+#zoomin {
+	background: $inact url("../svgs/footer/zoomIn.svg") no-repeat center;
+	background-size: 15px 15px;
+	border: hidden;
+	width: 15px;
+	height: 22px;
+	cursor: pointer;
+}
+#zoom {
+	background: $inact url("../svgs/footer/zoom.svg") no-repeat center;
+	background-size: 83px 22px;
+	border: hidden;
+	width: 83px;
+	height: 22px;
+	cursor: pointer;
+}
+#zoomout {
+	background: $inact url("../svgs/footer/zoomOut.svg") no-repeat center;
+	background-size: 15px 15px;
+	border: hidden;
+	width: 15px;
+	height: 22px;
+	cursor: pointer;
+}
+#zoomreset {
+	background: $inact url("../svgs/footer/resetZoom.svg") no-repeat center;
+	background-size: 18px 22px;
+	border: hidden;
+	width: 18px;
+	height: 22px;
+	cursor: pointer;
+	margin-right: 5px;
+}
+
+@media only screen and (max-width: 991px) {
+	.footerControls {
+		display: none;
+	}
+}
+
+// Module tabs
+.moduleTabCol {
+	display: flex;
+	align-items: stretch;
+	position: relative;
+	width: 200px;
+	height: 100%;
+	float: left;
+	padding-right: 28px;
+	border-radius: 10px 10px 0 0;
+  overflow: hidden;
+	white-space: nowrap;
+	text-overflow:ellipsis;
+	flex-shrink: unset;
+	&:first-child {
+		margin-left: 0;
+	}
+	.moduleTabIcon {
+		fill: #fff;
+	}
+	&::before {
+    content: '';
+    border-right: 2px solid $bg;
+    position: absolute;
+    height: 60%;
+    right: 0px;
+    top: 20%;
+	}
+	&.active {
+    margin-left: -2px;
+    background: $bg;
+    border-right: hidden;
+    flex-shrink: 0!important;
+    .moduleTabBtn {
+      color: $curt;
+    }
+		.moduleTabIcon {
+			fill: $curt;
+		}
+		&::before {
+      border-right: hidden;
+		}
+	}
+}
+.moduleTabBtn {
+	text-overflow:ellipsis;
+	overflow: hidden;
+	background: none;
+	width: 100%;
+	border: hidden;
+	color: #fff;
+	height: 100%;
+	line-height: 28px;
+	font-size: 14px;
+	font-family: "reg";
+	text-align: left;
+	padding-left: 8px;
+	cursor: default!important;
+}
+.moduleTabIcon {
+	width: auto;
+	height: calc(100% - 8px);
+	margin-right: 5px;
+	vertical-align: middle;
+}
+.moduleTabClose {
+	position: absolute;
+	width: 15px;
+	height: 15px;
+	padding: 5px;
+	right: 8px;
+	top: 27%;
+	border-radius: 50%;
+	border: hidden;
+	cursor: default!important;
+	background: url("../svgs/close.svg") no-repeat center;
+	background-size: 12px 15px;
+	background-color: none;
+	&:hover {
+		background-color: $dim;
+	}
+}
+.moduleStyle {
+  display: none;
+}
+@media only screen and (max-width: 991px) {
+	.moduleTabClose {
+		display: none;
+	}
+	.moduleTabCol {
+		padding-right: 8px;
+		&.active {
+			.moduleTabClose {
+				display: block;
+			}
+		}
+	}
+}
+
+// Sub-Module tabs
+.subModuleTabCol {
+	display: flex;
+	align-items: stretch;
+	position: relative;
+	width: 200px;
+	height: 100%;
+	float: left;
+	padding-right: 8px;
+	border-radius: 10px 10px 0 0;
+  overflow: hidden;
+	white-space: nowrap;
+	text-overflow:ellipsis;
+	flex-shrink: unset;
+  &.metcoDashboard {
+    &:hover {
+      padding-right: 32px;
+      margin-left: -2px;
+      border-right: hidden;
+      width: unset;
+      min-width: inherit;
+      overflow: unset;
+	    text-overflow: inherit;
+      background: $dbg;
+      .subModuleTabBtn {
+        min-width: inherit;
+	      text-overflow: inherit;
+        overflow: unset;
+        color: $hov;
+      }
+      .subModuleTabIcon {
+        fill: $hov;
+      }
+      &::before {
+        border-right: hidden;
+      }
+    }
+    &.active {
+      padding-right: 2px;
+      width: 200px !important;
+    }
+  }
+  &.alarmsModule {
+    width: 220px;
+		padding-right: 20px;
+  }
+	&:first-child {
+		margin-left: 0;
+	}
+	.subModuleTabIcon {
+		fill: #fff;
+	}
+	&::before {
+    content: '';
+    border-right: 2px solid $bg;
+    position: absolute;
+    height: 60%;
+    right: 0px;
+    top: 20%;
+	}
+	&.active {
+    margin-left: -2px;
+    background: $dbg;
+    border-right: hidden;
+    flex-shrink: 0!important;
+    padding-right: 20px;
+    .subModuleTabBtn {
+      color: $curt!important;
+    }
+		.subModuleTabIcon {
+			fill: $curt!important;
+		}
+		&::before {
+      border-right: hidden;
+		}
+	}
+}
+.subModuleTabBtn {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	background: none;
+	width: 100%;
+	border: hidden;
+	color: #fff;
+	height: 100%;
+	line-height: 28px;
+	font-size: 14px;
+	font-family: "reg";
+	text-align: left;
+	padding: 0 8px 0;
+	cursor: default!important;
+}
+.subModuleTabIcon {
+	float: left;
+	width: auto;
+	max-width: 25px;
+	height: calc(100% - 8px);
+	margin-right: 5px;
+	margin-top: 5px;
+}
+.subModuleTabClose {
+	position: absolute;
+	width: 15px;
+	height: 15px;
+	padding: 5px;
+	right: 8px;
+	top: 27%;
+	border-radius: 50%;
+	border: hidden;
+	cursor: default!important;
+	background: url("../svgs/close.svg") no-repeat center;
+	background-size: 12px 15px;
+	background-color: none;
+	&:hover {
+		background-color: $dim;
+	}
+}
+.subModuleStyle {
+  display: none;
+}
+@media only screen and (max-width: 991px) {
+	.subModuleTabClose {
+		display: none;
+	}
+	.subModuleTabCol {
+		padding-right: 8px;
+		&.active {
+			.subModuleTabClose {
+				display: block;
+			}
+		}
+	}
+}
+
+// Module path
+.modulePath {
+	background: $bg;
+	width: 100%;
+	height: $topPathHeight;
+	line-height: $topPathHeight;
+	text-align: left;
+	padding: 5px 20px;
+	img {
+		height: 15px;
+		width: auto;
+		cursor: pointer;
+	}
+}
+.modulePathNavigate {
+	color: $text;
+	margin: 0 5px;
+	vertical-align: middle;
+	font: {
+		family: "med";
+		weight: bold;
+		size: 16px;
+	}
+}
+.modulePathCurrent {
+	color: $text;
+	font-family: "light";
+	font-size: 13px;
+	cursor: pointer;
+}
+.useCasePath {
+  float: right;
+  text-align: left;
+  display: none;
+  img {
+    height: 20px;
+    width: auto;
+    cursor: pointer;
+    margin-right: 5px;
+  }
+}
+.useCasePathCurrent {
+  color: #fff;
+  font-family: "light";
+  font-size: 13px;
+  vertical-align: middle;
+  cursor: default!important;
+}
+@media only screen and (max-width: 991px) {
+	.useCasePath {
+		display: none!important;
+	}
+}
+
+// Change layout
+.sideIconLayout {
+  position: absolute;
+  top: 0;
+  left: 5px;
+  width: 40px;
+  height: 40px;
+  float: left;
+  margin-top: 10px;
+  .sideIconBtn {
+    margin: 0;
+  }
+}
+.openLayout {
+  background: url("../svgs/sideIcons/layout.svg") no-repeat center;
+  background-color: $act;
+  &.active {
+    background-color: $curt!important;
+  }
+}
+.closeLayout {
+  position: absolute;
+  top: 30px;
+  left: 0px;
+  background: url("../svgs/close.svg") no-repeat center;
+  background-color: $act;
+  background-size: 20px 20px!important;
+}
+#changeLayout {
+  @include shadow;
+  display: none;
+  width: 100%;
+  height: 40px;
+  background: $dbg;
+  border: 1px solid $inact;
+  border-radius: 20px;
+  float: left;
+  margin: 10px 5px 0px;
+  text-align: center;
+}
+.changeLayoutIcon {
+  float: left;
+  height: 30px;
+  width: auto;
+  cursor: pointer;
+  fill: $dim;
+  top: 7px;
+  position: relative;
+}
+.layoutActive {
+  svg {
+    fill: #fff;
+  }
+}
+.radioCon:hover .changeLayoutIcon {
+  fill: #fff;
+}
+.changeLayoutBtns {
+//  background: $inact;
+  display: flex;
+  align-items: center;
+  position: relative;
+  float: right;
+  height: 40px;
+//  line-height: 40px!important;
+  right: 0;
+  border-radius: 20px;
+  padding: 0 10px 0 15px;
+  text-align: right;
+}
+
+// Modules general styles
+.mainGenContainer {
+  width: calc(100% - 60px);
+  min-height: $mainContainerHeight;
+  float: left;
+  margin: 20px 5px 10px 55px;
+  position: relative;
+  // &.fullWidth {
+  //   width: calc(100% - 10px);
+  //   margin: 10px 5px;
+  // }
+}
+.moduleSection {
+  @include shadow;
+  position: relative;
+  float: left;
+  width: 100%;
+  height: $mainContainerHeight;
+  border-radius: 20px;
+  background: $dbg;
+  margin: auto;
+  border: solid 1px $inact;
+	overflow: hidden;
+  &.fullScreen {
+    position: fixed;
+    width: 100%!important;
+    height: 100vh!important;
+    min-height: 100vh!important;
+    max-height: 100vh!important;
+    margin: 0!important;
+    top: 0;
+    left: 0;
+    z-index: 9999995;
+    .siteMapContainer {
+      height: calc(100vh - 32px);
+    }
+    .alarmSiteMapControls {
+      height: 600px;
+    }
+    .moduleSectionContent {
+      max-height: calc(100vh - 32px);
+    }
+    .overflowHidden {
+      max-height: calc(100vh - 32px);
+      iframe {
+        height: calc(100vh + 5px);
+      }
+    }
+    .BIDashboardiFrame {
+      height: calc(100vh - 42px);
+      margin-top: 0;
+      iframe {
+        height: calc(100vh + 23px)!important;
+      }
+    }
+  }
+  &.twoVer {
+    width: calc(50% - 5px);
+    &:first-child {
+      margin-right: 10px;
+    }
+  }
+  &.twoHor {
+    min-height: calc( #{$mainContainerHeight}/2 - 5px);
+    max-height: calc( #{$mainContainerHeight}/2 - 5px);
+    margin-top: 10px;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  &.four {
+		width: calc(50% - 5px);
+    min-height: calc( #{$mainContainerHeight}/2 - 5px);
+    max-height: calc( #{$mainContainerHeight}/2 - 5px);
+		&:first-child {
+      margin-right: 10px;
+    }
+  }
+}
+.moduleSectionHeader {
+	position: sticky;
+	position: -webkit-sticky;
+  float: left;
+  width: 100%;
+  height: 30px;
+  top: 0;
+  line-height: 20px;
+  background: $inact;
+  font-size: 14px;
+  padding: 5px 15px;
+  color: #fff;
+  font-family: "med";
+  z-index: 9;
+  &.tabs {
+    display: flex;
+    align-items: stretch;
+    padding: 2px 75px 0 15px;
+  }
+}
+.movingContainer {
+  width: 70px;
+  height: 10px;
+  position: relative;
+  border-top: 2.5px solid $dbg;
+  border-bottom: 2.5px solid $dbg;
+  background: none;
+  cursor: move;
+  margin: 0 auto;
+  top: -15px;
+  z-index: 1;
+}
+.containerControls {
+  display: flex;
+  align-items: center;
+	flex-direction: row;
+	justify-content: flex-start;
+  width: auto;
+  height: 20px;
+  float: right;
+  z-index: 1;
+  top: 5px;
+  position: absolute;
+  right: 15px;
+}
+.containerControlsBtn {
+	position: relative;
+  height: 20px;
+  width: 20px;
+  border: none;
+  cursor: pointer;
+  &:last-child {
+    margin-left: 10px;
+  }
+  &.fullScreen {
+    background: url("../svgs/controls/openFullScreen.svg") no-repeat center;
+    background-size: auto 20px;
+    &.active {
+      background: url("../svgs/controls/closeFullScreen.svg") no-repeat center;
+    }
+  }
+  &.minimizeScreen {
+		background: url("../svgs/controls/minimizeWindow.svg") no-repeat center;
+		background-size: 15px 3px;
+  }
+	&.alarmModAlarmExport {
+    background: url("../svgs/controls/export.svg") no-repeat center;
+    background-size: auto 20px;
+  }
+}
+.moduleSectionContent {
+  position: relative;
+  float: left;
+  width: 100%;
+	overflow: auto;
+	min-height: calc(100% - #{$mainContentHeader} );
+  max-height: calc(100% - #{$mainContentHeader} );
+  &.padding {
+    padding: 10px;
+  }
+  &.empty {
+    color: #fff;
+    @include flex;
+    font-family: "med";
+    font-size: 20px;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+	#siteMapContainer, #openLayout, #changeLayout, .sideIcons, .sideNav {
+		display: none!important;
+	}
+	.mainGenContainer {
+    width: calc(100% - 10px);
+		margin: 10px 5px;
+	}
+	.moduleSection.twoVer {
+		width: 100%!important;
+		margin: 0!important;
+	}
+	.moduleSection.four {
+		width: 100%!important;
+		margin-right: 0!important;
+		&:last-child {
+      margin-top: 10px!important;
+    }
+	}
+  #alarmsSideNav {
+    display: block!important;
+    width: 100%;
+    margin: auto;
+    .sideNavTogglePin {
+      display: none;
+    }
+    .toggleAlarmsStackFilter {
+      margin-right: 0;
+      &::before {
+        border-right: hidden;
+      }
+    }
+    .alarmControlsContainer {
+      display: none;
+    }
+    .sideNavStackDetailsContent {
+      width: calc(100% - 10px);
+    }
+    .navAdvancedFilterBtn {
+      margin-left: 5px;
+    }
+    .navAdvancedFilterSelect {
+      margin-right: 6px;
+    }
+  }
+  #alarmsModuleContainer {
+    display: none;
+  }
+}
+
+// Side nav
+.sideNav {
+	@include shadow;
+	display: none;
+	width: 400px;
+	min-height: $mainContainerHeight;
+	max-height: $mainContainerHeight;
+	margin: 0 10px 0 -15px;
+	background: $dbg;
+	border: 1px solid $inact;
+	border-radius: 20px;
+	position: absolute;
+	float: left;
+	z-index: 9999996;
+	overflow: auto;
+	&.pinned {
+    display: block;
+		position: relative;
+    z-index: 9999991;
+	}
+}
+#mapsSideNav, #alarmsSideNav, #metcoSideNav {
+  display: block;
+}
+.sideNavHeader {
+	position: sticky;
+	position: -webkit-sticky;
+	top: 0;
+	width: 100%;
+	height: auto;
+	float: left;
+	z-index: 99;
+  background: $dbg;
+  margin-bottom: 10px;
+  &.alarms {
+    position: relative;
+  }
+}
+.sideNavHead {
+	background: $inact;
+	position: relative;
+	float: left;
+	width: 100%;
+	height: 40px;
+	z-index: 9;
+  border-radius: 18px 18px 0 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+  &.filterOpened {
+    border-radius: 18px 18px 0 0;
+  }
+}
+.sideNavHeaderBorder {
+	width: 100%;
+	border-bottom: 3px solid $dbg;
+	position: absolute;
+	bottom: -3px;
+	left: 0;
+	z-index: 99;
+}
+.sideNavToggleFilter {
+  height: 40px;
+	width: 40px;
+	border: hidden;
+	cursor: pointer;
+  margin-left: 5px;
+//	border-radius: 20px;
+	vertical-align: middle;
+	text-align: center;
+	background: url("../svgs/sideNav/showSearchFilter.svg") no-repeat center;
+	background-size: 30px 30px!important;
+	background-color: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+//	&:hover {
+//		background-color: $hov!important;
+//	}
+	&.active {
+		background: url("../svgs/sideNav/closeSearchFilter.svg") no-repeat center;
+//    background-size: 20px 25px;
+	}
+}
+.sideNavTogglePin {
+	background: url("../svgs/sideNav/pinSideNav.svg") no-repeat left;
+	padding-left: 25px;
+	height: 40px;
+	width: auto;
+	color: #fff;
+	font-family: "reg";
+	font-size: 14px;
+	border: hidden;
+	cursor: pointer;
+	text-align: left;
+	background-size: 20px 20px;
+	position: relative;
+	margin-right: 10px;
+	order: 1;
+	
+	&.unpin {
+		background: url("../svgs/sideNav/unpinSideNav.svg") no-repeat left;
+		background-size: 25px 25px!important;
+		padding-left: 25px;
+	}
+}
+.sideNavToggleUnpin {
+	display: none;
+}
+.sideNavFilterBorderTop {
+	border-top: 1px solid $act;
+	width: calc(100% - 20px);
+	position: absolute;
+	top: 0px;
+	right: 10px;
+	float: left;
+}
+.sideNavFilter {
+	height: auto;
+	width: 100%;
+	background:$inact;
+	float: left;
+	position: relative;
+	display: none;
+	align-content: center;
+	flex-direction: column;
+	padding-bottom: 5px;
+  z-index: 1;
+}
+.sideNavFilterContainer {
+	text-align: center;
+	margin: 2px auto;
+	padding: 0;
+	float: left;
+	position: relative;
+	width: 100%;
+	height: auto;
+	padding: 0 10px;
+}
+.sideNavFilterBtn {
+	background: rgba($act, .5);
+	padding: 0 10px;
+	height: 28px;
+	line-height: 28px;
+	font-family: "reg";
+	font-size: 13px;
+	border: hidden;
+	color: #fff;
+	margin: 5px 2.5px;
+	border-radius: 14px;
+	cursor: pointer;
+	&.active {
+		background: $hov;
+	}
+	&:hover {
+		background: $hov;
+	}
+}
+.sideNavFilterSearch {
+	width: calc(100% - 40px);
+	height: 35px;
+	position: relative;
+	float: left;
+	margin: 0 auto;
+}
+.filterSearchInput {
+	width: 100%;
+	height: 35px;
+	border-radius: 17.5px;
+	border: 1px solid $act;
+	background: $cbg;
+	color: #fff;
+	padding: 0 35px 0 10px;
+	line-height: 100%;
+	font-family: "reg";
+	font-size: 14px;
+	&::placeholder {
+		color: $dim;
+	}
+}
+.FilterSearchSorting {
+	position: absolute;
+	top: 8px;
+	right: 10px;
+	height: 19px;
+	width: 20px;
+	float: right;
+	border: none;
+	cursor: pointer;
+	background: url(../svgs/sideNav/searchSorting.svg) no-repeat center;
+	background-size: 20px 19px;	
+}
+.sideNavContent {
+  width: calc(100% - 20px);
+  margin: 15px 10px 0;
+  bottom: 10px;
+  padding: 10px;
+  float: left;
+  position: relative;
+//  margin: 10px;
+  border-radius: 20px;
+  &.mapPadding {
+    background: $inact;
+    padding-left: 20px!important;
+    &.marginBottom {
+      margin-bottom: 10px;
+    }
+  }
+  &.alarms {
+    max-height: $alarmsStack;
+    overflow: auto;
+    width: 100%;
+    padding: 0 10px;
+    margin: 0!important;
+		bottom: unset!important;
+    &.noFilters {
+      max-height: calc( #{$alarmsStack} + 120px );
+    }
+    &.bothFilters {
+      max-height: calc( #{$alarmsStack} - 120px );
+    }
+  }
+  &.metco {
+    padding: 10px 0!important;
+    display: flex;
+    flex-direction: column;
+  }
+}
+$sideNavBottomOpened: calc( #{$mainContainerHeight} - 32px - 200px);
+.sideNavInformation {
+  width: calc(100% - 20px);
+  height: auto;
+  position: relative;
+  margin-top: $sectionContentHeight;
+  left: 10px;
+  bottom: 10px;
+  z-index: -1;
+  &.active {
+    margin-top: $sideNavBottomOpened;
+  }
+}
+.sideNavInformationBtn {
+  background: $inact;
+  color: #fff;
+  cursor: pointer;
+  height: 30px;
+  line-height: 30px!important;
+  width: 100%;
+  border: none;
+  border-radius: 15px;
+  text-align: left;
+  padding: 0 10px;
+  font-size: 14px;
+  font-family: "reg";
+  &:after {
+		content: '\002B';
+		color: #fff;
+		font-size: 18px;
+		font-weight: bolder;
+		float: right;
+	}
+  &:hover {
+		background: $act;
+	}
+}
+.activeColl {
+  background: $act;
+  border-radius: 15px 15px 0 0;
+  &:after {
+		content: "\2212";
+	}
+}
+.sideNavInformationCont {
+  display: none;
+  width: 100%;
+  height: 200px;
+  border-radius: 0 0 15px 15px;
+  border-top: 1px solid $dbg;
+  overflow: hidden;
+  transition: 0.1s ease-out;
+  background: $inact;
+  line-height: 22px;
+  padding: 10px 15px;
+  text-align: left;
+  color: #fff;
+  font-size: 12px;
+  font-family: "light";
+}
+// Change layout
+.sideNavLayout {
+	@include shadow;
+	width: 400px;
+	background: $dbg;border: solid 1px $inact;
+	border-radius: 20px;
+	position: absolute;
+	z-index: 9999999991;
+	margin: 0 10px 0 -15px;
+	height: auto;
+	display: none;
+	flex-direction: column;
+	padding: 20px;
+}
+.layoutViewModules {
+	width: 100%;
+	flex-direction: column;
+	display: flex;
+}
+.sideNavLayoutTitle {
+	color: #fff;
+	text-align: left;
+	font-family: 'reg';
+  font-size: 14px;
+  // margin-bottom: 5px;
+}
+.sideNavLayoutRow {
+//	text-align: center;
+	margin: 10px auto;
+	background: $inact;
+	display: flex;
+	justify-content: center;
+	align-items:center; 
+	position: relative;
+	width: 100%;
+	padding: 10px;
+	@include shadow;
+	height: 80px;
+	border-radius: 10px;
+	&.layout {
+    height: 80px;
+    margin-bottom: 0;
+	}
+}
+#mapsLayoutAllViews {
+	margin-top: 10px;
+	display: none;
+	
+}
+.sideNavLayoutBtn {
+	width: 95px;
+	height: 60px;
+	margin: 0 5px;
+	color: #fff;
+	font-family: 'reg';
+	font-size: 13px;
+	border: hidden;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+  background: none;
+  &.active {
+    color: $curt;
+    svg {
+      fill: $curt;
+    }
+  }
+  &:disabled {
+    color: $dim;
+    cursor: default;
+    svg {
+      fill: $dim;
+    }
+  }
+	&.layout {
+		padding: 0!important;
+		width: 80px;
+		height: 60px;
+    justify-content: center;
+    
+		.sideNavLayoutBtnIcon {
+      max-width: 40px;
+      height: 40px;
+		}
+	}
+//	&:hover {
+//		color: $hov;
+//		.sideNavLayoutBtnIcon {
+//			fill: $hov;
+//		}
+//	}
+//	&.selected {
+//		color: $curt!important;
+//		.sideNavLayoutBtnIcon {
+//			fill: $curt!important;
+//		}
+//	}
+}
+.sideNavLayoutBtnIcon {
+	max-width: 35px;
+	height: 35px;
+	fill: #fff;
+}
+// Maps side nav tree
+.tree {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  li {
+		margin: 0;
+		padding: 0 14px;
+		border-left: 1px solid $act;
+    &:before {
+      position: relative;
+      top: -3px;
+      height: 30px;
+      width: 7px;
+      border-bottom: 1px solid $act;
+      content: "";
+      display: inline-block;
+      left: -14px;
+    }
+    &:first-child {
+      &:before {
+        top: -3px;
+      }
+    }
+    &:last-child {
+      border-left:none;
+      &:before {
+        border-left: 1px solid $act;
+      }
+    }
+	}
+}
+.treeBtn {
+  background: url("../svgs/sideNav/mapsModule/treeMore.svg") no-repeat left;
+  background-size: 14px 14px!important;
+  color: #fff;
+  cursor: pointer;
+  font-family: "reg";
+  font-size: 14px;
+  border: hidden;
+  padding-left: 20px;
+  line-height: 18px;
+  margin-left: -17px;
+  vertical-align: middle;
+  &.tp {
+    background: none!important;
+    padding-left: 5px!important;
+  }
+  svg {
+    width: 15px;
+    max-height: 20px;
+    fill: #fff;
+    margin-right: 2px;
+  }
+  &:hover {
+    color: #fff;
+    svg {
+      fill: #fff;
+    }
+	}
+  &.active {
+    background: url("../svgs/sideNav/mapsModule/treeLess.svg") no-repeat left;
+		color: #fff;
+    svg {
+      fill: #fff;
+    }
+	}
+  &.current {
+		color: $curt!important;
+    font-family: "med";
+    svg {
+      fill: $curt!important;
+    }
+	}
+}
+.treeHide {
+  display: none;
+}
+#treeGermany, #treeHeatMap, #treeUSA, #treeMexico, #treeUAE, #treePortug, #treeVisual, #treeEgypt {
+  margin-left: -6px;
+}
+.treeOpenSiteMap {
+  width: 20px;
+  height: 16px;
+  position: absolute;
+  float: right;
+  right: 20px;
+  margin-top: 20px;
+  background: url("../svgs/sideNav/mapsModule/treeOpenSiteMap.svg") no-repeat center;
+  background-size: 20px 16px;
+  cursor: pointer;
+  border: hidden;
+}
+.treeLocateTP {
+  width: 20px;
+  height: 16px;
+  position: absolute;
+  float: right;
+  right: 20px;
+  margin-top: 20px;
+  background: url("../svgs/sideNav/mapsModule/treeLocateOnMap.svg") no-repeat center;
+  background-size: 20px 16px;
+  cursor: pointer;
+  border: hidden;
+}
+
+// Maps module styles
+.overflowHidden {
+  overflow: hidden!important;
+	border-radius: 0 0 20px 20px;
+  max-height: $sectionContentHeight;
+  iframe {
+    float: left;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: calc( #{$mainContainerHeight} + 5px);
+	}
+}
+.siteMapContainer {
+  display: none;
+  align-items: center;
+	flex-direction: column;
+	justify-content: space-between!important;
+	width: 100%;
+	height: $sectionContentHeight;
+	padding: 10px;
+	position: relative;
+  &.mapsModuleSiteMapContainer {
+    height: unset;
+    min-height: $sectionContentHeight;
+  }
+}
+.kineticActive {
+//  @include flex;
+  display: block;
+  text-align: center;
+	position: relative;
+	width: 100%!important;
+	height: 80%!important;
+	overflow: hidden;
+	background: rgba($inact, .2);
+	margin: auto;
+	border-radius: 10px;
+  .panzoom {
+    position: relative;
+    margin: 0!important;
+    max-width: 100%;
+    max-height: 100%;
+    &.mapsModule {
+      img {
+        position: relative;
+        margin: 0!important;
+//        max-width: 100%;
+//        max-height: 100%;
+//        width: inherit;
+        height: 400px;
+      }
+    }
+    img {
+      width: auto;
+      height: 360px;
+    }
+  }
+}
+.siteMapTP {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  transform: matrix(1, 0, 0, 1, 398, 155);
+  background: url("../svgs/mapModule/GISFilters/IPCamAlarm.svg") center no-repeat;
+  background-size: 100% 100%;
+  z-index: 1;
+  border: hidden;
+  &.stadiumDor {
+    transform: matrix(1, 0, 0, 1, 552, 79);
+  }
+  &.parking {
+    width: 16px;
+    height: 16px;
+    transform: matrix(1, 0, 0, 1, 502, 285);
+    background: url("../svgs/mapModule/GISFilters/parking.svg") center no-repeat;
+    &.berlin {
+      transform: matrix(1, 0, 0, 1, 591, 129);
+    }
+    &.dortmund {
+      transform: matrix(1, 0, 0, 1, 65, 33)!important;
+      width: 21px!important;
+      height: 21px!important;
+    }
+  }
+  &.weather {
+    width: 17px;
+    height: 11px;
+    transform: matrix(1, 0, 0, 1, 385, 151);
+    background: url("../svgs/mapModule/GISFilters/weather.svg") center no-repeat;
+    &.berlin {
+      transform: matrix(1, 0, 0, 1, 442, 103);
+    }
+  }
+  &.accessControl {
+    width: 21px;
+    height: 21px;
+    background: url("../svgs/mapModule/GISFilters/accessControl.png") center no-repeat;
+    background-size: 100% 100%;
+    &.dortmund {
+      transform: matrix(1, 0, 0, 1, 322, 275);
+    }
+  }
+  &.airtrafic {
+    width: 17px;
+    height: 19px;
+    transform: matrix(1, 0, 0, 1, 264, 154);
+    background: url("../svgs/mapModule/GISFilters/airtrafic.svg") center no-repeat;
+    &.berlin {
+      transform: matrix(1, 0, 0, 1, 378, 123);
+    }
+  }
+  &.airQuality {
+    width: 17px;
+    height: 11px;
+    transform: matrix(1, 0, 0, 1, 371, 149);
+    background: url("../svgs/mapModule/GISFilters/airQuality.svg") center no-repeat;
+    &.berlin {
+      transform: matrix(1, 0, 0, 1, 427, 101);
+    }
+  }
+  &.flip {
+    background: url("../svgs/mapModule/GISFilters/IPCamAlarmFlip.svg") center no-repeat;
+  }
+  &.queue {
+    background: url("../svgs/mapModule/GISFilters/x-rayAlarm.svg") center no-repeat;
+    width: 30px;
+    height: 21px;
+  }
+  &.airport {
+    width: 30px;
+    height: 21px;
+    transform: matrix(1, 0, 0, 1, 208, 170);
+  }
+  &.GERairport {
+    width: 22px;
+    height: 16px;
+    transform: matrix(1, 0, 0, 1, 314, 130) scaleX(-1);
+  }
+  &.airportMapsCAM {
+    width: 31px;
+    height: 23px;
+  }
+  &.alarm14 {
+    transform: matrix(1, 0, 0, 1, 574, 59);
+  }
+  &.alarm21 {
+    transform: matrix(1, 0, 0, 1, 597, 269);
+  }
+  &.alarm24 {
+    transform: matrix(1, 0, 0, 1, 52, 286);
+  }
+  &.alarm20 {
+    transform: matrix(1, 0, 0, 1, 620, 189);
+  }
+  &.alarm15 {
+    transform: matrix(1, 0, 0, 1, 491, 213);
+  }
+  &.alarm17 {
+    transform: matrix(1, 0, 0, 1, 457, 253);
+  }
+  &.alarm19 {
+    transform: matrix(1, 0, 0, 1, 233, 190);
+  }
+  &.alarm25 {
+    transform: matrix(1, 0, 0, 1, 320, 52);
+  }
+  &.alarm13 {
+    transform: matrix(1, 0, 0, 1, 287, 52);
+  }
+  &.alarm18 {
+    transform: matrix(1, 0, 0, 1, 155, 52);
+  }
+  
+  
+  &.alarm39 {
+    transform: matrix(1, 0, 0, 1, 514, 102);
+    height: 18px;
+  }
+  &.alarm32 {
+    transform: matrix(1, 0, 0, 1, 603, 277);
+    height: 18px;
+  }
+  &.alarm35 {
+    transform: matrix(1, 0, 0, 1, 345, 218);
+    height: 18px;
+  }
+  &.alarm31 {
+    transform: matrix(1, 0, 0, 1, 250, 120);
+    height: 18px;
+  }
+  &.alarm28 {
+    transform: matrix(1, 0, 0, 1, 431, 349) scaleX(-1);
+    height: 18px;
+  }
+  &.alarm34 {
+    transform: matrix(1, 0, 0, 1, 551, 74) scaleX(-1);
+    height: 18px;
+  }
+  &.alarm29 {
+    transform: matrix(1, 0, 0, 1, 346, 145);
+    height: 18px;
+  }
+  &.DeuBahn {
+    transform: matrix(1, 0, 0, 1, 398, 155);
+  }
+  
+  &.alarm38 {
+    transform: matrix(1, 0, 0, 1, 41, 187);
+    height: 18px;
+  }
+  &.alarm33 {
+    transform: matrix(1, 0, 0, 1, 195, 243) scaleX(-1);
+    height: 18px;
+  }
+}
+.siteMapMapper {
+  position: absolute;
+  width: 380px;
+  height: 280px;
+  background: rgba($cbg, .9);
+  z-index: 9;
+  overflow: hidden;
+  transform: matrix(1, 0, 0, 1, 440, 35);
+  cursor: default;
+  border-radius: 15px;
+  display: none;
+  flex-direction: column;
+  @include shadow;
+  &.pinned {
+    width: 100vw!important;
+    height: 100vh!important;
+    position: fixed!important;
+    top: 0!important;
+    left: 0!important;
+    z-index: 9999999999!important;
+    background: rgba($cbg, 1)!important;
+    padding: 0;
+    .siteMapMapperContent {
+      width: 100%;
+      height: calc(100vh - 40px)!important;
+      padding: 0!important;
+      overflow: hidden;
+      @include flex;
+      img {
+        width: 100%;
+        height: auto;
+      }
+      iframe {
+        width: calc(100% + 260px);
+        height: 100%;
+      }
+    }
+  }
+  &.outMap {
+    left: calc(50% - 190px);
+    top: 85px;
+    transform: unset;
+    &.mapsMod {
+      top: 240px;
+      height: 320px;
+      .siteMapMapperContent {
+        padding: 10px 10px 0;
+      }
+    }
+    &.data {
+      top: 270px;
+      height: auto;
+      min-height: 250px;
+      .siteMapMapperContent {
+        height: auto;
+        min-height: 220px;
+        padding: 5px;
+      }
+    }
+  }
+}
+.siteMapMapperHead {
+  height: 30px;
+  width: 100%;
+  color: #fff;
+  background: $inact;
+  border-bottom: solid 2px $act;
+  text-align: left;
+  padding: 0 10px;
+  font-family: 'reg';
+  font-size: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  img {
+    margin-right: 5px;
+    height: 60%!important;
+    width: auto;
+  }
+}
+.siteMapMapperClose {
+  border: hidden;
+  background: url("../svgs/close.svg") center no-repeat;
+  background-size: 100% 100%;
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  right: 10px;
+  top: 8px;
+}
+.siteMapMapperPin {
+  border: hidden;
+  background: url("../svgs/controls/pinWindow.svg") center no-repeat;
+  background-size: 100% 100%;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  right: 32px;
+  top: 7px;
+  &.exit {
+    background: url("../svgs/controls/exitPinWindow.svg") center no-repeat;
+  }
+}
+.siteMapMapperContent {
+  width: 100%;
+  height: 280px;
+  @include flex;
+  padding: 10px;
+  flex-direction: column;
+  position: relative;
+  video {
+    width: 100%;
+    height: auto;
+    max-height: 210px;
+    outline: none;
+    border: hidden;
+  }
+  img {
+    width: 100%;
+    height: auto;
+  }
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 660px;
+    height: 220px;
+  }
+}
+.mapperBtnAction {
+  width: 120px;
+  @include genBtn;
+  height: 30px;
+  margin-top: 10px;
+}
+.siteMapDetails {
+	width: 100%;
+	height: 30px;
+	position: relative;
+	text-align: left;
+	padding: 0 10px;
+	color: #fff;
+	font-family: "reg";
+	font-size: 16px;
+	line-height: 30px;
+	text-shadow: 1px 1px #000;
+	margin: auto;
+  &.alarm {
+    padding: 0 10px;
+	  font-size: 16px;
+	  text-shadow: none;
+  }
+}
+.siteMapControls {
+	width: auto;
+	height: 30px;
+	margin: auto;
+}
+.zoomcontrols {
+	display: none;
+}
+.siteMapControlsBtn {
+	@include shadow;
+	width: 30px;
+	height: 30px;
+	border-radius: 15px;
+	border: hidden;
+	background-color: $act!important;
+	background-size: 16px 16px!important;
+	cursor: pointer;
+	float: left;
+	margin-right: 10px;
+	&:first-child {
+		margin-right: 15px;
+	}
+	&:last-child {
+		margin-right: 0;
+		margin-left: 15px;
+	}
+	&:hover {
+		background-color: $hov!important;
+	}
+	&.zoomReset {
+		background: url(../svgs/controls/siteMap/resetZoom.svg) no-repeat center;
+	}
+	&.zoomOut {
+		background: url(../svgs/controls/siteMap/zoomOut.svg) no-repeat center;
+	}
+	&.zoomIn {
+		background: url(../svgs/controls/siteMap/zoomIn.svg) no-repeat center;
+	}
+	&.closeSiteMap, &.closeSiteHeatMap, &.closeSiteVisual {
+		background: url(../svgs/close.svg) no-repeat center;
+	}
+}
+
+// GIS map filters
+.GISmapSide {
+	float: left;
+	width: 30px;
+	position: absolute;
+	left: 16px;
+	text-align: center;
+	z-index: 1;
+	&.alarms {
+		top: 155px;
+	}
+	&.filters {
+		top: 195px;
+	}
+}
+.GISmapSideBtn {
+	@include shadow;
+	width: 30px;
+	height: 30px;
+	border: hidden;
+	border-radius: 15px;
+	cursor: pointer;
+	background-size: 20px 20px!important;
+	&:hover {
+		background-color: $hov!important;
+		.GISmapSideBtnSpan {
+			fill: $hov;
+		}
+	}
+	&.alarms {
+		background: $act url(../svgs/mapModule/GISFilters/recentAlarms.svg) no-repeat center;
+	}
+	&.filters {
+		background: $act url(../svgs/mapModule/GISFilters/filters.svg) no-repeat center;
+	}
+	&.active {
+		background-color: $curt!important;
+		.GISmapSideBtnSpan {
+			transform-origin: left;
+    	transform: translate(125px, 140px) rotate(-90deg);
+			fill: $dan;
+		}
+	}
+}
+.GISmapSideBtnSpan {
+	fill: $act;
+	position: relative;
+	top: 0px;
+	width: auto;
+	left: 20px;
+	height: 16px;
+	transition: .3s ease-out;
+}
+.GISmapSideAlarms {
+	position: absolute;
+	display: none;
+	top: 0;
+	left: 40px;
+}
+.GISmapSideAlarmsRow {
+	@include shadow;
+	width: 250px;
+	height: 40px;
+	display: none;
+	border-radius: 25px;
+	float: left;
+	margin-bottom: 10px;
+	position: relative;
+	background: rgba($cbg, .8);
+}
+.GISmapSideAlarmsIcon {
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	float: left;
+	top: 0;
+	padding: 5px;
+	left: 0;
+	border-radius: 20px 0 0 20px;
+	text-align: center;
+	@include flex;
+	img {
+		width: 25px;
+    height: auto;
+    max-height: 25px;
+	}
+  &.armed {
+    background: #f00;
+  }
+  &.blPerson {
+    background: #801f23;
+  }
+  &.rack {
+    background: #13bcd0;
+  }
+  &.blCar {
+    background: #9b47d1;
+  }
+  &.planogram {
+    background: #13bcd0;
+  }
+  &.unObject {
+    background: #9e005d;
+  }
+  &.crowd {
+    background: #ef7421;
+  }
+  &.layingP {
+    background: #703711;
+  }
+  &.restA {
+    background: #801f23;
+  }
+  &.slipFall {
+    background: #703711;
+  }
+  &.vbpCounting {
+    background: #6857ce;
+  }
+  &.sbpCounting {
+    background: #6857ce;
+  }
+  &.vandalism {
+    background: #5688EE;
+  }
+  &.fire {
+    background: #f00;
+  }
+  &.grafitti {
+    background: #F5FC01;
+  }
+  &.plantedL {
+    background: #D0008E;
+  }
+  &.crossLine {
+    background: #16D007;
+  }
+}
+.GISmapSideAlarmsTitle {
+	text-align: left;
+	float: left;
+	font-size: 14px;
+	font-family: "med";
+	color: #fff;
+	float: left;
+	position: relative;
+	text-shadow: 1px 1px #000;
+	left: 50px;
+	top: 3px;
+}
+.GISmapSideAlarmsDetailsIcon {
+	color: #fff;
+	font-size: 12px;
+	line-height: 14px;
+	font-family: "med";
+	text-align: left;
+	position: absolute;
+	float: right;
+	text-shadow: 1px 1px #000;
+	left: 50px;
+	top: 22px;
+	img {
+		height: 14px;
+		width: auto;
+    margin-right: 5px;
+	}
+}
+.GISmapSideAlarmsView {
+	@include shadow;
+	width: 30px;
+	fill: #fff;
+	cursor: pointer;
+	float: right;
+	position: relative;
+	right: 10px;
+	top: 13px;
+	padding-left: 8px;
+	border-left: solid 1px $bg;
+}
+#GISmapSideFilters {
+	display: none;
+	padding-left: 1px;
+}
+.GISmapSideFiltersBtn {
+	@include shadow;
+	display: none;
+	width: 28px;
+	height: 28px;
+	border: hidden;
+	border-radius: 14px;
+	cursor: pointer;
+	background-color: $act!important;
+	background-size: 20px 20px!important;
+	margin: 5px auto 0;
+	float: left;
+	&:hover{
+		background-color: $hov!important;
+		.GISmapSideFiltersBtnMore {
+			fill: $hov;
+		}
+	}
+	&.active {
+		background-color: $curt!important;
+		.GISmapSideFiltersBtnMore {
+			fill: $curt;
+			transform-origin: left;
+    	transform: translate(102px, 0) rotate(180deg);
+		}
+	}
+	&.tps {
+		background: url(../svgs/mapModule/GISFilters/touchPoints.svg) no-repeat center;
+	}
+	&.tpsIPCamera {
+		background: url(../svgs/mapModule/GISFilters/ipCamera.svg) no-repeat center;
+	}
+	&.tpsIPCameraView {
+		background: url(../svgs/mapModule/GISFilters/ipCameraView.svg) no-repeat center;
+	}
+	&.tpsAccessControl {
+		background: url(../svgs/mapModule/GISFilters/accessControl.svg) no-repeat center;
+	}
+	&.tpsTraffic {
+		background: url(../svgs/mapModule/GISFilters/traffic.svg) no-repeat center;
+	}
+	&.tpsLightSensor {
+		background: url(../svgs/mapModule/GISFilters/lightSensor.svg) no-repeat center;
+	}
+	&.movingTPs {
+		background: url(../svgs/mapModule/GISFilters/movingTPs.svg) no-repeat center;
+	}
+	&.alarms {
+		background: url(../svgs/mapModule/GISFilters/alarms.svg) no-repeat center;
+	}
+}
+.GISmapSideFiltersBtnMore {
+	fill: $act;
+	position: relative;
+	top: 0;
+	left: 20px;
+	height: 14px;
+	width: auto;
+	transition: .1s ease-out;
+}
+#GISmapSideFiltersTPs {
+	display: none;
+	position: absolute;
+	left: 32px;
+	top: 40px;
+	flex-direction: column;
+	text-align: center;
+	justify-content: center;
+	width: auto;
+}
+.GISmapSideFiltersTitle {
+	color: #fff;
+	font-family: "med";
+	border-radius: 12px;
+	padding: 3px 5px;
+	text-shadow: 1px 1px #000;
+	background: rgba($cbg, .8);
+	font-size: 14px;
+	line-height: 16px;
+	text-align: left;
+}
+
+// Alarms module
+.toggleAlarmsStackFilter {
+	background: url(../svgs/alarmsModule/closeFilter.svg) no-repeat left;
+	margin-right: 10px;
+	border: hidden;
+	height: 25px;
+	width: 35px;
+	cursor: pointer;
+	position: relative;
+	background-size: 25px 25px!important;
+	&::before {
+    content: '';
+    border-right: 2px solid $dbg;
+    position: relative;
+    height: 70%;
+    right: -20px;
+    top: 4%;
+	}
+	&.show {
+		background: url(../svgs/alarmsModule/openFilters.svg) no-repeat left;
+	}
+}
+.sideNavAdvancedFilter {
+	@include shadow;
+  width: 100%;
+  float: left;
+  position: relative;
+  height: 160px;
+  padding: 40px 5px 0;
+	margin-top: -40px;
+  background: $dbg;
+  display: flex;
+  flex-direction: column;
+	background: rgba($inact, .3);
+	border-bottom: solid 2px $dbg;
+}
+.navAdvancedFilterRow {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+  float: left;
+  width: 100%;
+  height: calc(100% / 3);
+  border-bottom: solid 1px $inact;
+  &:last-child {
+    border-bottom: hidden;
+  }
+}
+.filterBtnContainer {
+	width: auto;
+	height: 100%;
+	flex: 1;
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	&.cls {
+		flex: 0;
+		.alarmControlsBtn {
+			height: 15px;
+			margin-left: 2px;
+			&:hover {
+				fill: $hov;
+			}
+		}
+	}
+	&.center {
+		justify-content: center;
+	}
+}
+.navAdvancedFilterBtn {
+	display: flex;
+	align-items: center;
+	width: auto;
+	color: #fff;
+	cursor: pointer;
+	float: left;
+	border: hidden;
+	font-size: 12px;
+	font-family: "med";
+	background: none;
+	margin-left: 10px;
+	position: relative;
+	padding: 0;
+	&:first-child {
+		margin-left: 0;
+	}
+	&:hover {
+		color: $hov;
+		.navAdvancedFilterIcon {
+			fill: $hov;
+      &.metco {
+        fill: $hov;
+      }
+		}
+	}
+	&:disabled {
+		color: $dim;
+		cursor: default;
+		.navAdvancedFilterIcon {
+			fill: $dim!important;
+		}
+	}
+	&.active {
+		color: $curt;
+		.navAdvancedFilterIcon {
+			fill: $curt;
+		}
+	}
+	&.high {
+    &.active, &:hover {
+			color: #f00;
+		}
+	}
+	&.medium {
+    &.active, &:hover {
+			color: orange;
+		}
+	}
+	&.low {
+    &.active, &:hover {
+			color: #0f0;
+		}
+	}
+	&.clear {
+		margin-left: 0;
+	}
+	&.metco {
+    color: #fff;
+		margin-left: 15px;
+    font-family: "reg";
+    font-size: 15px;
+    &:hover {
+      color: $hov;
+    }
+    .clearSelectedMetcoDB {
+      margin-right: 3px;
+    }
+	}
+}
+.navAdvancedFilterIcon {
+	fill: $dim;
+	height: 18px;
+	max-width: 18px;
+	margin-right: 3px;
+  &.metco {
+    height: 22px;
+    max-width: 22px;
+  }
+  &:hover {
+    fill: $hov!important;
+  }
+}
+.navAdvancedFilterSelect {
+	display: flex;
+	align-items: center!important;
+	width: auto;
+	cursor: pointer;
+	float: left;
+	border: hidden;
+	margin-right: 6px;
+	top: 5px;
+	position: relative;
+	&:last-child {
+		margin-right: 0;
+	}
+}
+.navAdvancedFilterLabel {
+	margin-left: 19px;
+	position: relative;
+	top: -2px;
+	color: #fff;
+	font-size: 12px;
+	font-family: "reg";
+  &:hover {
+    color: $hov;
+  }
+  &.active {
+		color: $curt;
+	}
+}
+.alarmsHeaderActions {
+	width: auto;
+	height: 20px;
+	z-index: 99;
+	top:5px;
+	right: 70px;
+	padding: 0 5px;
+	position: absolute;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	border-right: solid 2px $dbg;
+}
+.alarmsHeaderActionsBtns {
+	fill: #fff;
+	min-width: 22px;
+	max-height: 22px;
+	margin: 10px 5px 0;
+	cursor: pointer;
+}
+
+// Alarms stack
+.alarmStackTitle {
+  margin: 0 auto 5px;
+  width: 100%;
+  height: 25px;
+  position: relative;
+  float: left;
+  display: flex;
+  align-items: flex-end;
+  text-align: left;
+  color: $curt;
+  font-family: 'reg';
+  padding-left: 10px;
+  padding-bottom: 5px;
+  font-size: 14px;
+  position: sticky;
+  top: 0;
+  background: $dbg;
+  z-index: 1;
+}
+.alarmStackContainer {
+  margin: 0 auto 10px;
+  width: 100%;
+  height: auto;
+  position: relative;
+  float: left;
+  display: flex;
+}
+.stackCheckB {
+  position: relative;
+  width: 16px;
+  float: left;
+  height: 16px;
+  top: 11px;
+  margin-right: 10px;
+  display: none;
+}
+.alarmSideNavStack {
+  @include shadow;
+  border-radius: 20px;
+  width: 100%;
+  height: auto;
+  position: relative;
+  float: left;
+  margin: auto;
+  &.select {
+    width: calc(100% - 26px);
+  }
+}
+.alarmSideNavStackBtn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: $inact;
+  color: #fff;
+  cursor: pointer;
+  height: 40px;
+  width: 100%;
+  border: none;
+  border-radius: 20px;
+  text-align: left;
+  padding: 0 5px 0 0;
+  position: relative;
+  overflow: hidden;
+  &.active {
+		background: rgba($act, .8);
+    border-radius: 20px 20px 0 0;
+    &:after {
+      content: "\2212";
+    }
+	}
+  &:hover {
+		background: rgba($act, .6);
+	}
+  &:after {
+		content: '\002B';
+		color: #fff;
+		font-size: 18px;
+		font-weight: bolder;
+		float: right;
+	}
+}
+.alarmSideNavStackIcon {
+  @include flex;
+  width: 60px;
+  height: 40px;
+  position: relative;
+  float: left;
+	padding-left: 5px;
+  left: 0;
+	background: rgba($cbg, .3);
+	border-right: solid 2px;
+  img {
+		max-width: 30px;
+    max-height: 30px;
+		margin: auto;
+		position: relative;
+	}
+  &.active {
+    background: rgba($curt, .8);
+  }
+  &.armed, &.gunDor {
+    border-right-color: #f00;
+  }
+  &.blPerson, &.egyFaceRe {
+    border-right-color: #801f23;
+  }
+  &.rack {
+    border-right-color: #13bcd0;
+  }
+  &.blCar, &.egyBloCard, &.egySprDirec {
+    border-right-color: #9b47d1;
+  }
+  &.planogram, &.egyDefePump {
+    border-right-color: #13bcd0;
+  }
+  &.unObject, &.unObjectDor {
+    border-right-color: #9e005d;
+  }
+  &.unattendedObject, &.egyPCapa, &.egyFullTrash {
+    border-right-color: #9e005d;
+  }
+  &.crowd, &.egyDoorOpen, &.egyStreetLight {
+    border-right-color: #ef7421;
+  }
+  &.layingP, &.egyHighWatPress {
+    border-right-color: #703711;
+  }
+  &.restA, &.egyRemoteOp, &.egyHighUsage {
+    border-right-color: #801f23;
+  }
+  &.slipFall, &.egyWatLeakage {
+    border-right-color: #703711;
+  }
+  &.vbpCounting, &.lowConver, &.egyDeviceDis, &.egyLowWater {
+    border-right-color: #6857ce;
+  }
+  &.sbpCounting, &.purchase, &.egyWatCons, &.egyElecSpike {
+    border-right-color: #6857ce;
+  }
+  &.vandalism, &.maskDet, &.egyDuress, &.egyBadWater, &.egyWongDir {
+    border-right-color: #5688EE;
+  }
+  &.fire, &.fireDor, &.egyLNPR {
+    border-right-color: #f00;
+  }
+  &.grafitti, &.maxCapac, &.maxCapacDor, &.egyElecCons, &.egyLowSoil {
+    border-right-color: #F5FC01;
+  }
+  &.plantedL, &.socialMPost {
+    border-right-color: #D0008E;
+  }
+  &.crossLine {
+    border-right-color: #16D007;
+  }
+  &.fighting, &.gunMarket, &.fightingDor {
+    border-right-color: orange;
+  }
+  &.animal {
+    border-right-color: #1186A4;
+  }
+  &.knife, &.knifeDor {
+    border-right-color: #E75153;
+  }
+  &.gun, &.fever {
+    border-right-color: #FC0004;
+  }
+  &.drugs {
+    border-right-color: #E1D86C;
+  }
+  &.gasCart, &.gasCartDor {
+    border-right-color: #03955B;
+  }
+  &.bomb, &.bombDor {
+    border-right-color: #AF0AD6;
+  }
+  &.object, &.headCount {
+    border-right-color: #038617;
+  }
+  &.protectedArea, &.intrusionDor {
+    border-right-color: #FFD705;
+  }
+  &.removedObject, &.flowPeople {
+    border-right-color: #022ED6;
+  }
+  &.wrongDirection, &.demographics {
+    border-right-color: #52E060;
+  }
+  &.fallFighting {
+    border-right-color: #B4E701;
+  }
+  &.loitering, &.goods {
+    border-right-color: #B4E701;
+  }
+  &.robbery, &.oxxoRack {
+    border-right-color: #27FFE4;
+  }
+}
+.alarmSideNavStackBtnDetails {
+  margin: 0 5px 0 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 40px;
+  width: calc(100% - 20px);
+  float: left;
+}
+.alarmSideNavStackBtnRow {
+  width: 100%;
+  height: calc(100% / 2);
+  position: relative;
+  float: left;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.alarmSideNavStackBtnTitle {
+  flex: 1;
+  text-align: left;
+  text-shadow: .5px .5px #000;
+  padding-top: 4px;
+  float: left;
+  font-size: 14px;
+  font-family: "reg";
+  color: #fff;
+}
+.alarmSideNavStackBtnDateIcon {
+  height: 100%;
+  text-shadow: .5px .5px #000;
+  margin: auto;
+  flex: 1;
+  color: #fff;
+  font-size: 12px;
+  font-family: "reg";
+  text-align: left;
+  float: left;
+  display: flex;
+  align-items: center;
+  img {
+    height: 14px;
+    width: auto;
+    margin-right: 5px;
+  }
+}
+.alarmSideNavStackBtnSideIcons {
+  height: 100%;
+  display: flex;
+  align-items: center; 
+  width: auto;
+  margin: auto;
+}
+.stackBtnSideIconsCls {
+  float: left;
+  height: 18px;
+  width: 18px;
+  background-size: 18px 18px;
+  &.viewed {
+    background: url("../svgs/alarmsModule/alarmStack/controls/viewed.svg") no-repeat center;
+  }
+  &.unViewed {
+    background: url("../svgs/alarmsModule/alarmStack/controls/unviewed.svg") no-repeat center;
+  }
+  &.attachment {
+    background: url("../svgs/alarmsModule/alarmStack/controls/attachment.svg") no-repeat center;
+  }
+}
+.sideNavStackDetails {
+  margin-top: 1px;
+  height: 150px;
+  border-radius: 0 0 20px 20px;
+  overflow: hidden;
+  transition: 0.3s ease-out;
+  background: rgba($inact, .5);
+  display: none;
+}
+.sideNavStackDetailsContent {
+  display: flex;
+  flex-direction: column;
+  float: left;
+  width: calc(100% - 40px);
+  height: 100%;
+  margin: 0 5px;
+  padding: 5px;
+}
+.sideNavStackDetailsRow {
+  margin: auto;
+  line-height: 20px;
+  flex: 1;
+  float: left;
+  width: 100%;
+  text-align: left;
+}
+.navStackDetailsLabel {
+  width: 30%;
+  font-size: 14px;
+  text-shadow: .5px .5px #000;
+  font-family: "med";
+  color: $hov;
+  float: left;
+}
+.navStackDetailsData {
+  width: 70%;
+  font-size: 14px;
+  text-shadow: .5px .5px #000;
+  font-family: "reg";
+  color: #fff;
+  float: left;
+  &.tp {
+    text-transform: uppercase;
+  }
+  &.low {
+    color: #0f0;
+  }
+  &.medium {
+    color: orange;
+  }
+  &.danger {
+    color: #f00;
+  }
+}
+.alarmControlsContainer {
+  @include shadow;
+  background: rgba($cbg, .1);
+  width: 30px;
+  padding: 5px 0;
+  position: relative;
+  float: right;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+.alarmControlsBtn {
+  width: 20px;
+  margin: 2px auto;
+  fill: #fff;
+  cursor: pointer;
+  &:hover {
+    fill: $hov;
+  }
+}
+.headerAlarmsActions {
+	width: auto;
+	height: 100%;
+	display: flex;
+	margin-left: auto;
+	flex-direction: row;
+	padding-right: 10px;
+	padding-left: 10px;
+	align-self: flex-end;
+	&::after {
+    content: '';
+    border-right: 2px solid $dim;
+    position: relative;
+    height: 60%;
+    right: -12px;
+    top: 20%;
+	}
+	.alarmControlsBtn {
+		fill: #fff;
+		height: 20px;
+		margin-left: 5px;
+	}
+}
+.alarmsModuleStyle {
+  height: auto;
+  width: 100%;
+  padding: 10px;
+	display: none;
+}
+
+// Alarm sections
+@mixin subModuleSection {
+  border-radius: 15px;
+	border: solid 1px $inact;
+  @include shadow;
+  background: rgba($cbg, .8);
+}
+@mixin alarmSections {
+	@include subModuleSection;
+  width: 100%;
+  overflow: hidden;
+}
+.alarmSiteMapContainer {
+  @include alarmSections;
+  min-height: $alarmTopSectionHeight;
+  margin-bottom: 10px;
+	padding: 5px;
+  display: flex;
+  flex-direction: row;
+	align-items: center;
+}
+.alarmSiteMapControls {
+//  width: 100%;
+  height: $alarmTopSectionHeight;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 10px;
+  position: relative;
+	flex-grow: 11;
+  .siteMapControls {
+    .siteMapControlsBtn {
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+}
+.alarmOnSiteActions {
+  width: 170px;
+	flex-grow: 1;
+	.flex {
+		@include flex;
+	}
+}
+.alarmOnSiteActionBtn {
+  @include genBtn;
+	@include flex;
+  width: 150px;
+  margin: 5px;
+	float: left;
+	position: relative;
+	.alarmControlsBtn {
+		width: auto;
+		height: 20px;
+		margin: 0 3px!important;
+
+		fill: #fff;
+	}
+}
+.alarmDetailContainer {
+  @include alarmSections;
+  height: auto;
+}
+.alarmDetailTabsHeader {
+  width: 100%;
+  height: 30px;
+  background: $inact;
+	position: relative;
+	display: flex;
+  align-items: stretch;
+  justify-content: center;
+  padding: 2px 35px 0 10px;
+}
+.alarmDetailTabsContainer { // Alarms Details Tabs
+  width: 100%;
+  position: relative;
+  padding: 10px;
+  display: none;
+  flex-direction: row;
+  align-items: stretch;
+	&.detailsPadding {
+		padding: 5px;
+	}
+}
+.alarmModAlarmTabBtn {
+	position: relative;
+	width: 120px;
+	height: 100%;
+	float: left;
+	border-radius: 10px 10px 0 0;
+  overflow: hidden;
+	white-space: nowrap;
+	text-overflow:ellipsis;
+	color: #fff;
+	line-height: 28px;
+	font-size: 14px;
+	font-family: "reg";
+	text-align: left;
+	padding: 0 8px 0;
+	cursor: default!important;
+  background: none;
+  text-align: center;
+	&:first-child {
+		margin-left: 0;
+	}
+  &:last-child {
+    &::before {
+      border-right: hidden;
+    }
+  }
+	&::before {
+    content: '';
+    border-right: 2px solid $bg;
+    position: absolute;
+    height: 60%;
+    right: 0px;
+    top: 20%;
+	}
+	&.active {
+    margin-left: -2px;
+    background: $cbg;
+    border-right: hidden;
+    flex-shrink: 0!important;
+		color: $curt;
+		&::before {
+      border-right: hidden;
+		}
+	}
+}
+
+// Alarm detail
+.alarmModAlarmDetails {
+	@include shadow;
+  position: relative;
+  min-height: 320px;
+  flex-grow: 4;
+  display: flex;
+  flex-direction: column;
+	overflow: hidden;
+	background: $dbg;
+	border: solid 1px rgba($inact, .3);
+	border-radius: 10px;
+	margin: 5px;
+	padding: 10px;
+  &.details {
+    align-items: center;
+  }
+  &.events {
+    justify-content: center;
+    align-items: center;
+    flex-grow: 3;
+		&.RTPs {
+			border-left: hidden;
+		}
+  }
+  &.video {
+    justify-content: center;
+    align-items: center;
+//    min-width: 100px;
+    flex-grow: 2!important;
+  }
+  &.eventDetails {
+    flex-direction: column;
+    min-width: 250px;
+    &.inact {
+      background: url(../svgs/alarmsModule/mediaViewer.svg) $dbg no-repeat center;
+      background-size: auto 50%!important;
+    }
+  }
+}
+.alarmEventDescription {
+  position: relative;
+  display: none;
+  flex-direction: row;
+  align-items: flex-start;
+  &:first-child {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: solid 1px $inact;
+  }
+  &.one {
+    flex-grow: 1;
+  }
+  &.two {
+    flex-grow: 4;
+  }
+  &.lnpr {
+    flex-direction: column!important;
+    justify-content: center;
+    align-items: center;
+  }
+  &.oneSec {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border-bottom: hidden;
+    align-items: center;
+    flex-direction: column;
+    flex-grow: 1;
+    &.padding {
+      padding-top: 15px;
+      padding-left: 15px;
+      .alarmDetailRow {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+.mediaPlayerBtn {
+	width: 30px;
+	height: 30px;
+  margin: 5px;
+	border-radius: 15px;
+	background-color: $act!important;
+  background-size: 18px 18px!important;
+  &.maxmize {
+    background: url("../svgs/controls/maxmize.svg") center no-repeat;
+  }
+  &.save {
+//    position: absolute;
+//    right: 0;
+    background: url("../svgs/controls/save.svg") center no-repeat;
+  }
+  &.snap {
+    background: url("../svgs/controls/snap.svg") center no-repeat;
+  }
+	&:hover {
+		background-color: $hov!important;
+	}
+}
+.alarmEventDataImg {
+  width: 90px;
+  height: auto;
+  border-radius: 10px;
+  margin-right: 10px;
+  overflow: hidden;
+  @include flex;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+.alarmEventDescriptionContent {
+  display: flex;
+  flex-grow: 1;
+  width: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.alarmEventDescriptionContentTop {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 15px;
+}
+.alarmDetailRow {
+  width: 100%;
+  position: relative;
+  height: 30px;
+  line-height: 20px;
+  float: left;
+  display: flex;
+  flex-direction: row;
+  &.description {
+    flex-direction: column;
+    border-top: solid 1px $inact;
+    margin-top: 5px;
+    padding-top: 10px;
+  }
+  &.plate {
+    @include flex;
+    height: auto;
+    img {
+      width: 150px;
+      height: auto;
+    }
+  }
+}
+.alarmDetailsEventsRow {
+  position: relative;
+	flex-grow: 10;
+}
+.alarmDetailRowLabel {
+  position: relative;
+  width: 40%;
+  font-size: 15px;
+  text-shadow: .5px .5px #000;
+  font-family: "med";
+  color: $hov;
+  float: left;
+  &.widthRow {
+    width: 60%!important;
+  }
+  &.description {
+    line-height: 20px;
+    margin-bottom: 10px;
+    text-decoration: underline;
+    width: 100%;
+  }
+  &.img {
+    width: 120px;
+    height: auto;
+    margin-right: 30px;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+.alarmDetailRowData {
+  position: relative;
+  width: 60%;
+  font-size: 15px;
+  text-shadow: .5px .5px #000;
+  font-family: "reg";
+  color: #fff;
+  float: left;
+  &.danger {
+    color: #f00;
+  }
+  &.medium {
+    color: orange;
+  }
+  &.low {
+    color: #0f0;
+  }
+  &.score {
+    font-weight: bold!important;
+    color: $hov;
+  }
+  &.description {
+    width: 100%;
+  }
+  &.oneData {
+    margin-top: 15px;
+    font-size: 20px;
+    &.bolder {
+      font-family: "med";
+      font-size: 25px;
+    }
+  }
+  &.widthRow {
+    width: 40%!important;
+  }
+}
+
+// Alarm Detail events
+.alarmEventsRow {
+  position: relative;
+  max-height: 80px;
+  height: auto;
+  float: left;
+  @include flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+  img {
+    height: 60px;
+    width: auto;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+.alarmEventsDocument, .alarmRTPsDocument {
+  cursor: pointer;
+  position: relative;
+  width: 120px;
+  height: 70px;
+  border-radius: 10px;
+  overflow: hidden;
+	background-size: 100% auto!important;
+	opacity: .5;
+	&.active, &:hover {
+		border: solid 1px $curt;
+		@include shadow;
+		opacity: 1;
+	}
+	&.armedEvent1 {
+		background: url(../imgs/alarmsModule/alarmsEvents/armedAssault/event1.png) no-repeat center;
+	}
+	&.armedEvent2 {
+		background: url(../imgs/alarmsModule/alarmsEvents/armedAssault/event2.png) no-repeat center;
+	}
+	&.armedEvent3 {
+		background: $inact url(../imgs/alarmsModule/alarmsEvents/armedAssault/event3.png) no-repeat center;
+		background-size: 80% auto!important;
+	}
+	&.armedEvent4 {
+		background: $inact url(../imgs/alarmsModule/alarmsEvents/armedAssault/event4.png) no-repeat center;
+	}
+	&.blPersonEvent1 {
+		background: $inact url("../imgs/alarmsModule/alarmsEvents/blPerson/event1.png") no-repeat center;
+	}
+	&.fightEvent1 {
+		background: url(../imgs/alarmsModule/alarmsEvents/fighting/event1.png) no-repeat center;
+	}
+	&.fightEvent2 {
+		background: url(../imgs/alarmsModule/alarmsEvents/fighting/event2.png) no-repeat center;
+	}
+	&.rackEvent1 {
+		background: $inact url("../imgs/alarmsModule/alarmsEvents/rackRefill/event1.png") no-repeat center;
+	}
+	&.bombEvent1 {
+		background: $inact url("../imgs/alarmsModule/alarmsEvents/Bomb.jpg") no-repeat center;
+	}
+	&.gasDetEvent1 {
+		background: $inact url("../imgs/alarmsModule/alarmsEvents/Liquid.jpg") no-repeat center;
+	}
+	&.drugsDetEvent1 {
+		background: $inact url("../imgs/alarmsModule/alarmsEvents/Drugs.jpg") no-repeat center;
+	}
+	&.gunDetEvent1 {
+		background: $inact url("../imgs/alarmsModule/alarmsEvents/Gun.jpg") no-repeat center;
+	}
+	&.animalDetEvent1 {
+		background: $inact url("../imgs/alarmsModule/alarmsEvents/Animals.jpg") no-repeat center;
+	}
+	&.knifeDetEvent1 {
+		background: $inact url("../imgs/alarmsModule/alarmsEvents/Knife.jpg") no-repeat center;
+	}
+	&.ACSforceDoor {
+		background: $inact url("../imgs/alarmsModule/alarmsEvents/forceDoorOpen/event1.png") no-repeat center;
+		background-size: auto 80%!important;
+	}
+	&.fire {
+		background: $inact url("../imgs/alarmsModule/alarmsEvents/fire/event1.png") no-repeat center;
+	}
+	&.lprEvent1 {
+		background: $inact url("../imgs/alarmsModule/alarmsEvents/lpr/event1.png") no-repeat center;
+	}
+	&.crossLineEvent1 {
+		background: $inact url("../imgs/alarmsModule/alarmsEvents/crossingLine/event1.png") no-repeat center;
+	}
+	&.unattObjectEvent1 {
+		background: $inact url("../imgs/alarmsModule/alarmsEvents/unattObject/event1.png") no-repeat center;
+	}
+	&.plantedObjEvent1 {
+		background: $inact url("../imgs/alarmsModule/alarmsEvents/plantedObject/event1.png") no-repeat center;
+	}
+	&.grafittiEvent1 {
+		background: $inact url("../imgs/alarmsModule/alarmsEvents/grafitti/event1.png") no-repeat center;
+	}
+	&.unObjAlaEvent1 {
+		background: url("../imgs/alarmsModule/alarmsEvents/DeuBahn/unattendedObject.png") no-repeat center;
+	}
+	&.ATMRobberyEvent1 {
+		background: url("../imgs/alarmsModule/alarmsEvents/airport/ATMRobbery/event1.png") no-repeat center;
+	}
+	&.loiteringDetEvent1 {
+		background: url("../imgs/alarmsModule/alarmsEvents/DeuBahn/crowdDetection.png") no-repeat center;
+	}
+	&.loiteringDetEvent {
+		background: url("../imgs/alarmsModule/alarmsEvents/airport/loiteringDetection/event1.png") no-repeat center;
+	}
+	&.fallNdFighEvent1 {
+		background: url("../imgs/alarmsModule/alarmsEvents/DeuBahn/layingPerson.png") no-repeat center;
+	}
+	&.fallNdFighEvent {
+		background: url("../imgs/alarmsModule/alarmsEvents/airport//fallNdFight/event1.png") no-repeat center;
+	}
+	&.wrongDirEvent1 {
+		background: url("../imgs/alarmsModule/alarmsEvents/airport/wrongDirection/event1.png") no-repeat center;
+	}
+	&.removedObjEvent1 {
+		background: url("../imgs/alarmsModule/alarmsEvents/airport/removedObject/event1.png") no-repeat center;
+	}
+	&.protcAreaEvent1 {
+		background: url("../imgs/alarmsModule/alarmsEvents/DeuBahn/protectedArea.png") no-repeat center;
+	}
+	&.objDetcEvent1 {
+		background: url("../imgs/alarmsModule/alarmsEvents/airport/objectDetection/event1.png") no-repeat center;
+	}
+	&.uncountedGoods {
+		background: url("../imgs/alarmsModule/alarmsEvents/uncountedGoods/event1.png") no-repeat center;
+	}
+	&.gunDetected {
+		background: url("../imgs/alarmsModule/alarmsEvents/gunDetected/event1.png") no-repeat center;
+  }
+  
+	&.alarm55Event1 {
+		background: url("../imgs/alarmsModule/alarmsEvents/stadium/fight.png") no-repeat center;
+  }
+  &.alarm54Event1 {
+		background: url("../imgs/alarmsModule/alarmsEvents/stadium/fire.png") no-repeat center;
+	}
+  &.alarm53Event1 {
+		background: url("../imgs/alarmsModule/alarmsEvents/stadium/object.png") no-repeat center;
+	}
+  &.alarm52Event1 {
+		background: url("../imgs/alarmsModule/alarmsEvents/stadium/intrusion.png") no-repeat center;
+	}
+  &.alarm78Event1 {
+		background: url("../imgs/alarmsModule/alarmsEvents/wrongDirection.png") no-repeat center;
+	}
+  &.alarm64Event1 {
+		background: url("../imgs/alarmsModule/alarmsEvents/duress.png") no-repeat center;
+	}
+  &.alarm85Event1 {
+		background: url("../imgs/alarmsModule/alarmsEvents/crisisMgmt/waterFlood.jpeg") no-repeat center;
+	}
+  &.alarm84Event1 {
+		background: url("../imgs/alarmsModule/alarmsEvents/crisisMgmt/fire.jpeg") no-repeat center;
+	}
+  &.alarm83Event1 {
+		background: url("../imgs/alarmsModule/alarmsEvents/crisisMgmt/storm.jpeg") no-repeat center;
+	}
+}
+.alarmEventCloseCurrent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 15px;
+  height: 15px;
+  background: url("../svgs/close.svg") no-repeat center;
+  background-size: auto 100%;
+  cursor: pointer;
+  border: hidden;
+  z-index: 1;
+}
+.alarmEventDescDisplay {
+  width: 310px;
+  height: 210px;
+  border-radius: 20px;
+  @include shadow;
+  overflow: hidden;
+  background-size: 100% auto!important;
+  margin: auto;
+  &.rackEvent1 {
+    background: url("../imgs/alarmsModule/alarmsEvents/rackRefill/event1.png") center no-repeat;
+  }
+  &.bombEvent1 {
+    background: url("../imgs/alarmsModule/alarmsEvents/Bomb.jpg") center no-repeat;
+  }
+  &.gasDetEvent1 {
+    background: url("../imgs/alarmsModule/alarmsEvents/Liquid.jpg") center no-repeat;
+  }
+  &.drugsDetEvent1 {
+    background: url("../imgs/alarmsModule/alarmsEvents/Drugs.jpg") center no-repeat;
+  }
+  &.gunDetEvent1 {
+    background: url("../imgs/alarmsModule/alarmsEvents/Gun.jpg") center no-repeat;
+  }
+  &.knifeDetEvent1 {
+    background: url("../imgs/alarmsModule/alarmsEvents/Knife.jpg") center no-repeat;
+  }
+  &.animalDetEvent1 {
+    background: url("../imgs/alarmsModule/alarmsEvents/Animals.jpg") center no-repeat;
+  }
+  &.alarm85Event1 {
+    width: 380px;
+    height: 310px;
+    background: url("../imgs/alarmsModule/alarmsEvents/crisisMgmt/waterFlood.jpeg") center no-repeat;
+  }
+  &.alarm84Event1 {
+    width: 380px;
+    height: 310px;
+    background: url("../imgs/alarmsModule/alarmsEvents/crisisMgmt/fire.jpeg") center no-repeat;
+  }
+  &.alarm83Event1 {
+    width: 380px;
+    height: 310px;
+    background: url("../imgs/alarmsModule/alarmsEvents/crisisMgmt/storm.jpeg") center no-repeat;
+  }
+  &.conversionRate {
+    width: 100%;
+    border-radius: 0;
+    margin-top: 30px;
+    background: url("../imgs/alarmsModule/alarmsEvents/conversionRate/event1.png") center no-repeat;
+  }
+  &.demographicsAlert {
+    width: 100%;
+    border-radius: 0;
+    margin-top: 30px;
+    height: 250px;
+    background: url("../imgs/alarmsModule/alarmsEvents/demographicsAlert/event1.png") center no-repeat;
+  }
+}
+.detailsGraphsView {
+  width: 100%;
+  border-radius: 0;
+  margin: 30px auto 5px;
+  width: auto;
+  max-width: 90%;
+  max-height: 500px;
+  height: auto;
+  &.height {
+    max-height: 350px;
+  }
+  &.minHeight {
+    max-height: 300px;
+  }
+}
+// Alarm details attachments
+.alarmModEventVideoControls {
+	margin-top: 10px;
+	display: none;
+	flex-direction: row;
+	justify-content: center;
+	.VCAMediaPlayerBtn {
+		position: relative;
+		&.closex, &.play {
+			margin: 5px;
+			right: unset;
+			top: unset;
+		}
+	}
+  &.show {
+    margin-top: 0;
+    display: flex;
+  }
+}
+.alarmModEventVideo {
+	@include shadow;
+  width: 320px;
+  height: 200px;
+ 	background: url(../svgs/alarmsModule/mediaViewer.svg) rgba($inact, .1) no-repeat center;
+	background-size: auto 90px;
+  border-radius: 20px;
+  overflow: hidden;
+	&.armedEvent1 {
+		background: url(../imgs/alarmsModule/alarmsEvents/armedAssault/event1.png) no-repeat center;
+		background-size: auto 100%!important;
+	}
+	&.armedEvent2 {
+		background: url(../imgs/alarmsModule/alarmsEvents/armedAssault/event2.png) no-repeat center;
+		background-size: auto 100%!important;
+	}
+	&.armedEvent3 {
+		background: $inact url(../imgs/alarmsModule/alarmsEvents/armedAssault/event3.png) no-repeat center;
+		background-size: 80% auto!important;
+	}
+	&.armedEvent4 {
+		background: url(../imgs/alarmsModule/alarmsEvents/armedAssault/event4.png) no-repeat center;
+		background-size: auto 100%!important;
+	}
+	&.fightEvent1 {
+		background: $inact url(../imgs/alarmsModule/alarmsEvents/fighting/event1.png) no-repeat center;
+		background-size: auto 100%!important;
+	}
+	&.fightEvent2 {
+		background: url(../imgs/alarmsModule/alarmsEvents/fighting/event2.png) no-repeat center;
+		background-size: auto 100%!important;
+	}
+	&.fireEvent1 {
+		background: url(../imgs/alarmsModule/alarmsEvents/fire/event1.png) no-repeat center;
+		background-size: auto 100%!important;
+	}
+	&.lnpr {
+		background: url("../imgs/alarmsModule/alarmsEvents/lpr/event1.png") no-repeat center;
+		background-size: auto 100%!important;
+	}
+	&.crossLineEvent1 {
+		background: url("../imgs/alarmsModule/alarmsEvents/crossingLine/event1.png") no-repeat center;
+		background-size: auto 100%!important;
+	}
+	&.unattObjectEvent1 {
+		background: url("../imgs/alarmsModule/alarmsEvents/unattObject/event1.png") no-repeat center;
+		background-size: auto 100%!important;
+	}
+	&.plantedObjEvent1 {
+		background: url("../imgs/alarmsModule/alarmsEvents/plantedObject/event1.png") no-repeat center;
+		background-size: auto 100%!important;
+	}
+	&.grafittiEvent1 {
+		background: url("../imgs/alarmsModule/alarmsEvents/grafitti/event1.png") no-repeat center;
+		background-size: auto 100%!important;
+	}
+	&.unObjAlaEvent1 {
+		background: url("../imgs/alarmsModule/alarmsEvents/DeuBahn/unattendedObject.png") no-repeat center;
+		background-size: auto 100%!important;
+	}
+	&.ATMRobberyEvent1 {
+		background: url("../imgs/alarmsModule/alarmsEvents/airport/ATMRobbery/event1.png") no-repeat center;
+		background-size: auto 100%!important;
+	}
+	&.loiteringDetEvent1 {
+		background: url("../imgs/alarmsModule/alarmsEvents/DeuBahn/crowdDetection.png") no-repeat center;
+		background-size: auto 100%!important;
+	}
+	&.loiteringDetEvent {
+		background: url("../imgs/alarmsModule/alarmsEvents/airport/loiteringDetection/event1.png") no-repeat center;
+		background-size: auto 100%!important;
+	}
+	&.fallNdFighEvent1 {
+		background: url("../imgs/alarmsModule/alarmsEvents/DeuBahn/layingPerson.png") no-repeat center;
+		background-size: auto 100%!important;
+	}
+	&.fallNdFighEvent {
+    background: url("../imgs/alarmsModule/alarmsEvents/airport//fallNdFight/event1.png") no-repeat center;
+    background-size: auto 100%!important;
+	}
+	&.wrongDirEvent1 {
+		background: url("../imgs/alarmsModule/alarmsEvents/airport/wrongDirection/event1.png") no-repeat center;
+		background-size: auto 100%!important;
+	}
+	&.removedObjEvent1 {
+		background: url("../imgs/alarmsModule/alarmsEvents/airport/removedObject/event1.png") no-repeat center;
+		background-size: auto 100%!important;
+	}
+	&.protcAreaEvent1 {
+		background: url("../imgs/alarmsModule/alarmsEvents/DeuBahn/protectedArea.png") no-repeat center;
+		background-size: auto 100%!important;
+	}
+	&.objDetcEvent1 {
+		background: url("../imgs/alarmsModule/alarmsEvents/airport/objectDetection/event1.png") no-repeat center;
+		background-size: auto 100%!important;
+	}
+	&.uncountedGoods {
+		background: url("../imgs/alarmsModule/alarmsEvents/uncountedGoods/event1.png") no-repeat center;
+		background-size: auto 100%!important;
+	}
+	&.gunDetected {
+		background: url("../imgs/alarmsModule/alarmsEvents/gunDetected/event1.png") no-repeat center;
+		background-size: auto 100%!important;
+  }
+  &.alarm55Event1 {
+    background: url("../imgs/alarmsModule/alarmsEvents/stadium/fight.png") no-repeat center;
+    background-size: auto 100%!important;
+  }
+  &.alarm54Event1 {
+    background: url("../imgs/alarmsModule/alarmsEvents/stadium/fire.png") no-repeat center;
+    background-size: auto 100%!important;
+	}
+  &.alarm53Event1 {
+    background: url("../imgs/alarmsModule/alarmsEvents/stadium/object.png") no-repeat center;
+    background-size: auto 100%!important;
+	}
+  &.alarm52Event1 {
+    background: url("../imgs/alarmsModule/alarmsEvents/stadium/intrusion.png") no-repeat center;
+    background-size: auto 100%!important;
+	}
+  &.alarm78Event1 {
+    background: url("../imgs/alarmsModule/alarmsEvents/wrongDirection.png") no-repeat center;
+    background-size: auto 100%!important;
+	}
+  &.alarm64Event1 {
+    background: url("../imgs/alarmsModule/alarmsEvents/duress.png") no-repeat center;
+    background-size: auto 100%!important;
+	}
+}
+
+// Alarm action plan
+.alarmModAlarmActionP {
+	width: 100%;
+	height: auto;
+	padding: 10px;
+	@include flex;
+	img {
+		width: 70%;
+		height: auto;
+		max-height: 650px;
+	}
+}
+
+// Alarm SOP
+.alarmModAlarmActionSOP {
+	width: auto;
+	height: auto;
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+.alarmModAlarmActionSOPRow {
+	text-align: left;
+	position: relative;
+	float: left;
+	flex: 1;
+	margin-bottom: 10px;
+}
+.alarmModAlarmActionSOPLabel {
+	color: #fff;
+	position: relative;
+	font-family: "reg";
+	font-size: 15px;
+	margin-left: 22px;
+}
+.alarmModAlarmActionSOPLabelD {
+	color: $hov;
+	position: relative;
+	font-family: "reg";
+	font-size: 15px;
+	margin-top: 5px;
+}
+.alarmModAlarmActionSOPOption {
+	display: none;
+	flex: 1;
+	flex-direction: column;
+	justify-content: flex-start;
+  &.two {
+    margin-left: 20px;
+  }
+  &.three {
+    margin-left: 40px;
+  }
+  &.four {
+    margin-left: 40px;
+  }
+}
+
+// Alarm attachments data tables
+.dataTableContainer{
+	margin: 0 auto;
+	position: relative;
+	width: 100%;
+	height: auto;
+	border-radius: 10px;
+	overflow: hidden;
+	@include shadow;
+}
+.dataTables_scrollHeadInner {
+	padding: 0!important;
+	box-sizing: border-box!important;
+	width: 100%!important;
+}
+.dataTableScroll {
+	width: 100%!important;
+	position: relative;
+	margin: 0;
+	padding: 0;
+	border: none;
+	outline: none;
+	text-align: left;
+	box-sizing: border-box;
+	table-layout: fixed!important;
+}
+.dataTableScroll th, .dataTableScroll td {
+	border-top: hidden!important;
+}
+.dataTableScroll {
+	thead {
+		height: 30px!important;
+		tr {
+			color: #fff!important;
+			cursor: default!important;
+			padding: 0;
+      margin: 0;
+			vertical-align: middle;
+			button {
+				width: 150px;
+				height: 25px;
+				float: right;
+				background: $act;
+				border: none;
+				outline: hidden;
+				cursor: pointer;
+				color: #fff;
+				margin: 0!important;
+				border-radius: 12.5px;
+				font-family: "reg";
+				font-size: 16px;
+				line-height: inherit;
+				&:hover {
+					background: $hov;
+				}
+			}
+		}
+		th {
+			background: rgba($inact, .5) !important;
+			border-bottom: 2px solid $inact!important;
+			padding: 5px 10px;
+			text-align: left;
+			font-family: "reg";
+			font-size: 16px;
+			font-weight: inherit;
+			vertical-align: middle;
+		}
+	}
+	tbody {
+		tr {
+			&:nth-child(even) td {
+				background: rgba($dbg, .3);
+			}
+			td {
+				background: $dbg;
+				color: #fff!important;
+				height: 30px;
+				text-align: left;
+				font-family: "reg";
+				font-size: 14px;
+				outline: none;
+				padding: 0px 10px;
+				vertical-align: middle;
+				img {
+					width: auto;
+					height: 80%;
+					margin: auto;
+				}
+				svg {
+					max-width: 25px;
+					height: 80%;
+					margin: auto 5px;
+					cursor: pointer;
+					fill: $dim;
+					&:hover {
+						fill: #fff;
+					}
+				}
+				&.center {
+					text-align: center;
+				}
+				&.right {
+					text-align: right;
+				}
+			}
+		}
+	}
+}
+
+// Exporting alarm
+#alarmModExportAlarm {
+	display: none;
+}
+.modalForm {
+	width: 100%!important;
+	background: rgba(0, 0, 0, 0.8);
+	padding: 0!important;
+	margin: 0!important;
+	top: 0 !important;
+	height: 100vh!important;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	position: fixed!important;
+	z-index: 9999999 !important;
+	overflow: hidden!important;
+}
+.exportFormModal {
+	width: 400px;
+	height: 450px;
+	background: $dbg;
+	margin: auto;
+	position: relative;
+	border-radius: 20px;
+	display: none;
+	@include shadow;
+	overflow: hidden;
+}
+.modalHeadTitle {
+	position: relative;
+	width: 100%;
+	height: 40px;
+	background: $inact;
+	border-bottom: solid 2px $act;
+	line-height: 40px;
+	text-align: left;
+	padding: 0 20px;
+	color: #fff;
+	font-size: 18px;
+	font-family: "reg";
+}
+.exportAlarmRow {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	position: relative;
+	width: 100%;
+	margin: 15px auto 0;
+	padding: 0 20px;
+	float: left;
+	&:first-child {
+		margin-top: 40px;
+	}
+}
+.exportAlarmlabel {
+	color: #fff;
+	position: relative;
+	font-family: "reg";
+	flex: 1;
+	font-size: 16px;
+	margin-left: 24px;
+}
+.exportBtnDiv {
+	@include flex;
+	position: absolute;
+	width: 100%;
+	bottom: 5px;
+}
+.exportBtn {
+	@include genBtn;
+	width: 100px;
+	margin: 5px;
+}
+
+// BI Dashboards module
+.BIDashboardiFrame {
+  display: none;
+  width: 100%;
+  margin-top: 5px;
+	margin-bottom: 5px;
+  overflow: hidden;
+  height: calc( #{$sectionContentHeight} - 10px);
+  iframe {
+    width: 100%;
+    height: calc( #{$sectionContentHeight} + 30px)!important;
+  }
+  &.static {
+    padding: 10px 10px 5px;
+    overflow: auto;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  &.ecoSys {
+    padding: 0;
+    background: #000;
+    overflow: auto;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+.biDashboardLight {
+  display: none;
+}
+
+// Face Recognition
+#FRiFrame, .containerIFrame {
+	height: $mainContainerHeight;
+	background: rgba($cbg, .7);
+	border-radius: 20px;
+	overflow: hidden;
+  iframe {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+}
+
+// Video Analytics
+.VCATopSection {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+}
+.VCAflex{
+	margin-right: 10px;
+	float: left;
+	min-height: calc( #{$mainContainerHeight}/2 - 5px);
+	max-height: calc( #{$mainContainerHeight}/2 - 5px);
+	&:last-child {
+		margin: 0;
+	}
+	&.One {
+		width: 25%;
+	}
+	&.Two {
+		width: 50%;
+	}
+}
+
+@media only screen and (max-width: 991px) {
+	.VCATopSection {
+		flex-direction: column;
+	}
+	.VCAflex{
+		margin-right: 0;
+		margin-bottom: 10px;
+		float: left;
+		min-height: calc( #{$mainContainerHeight}/2 - 5px);
+		max-height: calc( #{$mainContainerHeight}/2 - 5px);
+		&:last-child {
+			margin: 0;
+		}
+		&.One {
+			width: 100%;
+		}
+		&.Two {
+			width: 100%;
+		}
+	}
+	#VCAalarmsEventsDiv {
+		display: none;
+	}
+	#media-player {
+		width: 320px;
+	}
+	#alarmModExportAlarm {
+		display: none!important;
+	}
+}
+
+// Video Analytics cameras list
+.camera-list {
+	position: relative;
+	width: 100%;
+	padding: 10px;
+}
+.CamItem {
+	@include shadow;
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	background: $inact;
+	border-radius: 20px;
+	height: 40px;
+	margin-bottom: 10px;
+	padding: 10px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+.camera-logo {
+	position: relative;
+	@include flex;
+	width: 30px;
+	height: 30px;
+	float: left;
+	margin-right: 10px;
+	img {
+		width: 100%;
+    height: auto;
+	}
+}
+.camera-title {
+	position: relative;
+	margin-right: 10px;
+	float: left;
+	text-align: left;
+	line-height: 30px;
+	color: #fff;
+	font-size: 16px;
+	font-family: "reg";
+}
+.camera-button {
+	position: absolute;
+	right: 10px;
+	width: 40px;
+	height: 40px;
+}
+.CamItemToggle {
+	@include flex;
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.material-switch > input[type="checkbox"] {
+	display: none;
+}
+.material-switch > label {
+	margin: auto;
+	cursor: pointer;
+	height: 20px;
+	position: relative;
+	width: 40px;
+}
+.material-switch > label::before {
+	background: $dan;
+	border-radius: 20px;
+	content: '';
+	height: 20px;
+	position: absolute;
+	right: 0;
+	transition: all 0.3s ease-in-out;
+	width: 40px;
+}
+.material-switch > label::after {
+	@include shadow;
+	background: #fff;
+	top: -1px;
+	border-radius: 50%;
+	content: '';
+	height: 22px;
+	position: absolute;
+	left: -1px;
+	transition: all 0.3s ease-in-out;
+	width: 22px;
+}
+.material-switch > input[type="checkbox"]:checked + label::before {
+	background: $suc;
+}
+.material-switch > input[type="checkbox"]:checked + label::after {
+	@include shadow;
+	background: #fff;
+	left: 19px;
+}
+
+.ClearAlarms {
+	background: url(../svgs/clear.svg) no-repeat left;
+	background-size: 20px 20px;
+	padding-left: 25px;
+	font-size: 14px;
+	font-family: "reg";
+	color: #fff;
+	text-align: left;
+	line-height: 20px;
+	border: hidden;
+}
+
+// Live Monitoring container inside
+.VCALiveStrContainer {
+	@include flex;
+	width: calc(100% - 20px);
+	min-height: calc( #{$mainContainerHeight}/2 - 38px);
+	margin: auto;
+	padding: 10px;
+}
+
+// Video Analytics alarms events & details
+.VCAalarmsEvents {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+}
+.VCALogContent {
+	@include subModuleSection;
+  margin-right: 10px;
+  padding: 10px;
+  width: 30%;
+  flex-grow: 1;
+  min-height: 100%;
+  max-height: 100%;
+  float: left;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border-radius: 10px;
+}
+.camera-alarms-tab {
+  background: $inact;
+  width: 100%;
+  height: 30px;
+  margin-bottom: 10px;
+  border-radius: 15px;
+  cursor: pointer;
+  overflow: hidden;
+  padding: 0 10px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  &:hover {
+    background: $hov;
+  }
+}
+.camera-alarms-tab-Selected {
+  background: $act;
+  width: 100%;
+  height: 30px;
+  margin-bottom: 10px;
+  border-radius: 15px;
+  cursor: pointer;
+  overflow: hidden;
+  padding: 0 10px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  &:hover {
+    background: $hov;
+  }
+}
+.alarm-details-title {
+  width: 100%;
+  height: 30px;
+  margin-left: 30px;
+  margin: 0;
+  text-align: left;
+  line-height: 30px;
+  color: #fff;
+  font-size: 14px;
+  font-family: "reg";
+}
+.VCALoDetails {
+	@include subModuleSection;
+  width: 70%;
+  flex-grow: 2;
+  float: left;
+  min-height: 100%;
+  max-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+}
+.logdetails {
+  flex-grow: 2;
+  text-align: left;
+  padding: 10px;
+  color: #fff;
+  font-family: "reg";
+  font-size: 16px;
+  line-height: 25px;
+  min-height: 100%;
+}
+.imagedivContainer {
+  @include flex;
+  flex-grow: 1;
+  min-height: 100%;
+}
+.imagediv {
+  @include flex;
+  @include shadow;
+  height: calc(100% - 40px);
+  width: calc(100% - 40px);
+	padding: 10px;
+  margin: auto;
+	border-left: solid 1px $inact;
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+// Rack Refill
+.rackSectionImg {
+	text-align: center;
+	padding: 10px;
+	img {
+		border-radius: 10px;
+		width: 100%;
+		height: auto;
+		position: relative;
+		margin: auto;
+	}
+}
+
+// Onboard Module
+.onBoardPersonalDocumentCon {
+  @include subModuleSection;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  padding-bottom: 10px;
+  overflow: hidden;
+  &:first-child {
+    margin-bottom: 10px;
+  }
+}
+.onBoardSectionTitle {
+  width: 100%;
+  text-align: left;
+  position: relative;
+  font-size: 16px;
+  height: 30px;
+  line-height: 30px;
+  background: $inact;
+  font-family: "reg";
+  margin: 0 0 10px;
+  padding: 0 10px;
+  color: #fff;
+}
+.onBoardPersonalDocument {
+  position: relative;
+  @include shadow;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 5px 0;
+  border: rgba($inact, .3) solid 1px;
+  @include flex;
+  &.inactive {
+    background: $dbg url("../svgs/onBoardModule/media.svg") no-repeat center;
+    background-size: 100px auto;
+  }
+  &.photo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 200px;
+    height: 260px;
+  }
+  &.natID {
+    display: flex;
+    justify-content: center;
+    min-height: 65px;
+    width: 640px;
+    background-size: auto 80%!important;
+  }
+  img {
+    width: auto;
+    height: 100%;
+    outline: none!important;
+    border: hidden!important;
+  }
+}
+.onBoardDocumentsControls {
+  width: auto;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  position: relative;
+}
+.onBoardDocumentsBtn {
+  position: relative;
+  margin-right: 5px;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  background-color: $act!important;
+  border-radius: 17.5px;
+  background-size: 25px 25px!important;
+  border: hidden;
+  &:last-child {
+    margin-right: 0;
+  }
+  &:hover {
+    background-color: $hov!important;
+  }
+  &.capture {
+    background: url("../svgs/onBoardModule/capture.svg") no-repeat center;
+  }
+  &.browse {
+    background: url("../svgs/onBoardModule/browse.svg") no-repeat center;
+  }
+}
+.onBoardChooseFile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+.onBoardValidationRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: calc(100% - 20px);
+  position: relative;
+  height: 35px;
+  margin: 10px 10px 0;
+}
+.onBoardValidationCon {
+  @include shadow;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  height: 35px;
+  overflow: hidden;
+  border-radius: 18.5px;
+  background: $dbg;
+  margin-right: 10px;
+  border: solid 1px rgba($inact, .3);
+}
+.onBoardValidationTooltip {
+  @include shadow;
+  position: relative;
+  width: 35px;
+  height: 100%;
+  background: rgba($inact, .3) url("../svgs/footer/tooltip.svg") no-repeat center;
+  background-size: 20px 20px;
+  margin-right: 10px;
+}
+.onBoardValidationText {
+  text-align: left;
+  font-family: "reg";
+  font-size: 14px;
+  color: #fff;
+}
+.onBoardInputsRow {
+  position: relative;
+  width: 100%;
+  margin: 5px 0;
+  padding: 0 10px;
+}
+.onBoardInputLabel {
+  @include inputLabel;
+  margin-top: 5px;
+  color: #fff;
+  margin-bottom: -10px;
+}
+.onBoardInput {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  outline: none;
+  font-size: 16px;
+  background: none;
+  color: #fff;
+  border-bottom: 1px solid $act;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  &:focus {
+    border-bottom: 1px solid $curt;
+    outline: none;
+  }
+}
+.onBoardCalculateBtn {
+  width: 100px;
+  @include genBtn;
+}
+.onBoardValidationDataCon {
+  width: calc(100% - 20px);
+  position: relative;
+  margin: -5px 10px 10px;
+  padding-bottom: 10px;
+  border-bottom: solid 1px $inact;
+}
+.onBoardValidationDataRow {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 100%;
+  margin: 12px 0;
+}
+.onBoardValidationDataLabel {
+  width: 25%;
+  text-align: left;
+  position: relative;
+  font-family: "med";
+  font-size: 14px;
+  color: $dim;
+}
+.onBoardValidationData {
+  width: 75%;
+  text-align: left;
+  position: relative;
+  font-family: "reg";
+  font-size: 14px;
+  color: $hov;
+}
+// Capture modal
+.onBoardCaptureFormModal {
+	width: 914px;
+	min-height: 570px;
+	background: $dbg;
+	margin: auto;
+	position: relative;
+	border-radius: 20px;
+	@include shadow;
+	overflow: hidden;
+}
+.onBoardCaptureModalHeader {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  background: $inact;
+	border-bottom: solid 2px $act;
+  text-align: left;
+  padding: 0 20px;
+  font-family: "reg";
+  font-size: 18px;
+  color: #fff;
+  display: none;
+}
+.onBoardCameraCon {
+  background: rgba($cbg, .4);
+  position: relative;
+  margin: 20px auto;
+  width: 640px;
+  height: 480px;
+  overflow: hidden;
+  @include shadow;
+}
+.onBoardCameraFooter {
+  @include flex;
+  width: 100%;
+  flex-direction: row;
+  margin: 20px 0 5px;
+}
+.onBoardCameraControls {
+  @include genBtn;
+  width: 100px;
+  margin: 5px;
+}
+
+#onBoardEmpty, #heatMapsEmpty, #visualEmpty {
+  display: none;
+}
+@media only screen and (max-width: 1439px) {
+  #onBoardScanning, #onBoardRegistration {
+    width: 100%;
+    height: auto;
+    margin-right: 0;
+  }
+  #onBoardRegistration {
+    margin-top: 10px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  #onBoardScanning, #onBoardRegistration, #heatMapsContainer, #visualContainer {
+    display: none;
+  }
+  #onBoardEmpty, #heatMapsEmpty, #visualEmpty {
+    display: block!important;
+  }
+}
+
+// Metco dahboards
+.metcoSideNavRow {
+  @include shadow;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 50px;
+  border-radius: 25px;
+  position: relative;
+  background: $inact;
+  width: 100%;
+  margin-bottom: 20px!important;
+  padding: 5px 10px!important;
+  &:last-child {
+    margin-bottom: 0!important;
+  }
+  &:hover {
+    background: rgba($act, .7)!important;
+    .metcoSideNavIcon {
+      fill: #fff;
+    }
+    .radioCmLabel {
+      color: #fff;
+    }
+  }
+  &.active {
+    background: rgba($hov, .5)!important;
+    
+  }
+}
+.metcoSideNavControls {
+  margin-left: 20px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  
+}
+.metcoSideNavIcon {
+  fill: $dim;
+  width: 35px!important;
+  max-height: 25px;
+  margin-right: 2px;
+}
+.radioCmLabel {
+  width: auto;
+  cursor: pointer;
+  margin-top: 1px;
+  position: relative;
+  margin-left: 25px;
+  color: #fff;
+  font-size: 15px;
+  font-family: "reg";
+  &.active {
+    color: #fff;
+    .metcoSideNavIcon {
+      fill: #fff!important;
+    }
+  }
+  &.metcoHeader {
+    margin-left: 20px;
+    top: 3px;
+  }
+}

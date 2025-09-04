@@ -1,0 +1,15 @@
+.moduleSectionContent.siteMap {
+  background: url("../svgs/sectionsBG/light/siteMap.svg") no-repeat center;
+  background-size: auto 30%;
+}
+
+.moduleSectionContent.alarms {
+  background: url("../svgs/sectionsBG/light/alarms.svg") no-repeat center;
+  background-size: auto 30%;
+}
+
+.moduleSectionContent.biDashboard {
+  background: url("../svgs/sectionsBG/light/biDashboard.svg") no-repeat center;
+  background-size: auto 30%;
+}
+/*# sourceMappingURL=secBgLight.css.map */

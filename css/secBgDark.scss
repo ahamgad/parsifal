@@ -1,0 +1,14 @@
+.moduleSectionContent {
+  &.siteMap {
+    background: url("../svgs/sectionsBG/dark/siteMap.svg") no-repeat center;
+    background-size: auto 30%;
+  }
+  &.alarms {
+    background: url("../svgs/sectionsBG/dark/alarms.svg") no-repeat center;
+    background-size: auto 30%;
+  }
+  &.biDashboard {
+    background: url("../svgs/sectionsBG/dark/biDashboard.svg") no-repeat center;
+    background-size: auto 30%;
+  }
+}

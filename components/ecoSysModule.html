@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<div class="rowG2K">
+  <section class="containerG2K">
+    <div class="rowG2K">
+      <section class="sideIcons">
+        <button class="sideIconBtn openNav" data-toggle="tooltip" data-placement="right" title="Menu">
+        </button>
+        <div><button class="sideIconBtn openChat" data-toggle="tooltip" data-placement="right" title="Chat">
+        </button>
+        <button class="sideIconBtn openCall" data-toggle="tooltip" data-placement="right" title="Call">
+        </button>
+        <button class="sideIconBtn openShortcuts" data-toggle="tooltip" data-placement="right" title="Shortcuts">
+        </button></div>
+      </section>
+    </div>
+  </section>
+  <section class="mainGenContainer">
+    <div id="ecoSysSideNav" class="sideNav scrollNone">
+      <div class="sideNavHeader">
+        <div class="sideNavHead">
+          <button id="ecoToggleSideNavFilter" class="sideNavToggleFilter">
+          </button>
+          <button class="sideNavTogglePin" id="pinEcoSysSideNav">
+            Pin
+          </button>
+          <button class="sideNavTogglePin unpin sideNavToggleUnpin" id="unpinEcoSysSideNav">
+            Unpin
+          </button>
+        </div>
+        <div id="EcoSysSideNavFilter" class="sideNavFilter">
+          <span class="sideNavFilterBorderTop"></span>
+          <div class="sideNavFilterContainer" id="EcoSysSideNavFilterBtn">
+            <button class="sideNavFilterBtn">
+              Country
+            </button>
+            <button class="sideNavFilterBtn">
+              City
+            </button>
+            <button class="sideNavFilterBtn">
+              Site
+            </button>
+            <button class="sideNavFilterBtn">
+              Touchpoints
+            </button>
+            <button class="sideNavFilterBtn">
+              Alarms
+            </button>
+          </div>
+          <div class="sideNavFilterSearch">
+            <input class="filterSearchInput" placeholder="Search..">
+            <button class="FilterSearchSorting">
+            </button>
+          </div>
+        </div>
+      </div>
+      <span class="sideNavHeaderBorder"></span>
+      <div id="" class="sideNavContent mapPadding">
+       
+      </div>
+    </div>
+    <section class="containerG2K">
+      <div class="rowG2K">
+        <div class="moduleSection scrollAct" id="EcoSysContainer">
+          <div class="moduleSectionHeader tabs">
+            
+            <div class="subModuleTabCol ecoSystem" id="ecoSystemTab3">
+              <div class="subModuleTabBtn ecoSysTab" onclick="openEcoSysTab(event,'EcoSysStyle3')">
+                <i class="ticketingEcoSys"></i> Ticketing
+              </div>
+            </div>
+            <div class="subModuleTabCol ecoSystem active" id="ecoSystemTab1">
+              <div class="subModuleTabBtn ecoSysTab" onclick="openEcoSysTab(event,'EcoSysStyle1')">
+                <i class="parkingEcoSys"></i> Parking
+              </div>
+            </div>
+            <div class="subModuleTabCol ecoSystem" id="ecoSystemTab5">
+              <div class="subModuleTabBtn ecoSysTab" onclick="openEcoSysTab(event,'EcoSysStyle5')">
+                <i class="merchandisingEcoSys"></i> Merchandising
+              </div>
+            </div>
+            <div class="subModuleTabCol ecoSystem" id="ecoSystemTab6">
+              <div class="subModuleTabBtn ecoSysTab" onclick="openEcoSysTab(event,'EcoSysStyle6')">
+                <i class="loyaltyTabIcon"></i> Loyalty
+              </div>
+            </div>
+            <div class="subModuleTabCol ecoSystem" id="ecoSystemTab4">
+              <div class="subModuleTabBtn ecoSysTab" onclick="openEcoSysTab(event,'EcoSysStyle4')">
+                <i class="socialEcoSys"></i> Social
+              </div>
+            </div>
+            <div class="subModuleTabCol ecoSystem" id="ecoSystemTab2">
+              <div class="subModuleTabBtn ecoSysTab" onclick="openEcoSysTab(event,'EcoSysStyle2')">
+                <i class="webNAppEcoSys"></i> Web and App
+              </div>
+            </div>
+            
+            <div class="containerControls">
+              <button class="containerControlsBtn minimizeScreen">
+              </button>
+              <button class="containerControlsBtn fullScreen" id="EcoSysFullScreenBtn">
+              </button>
+            </div>
+          </div>
+          <div class="moduleSectionContent scrollAct inside">
+            <div class="moduleSectionContent">
+              <div class="BIDashboardiFrame scrollAct inside ecoSys EcoSysStyle" id="EcoSysStyle1"  style="display: block;">
+                <img src="../imgs/dashboards/PARKING.png" alt="">
+              </div>
+              <div class="BIDashboardiFrame scrollAct inside ecoSys EcoSysStyle" id="EcoSysStyle2">
+                <img src="../imgs/dashboards/WEB&APP.png" alt="">
+              </div>
+              <div class="BIDashboardiFrame scrollAct inside ecoSys EcoSysStyle" id="EcoSysStyle3">
+                <img src="../imgs/dashboards/Ticketing.png" alt="">
+              </div>
+              <div class="BIDashboardiFrame scrollAct inside ecoSys EcoSysStyle" id="EcoSysStyle4">
+                <img src="../imgs/dashboards/SOCIAL.png" alt="">
+              </div>
+              <div class="BIDashboardiFrame scrollAct inside ecoSys EcoSysStyle" id="EcoSysStyle5">
+                <img src="../imgs/dashboards/MERCHANDISING.png" alt="">
+              </div>
+              <div class="BIDashboardiFrame scrollAct inside ecoSys EcoSysStyle" id="EcoSysStyle6">
+                <img src="../imgs/dashboards/LOYALTY.png" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+</div>
+
+<script src="js/components/ecoSysModule/icons.js"></script>
+<script src="js/components/ecoSysModule/scripts.js"></script>
+<script src="js/components/ecoSysModule/ecoSysModule.js"></script>

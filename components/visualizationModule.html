@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<div class="rowG2K">
+  <section class="containerG2K">
+    <div class="rowG2K">
+      <section class="sideIcons">
+        <button class="sideIconBtn openNav" data-toggle="tooltip" data-placement="right" title="Menu" id="openVisualSideNav">
+        </button>
+        <div><button class="sideIconBtn openChat" data-toggle="tooltip" data-placement="right" title="Chat">
+        </button>
+        <button class="sideIconBtn openCall" data-toggle="tooltip" data-placement="right" title="Call">
+        </button>
+        <button class="sideIconBtn openShortcuts" data-toggle="tooltip" data-placement="right" title="Shortcuts">
+        </button></div>
+      </section>
+      <section class="mainGenContainer">
+        <div id="visualSideNav" class="sideNav scrollNone">
+          <div class="sideNavHeader">
+            <div class="sideNavHead">
+              <button id="visualToggleSideNavFilter" class="sideNavToggleFilter">
+              </button>
+              <button class="sideNavTogglePin" id="pinVisualSideNav">
+                Pin
+              </button>
+              <button class="sideNavTogglePin unpin sideNavToggleUnpin" id="unpinVisualSideNav">
+                Unpin
+              </button>
+            </div>
+            <div id="visualSideNavFilter" class="sideNavFilter">
+              <span class="sideNavFilterBorderTop"></span>
+              <div class="sideNavFilterContainer" id="visualSideNavFilterBtn">
+                <button class="sideNavFilterBtn">
+                  Country
+                </button>
+                <button class="sideNavFilterBtn">
+                  City
+                </button>
+                <button class="sideNavFilterBtn">
+                  Site
+                </button>
+                <button class="sideNavFilterBtn">
+                  Touchpoints
+                </button>
+                <button class="sideNavFilterBtn">
+                  Alarms
+                </button>
+              </div>
+              <div class="sideNavFilterSearch">
+                <input class="filterSearchInput" placeholder="Search..">
+                <button class="FilterSearchSorting">
+                </button>
+              </div>
+            </div>
+          </div>
+          <span class="sideNavHeaderBorder"></span>
+          <div id="" class="sideNavContent mapPadding">
+            <ul class="tree">
+              <button id="treeVisual" class="treeBtn">
+                Deutsche Bahn
+              </button>
+              <ul id="treeVisualLevels" class="treeHide">
+                <li>
+                  <button class="treeBtn tp">
+                    Tracemap
+                  </button>
+                  <button class="treeOpenSiteMap" id="openVisual1">
+                  </button>
+                </li>
+                <li>
+                  <button class="treeBtn tp">
+                    Heatmap
+                  </button>
+                  <button class="treeOpenSiteMap" id="openVisual2">
+                  </button>
+                </li>
+                <li>
+                  <button class="treeBtn tp">
+                    Dwellmap
+                  </button>
+                  <button class="treeOpenSiteMap" id="openVisual3">
+                  </button>
+                </li>
+              </ul>
+            </ul>
+          </div>
+          <div id="visualSideNavInformation" class="sideNavInformation">
+            <button id="openHeatMapsInformation" class="sideNavInformationBtn">
+              Information
+            </button>
+            <div class="sideNavInformationCont">
+              - Click on a specific site in the navigation menu to navigate to it directly on the map<br>
+              - Use the search box in the navigation menu to filter its content for faster navigation<br>
+              - Click on the displayed icons on the map to see more details about that item<br>
+              - Use the zoom in feature over the map to see more details about a specific location
+            </div>
+          </div>
+        </div>
+        <section class="containerG2K">
+          <div class="rowG2K">
+            <div class="moduleSection scrollAct" id="visualContainer">
+              <div class="moduleSectionHeader">
+                Site Map
+                <div class="containerControls">
+                  <button class="containerControlsBtn minimizeScreen">
+                  </button>
+                  <button class="containerControlsBtn fullScreen" id="visualFullScreenBtn">
+                  </button>
+                </div>
+              </div>
+              <div class="moduleSectionContent scrollAct inside siteMap">
+                <section id="siteVisual1" class="siteMapContainer hMapsModuleSiteMapContainer">
+                  <div class="siteMapDetails ">
+                    Tracemap
+                  </div>
+                  <div class="kineticActive">
+                    <img class="panzoom" alt="" src="imgs/visualizationModule/traceMap.jpg">
+                  </div>
+                  <div class="siteMapControls">
+                    <button class="siteMapControlsBtn zoomReset">
+                    </button>
+                    <button class="siteMapControlsBtn zoomOut">
+                    </button>
+                    <button class="siteMapControlsBtn zoomIn">
+                    </button>
+                    <button class="siteMapControlsBtn closeSiteVisual">
+                    </button>
+                  </div>
+                </section>
+                <section id="siteVisual2" class="siteMapContainer hMapsModuleSiteMapContainer">
+                  <div class="siteMapDetails ">
+                    Heatmap
+                  </div>
+                  <div class="kineticActive">
+                    <img class="panzoom" alt="" src="imgs/visualizationModule/heatMap.jpg">
+                  </div>
+                  <div class="siteMapControls">
+                    <button class="siteMapControlsBtn zoomReset">
+                    </button>
+                    <button class="siteMapControlsBtn zoomOut">
+                    </button>
+                    <button class="siteMapControlsBtn zoomIn">
+                    </button>
+                    <button class="siteMapControlsBtn closeSiteVisual">
+                    </button>
+                  </div>
+                </section>
+                <section id="siteVisual3" class="siteMapContainer hMapsModuleSiteMapContainer">
+                  <div class="siteMapDetails ">
+                    Dwellmap
+                  </div>
+                  <div class="kineticActive">
+                    <img class="panzoom" alt="" src="imgs/visualizationModule/dwellMap.jpg">
+                  </div>
+                  <div class="siteMapControls">
+                    <button class="siteMapControlsBtn zoomReset">
+                    </button>
+                    <button class="siteMapControlsBtn zoomOut">
+                    </button>
+                    <button class="siteMapControlsBtn zoomIn">
+                    </button>
+                    <button class="siteMapControlsBtn closeSiteVisual">
+                    </button>
+                  </div>
+                </section>
+              </div>
+            </div>
+            <div class="moduleSection" id="visualEmpty">
+              <div class="moduleSectionHeader">
+                <div class="movingContainer">
+                </div>
+                <div class="containerControls">
+                </div>
+              </div>
+              <div class="moduleSectionContent padding empty">
+                Please sign in from a pc to get all this module features
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+    </div>
+  </section>
+</div>
+
+<script src="js/components/visualizationModule/scripts.js"></script>
+<script src="js/components/visualizationModule/visualizationModule.js"></script>
+<script src="js/components/visualizationModule/mapZoom.js"></script>

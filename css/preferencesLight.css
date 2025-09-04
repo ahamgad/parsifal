@@ -1,0 +1,304 @@
+.prefMap {
+  background: url("../svgs/preferences/light/mapsDim.svg") no-repeat center;
+}
+
+.prefMap.active {
+  background: url("../svgs/preferences/light/mapsAct.svg") no-repeat center;
+}
+
+.prefAlarms {
+  background: url("../svgs/preferences/light/alarmDim.svg") no-repeat center;
+}
+
+.prefAlarms.active {
+  background: url("../svgs/preferences/light/alarmAct.svg") no-repeat center;
+}
+
+.prefBiD, .prefMetco {
+  background: url("../svgs/preferences/light/dashboardDim.svg") no-repeat center;
+}
+
+.prefBiD.active, .prefMetco.active {
+  background: url("../svgs/preferences/light/dashboardAct.svg") no-repeat center;
+}
+
+.prefHist {
+  background: url("../svgs/preferences/light/historicalDim.svg") no-repeat center;
+}
+
+.prefHist.active {
+  background: url("../svgs/preferences/light/historicalAct.svg") no-repeat center;
+}
+
+.prefECO {
+  background: url("../svgs/preferences/light/ecoSysDim.svg") no-repeat center;
+}
+
+.prefECO.active {
+  background: url("../svgs/preferences/light/ecoSysAct.svg") no-repeat center;
+}
+
+.prefFR {
+  background: url("../svgs/preferences/light/FRDim.svg") no-repeat center;
+}
+
+.prefFR.active {
+  background: url("../svgs/preferences/light/FRAct.svg") no-repeat center;
+}
+
+.prefVCA {
+  background: url("../svgs/preferences/light/vcaDim.svg") no-repeat center;
+}
+
+.prefVCA.active {
+  background: url("../svgs/preferences/light/vcaAct.svg") no-repeat center;
+}
+
+.prefRack {
+  background: url("../svgs/preferences/light/rackDim.svg") no-repeat center;
+}
+
+.prefRack.active {
+  background: url("../svgs/preferences/light/rackAct.svg") no-repeat center;
+}
+
+.prefOnBoard {
+  background: url("../svgs/preferences/light/onBoardDim.svg") no-repeat center;
+}
+
+.prefOnBoard.active {
+  background: url("../svgs/preferences/light/onBoardAct.svg") no-repeat center;
+}
+
+.prefPlano {
+  background: url("../svgs/preferences/light/planoDim.svg") no-repeat center;
+}
+
+.prefPlano.active {
+  background: url("../svgs/preferences/light/planoAct.svg") no-repeat center;
+}
+
+.prefParkM {
+  background: url("../svgs/preferences/light/parkDim.svg") no-repeat center;
+}
+
+.prefParkM.active {
+  background: url("../svgs/preferences/light/parkAct.svg") no-repeat center;
+}
+
+.prefVMS {
+  background: url("../svgs/preferences/light/vmsDim.svg") no-repeat center;
+}
+
+.prefVMS.active {
+  background: url("../svgs/preferences/light/vmsAct.svg") no-repeat center;
+}
+
+.prefVBPC {
+  background: url("../svgs/preferences/light/vbpcDim.svg") no-repeat center;
+}
+
+.prefVBPC.active {
+  background: url("../svgs/preferences/light/vbpcAct.svg") no-repeat center;
+}
+
+.prefSBPC {
+  background: url("../svgs/preferences/light/sbpcDim.svg") no-repeat center;
+}
+
+.prefSBPC.active {
+  background: url("../svgs/preferences/light/sbpcAct.svg") no-repeat center;
+}
+
+.prefRestA {
+  background: url("../svgs/preferences/light/restrcDim.svg") no-repeat center;
+}
+
+.prefRestA.active {
+  background: url("../svgs/preferences/light/restrcAct.svg") no-repeat center;
+}
+
+.prefUnattO {
+  background: url("../svgs/preferences/light/unattDim.svg") no-repeat center;
+}
+
+.prefUnattO.active {
+  background: url("../svgs/preferences/light/unattAct.svg") no-repeat center;
+}
+
+.prefCrowdD {
+  background: url("../svgs/preferences/light/crowdDim.svg") no-repeat center;
+}
+
+.prefCrowdD.active {
+  background: url("../svgs/preferences/light/crowdAct.svg") no-repeat center;
+}
+
+.prefRetail {
+  background: url("../svgs/preferences/light/retailDim.svg") no-repeat center;
+}
+
+.prefRetail.active {
+  background: url("../svgs/preferences/light/retailAct.svg") no-repeat center;
+}
+
+.prefGenderID {
+  background: url("../svgs/preferences/light/genderDim.svg") no-repeat center;
+}
+
+.prefGenderID.active {
+  background: url("../svgs/preferences/light/genderAct.svg") no-repeat center;
+}
+
+.prefBuyBe {
+  background: url("../svgs/preferences/light/buyingDim.svg") no-repeat center;
+}
+
+.prefBuyBe.active {
+  background: url("../svgs/preferences/light/buyingAct.svg") no-repeat center;
+}
+
+.prefQLength {
+  background: url("../svgs/preferences/light/queueDim.svg") no-repeat center;
+}
+
+.prefQLength.active {
+  background: url("../svgs/preferences/light/queueAct.svg") no-repeat center;
+}
+
+.prefCashR {
+  background: url("../svgs/preferences/light/cashRegisterDim.svg") no-repeat center;
+}
+
+.prefCashR.active {
+  background: url("../svgs/preferences/light/cashRegisterAct.svg") no-repeat center;
+}
+
+.prefPOS {
+  background: url("../svgs/preferences/light/posDim.svg") no-repeat center;
+}
+
+.prefPOS.active {
+  background: url("../svgs/preferences/light/posAct.svg") no-repeat center;
+}
+
+.prefConxD {
+  background: url("../svgs/preferences/light/contextualDim.svg") no-repeat center;
+}
+
+.prefConxD.active {
+  background: url("../svgs/preferences/light/contextualAct.svg") no-repeat center;
+}
+
+.prefHeatM {
+  background: url("../svgs/preferences/light/heatMDim.svg") no-repeat center;
+}
+
+.prefHeatM.active {
+  background: url("../svgs/preferences/light/heatMAct.svg") no-repeat center;
+}
+
+.prefPixe {
+  background: url("../svgs/preferences/light/pixilationDim.svg") no-repeat center;
+}
+
+.prefPixe.active {
+  background: url("../svgs/preferences/light/pixilationAct.svg") no-repeat center;
+}
+
+.prefMobApp {
+  background: url("../svgs/preferences/light/mobileDim.svg") no-repeat center;
+}
+
+.prefMobApp.active {
+  background: url("../svgs/preferences/light/mobileAct.svg") no-repeat center;
+}
+
+.prefGraff {
+  background: url("../svgs/preferences/light/graffitiDim.svg") no-repeat center;
+}
+
+.prefGraff.active {
+  background: url("../svgs/preferences/light/graffitiAct.svg") no-repeat center;
+}
+
+.prefCamT {
+  background: url("../svgs/preferences/light/cameraTampDim.svg") no-repeat center;
+}
+
+.prefCamT.active {
+  background: url("../svgs/preferences/light/cameraTampAct.svg") no-repeat center;
+}
+
+.prefIntAC {
+  background: url("../svgs/preferences/light/accessControlDim.svg") no-repeat center;
+}
+
+.prefIntAC.active {
+  background: url("../svgs/preferences/light/accessControlAct.svg") no-repeat center;
+}
+
+.prefPubAI {
+  background: url("../svgs/preferences/light/announcementDim.svg") no-repeat center;
+}
+
+.prefPubAI.active {
+  background: url("../svgs/preferences/light/announcementAct.svg") no-repeat center;
+}
+
+.prefTimeInS {
+  background: url("../svgs/preferences/light/timeDim.svg") no-repeat center;
+}
+
+.prefTimeInS.active {
+  background: url("../svgs/preferences/light/timeAct.svg") no-repeat center;
+}
+
+.prefVand {
+  background: url("../svgs/preferences/light/vandalismDim.svg") no-repeat center;
+}
+
+.prefVand.active {
+  background: url("../svgs/preferences/light/vandalismAct.svg") no-repeat center;
+}
+
+.prefCIHeatMap {
+  background: url("../svgs/preferences/light/CIHeatMDim.svg") no-repeat center;
+}
+
+.prefCIHeatMap.active {
+  background: url("../svgs/preferences/light/CIHeatMAct.svg") no-repeat center;
+}
+
+.prefCIDashB {
+  background: url("../svgs/preferences/light/CIDashboardDim.svg") no-repeat center;
+}
+
+.prefCIDashB.active {
+  background: url("../svgs/preferences/light/CIDashboardAct.svg") no-repeat center;
+}
+
+.prefOccMonitor {
+  background: url("../svgs/preferences/light/occMonitorDim.svg") no-repeat center;
+}
+
+.prefOccMonitor.active {
+  background: url("../svgs/preferences/light/occMonitorAct.svg") no-repeat center;
+}
+
+.prefOccDB {
+  background: url("../svgs/preferences/light/occMDashboardDim.svg") no-repeat center;
+}
+
+.prefOccDB.active {
+  background: url("../svgs/preferences/light/occMDashboardAct.svg") no-repeat center;
+}
+
+.prefVisual {
+  background: url("../svgs/preferences/light/visualDim.svg") no-repeat center;
+}
+
+.prefVisual.active {
+  background: url("../svgs/preferences/light/visualAct.svg") no-repeat center;
+}
+/*# sourceMappingURL=preferencesLight.css.map */

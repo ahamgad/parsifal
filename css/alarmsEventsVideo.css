@@ -1,0 +1,78 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "light";
+  src: url("../fonts/g2k1Light.ttf");
+}
+
+@font-face {
+  font-family: "reg";
+  src: url("../fonts/g2k2Reg.ttf");
+}
+
+@font-face {
+  font-family: "med";
+  src: url("../fonts/g2k3Med.ttf");
+}
+
+.alarmEventVideoFade {
+  display: none;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9999999;
+  filter: alpha(opacity=80);
+}
+
+.alarmEventVideoFadeLight {
+  box-shadow: 2px 3px 6px -2px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 2px 3px 6px -2px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 2px 3px 6px -2px rgba(0, 0, 0, 0.5);
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-width: 700px;
+  max-height: 460px;
+  margin-left: -300px;
+  margin-top: -180px;
+  border: 1px solid #0c6d72;
+  border-radius: 20px;
+  z-index: 99999991;
+  overflow: hidden !important;
+}
+
+.boxclose {
+  float: right;
+  cursor: pointer;
+  border: hidden;
+  border-radius: 15px;
+  background: #0c6d72;
+  font-size: 31px;
+  font-weight: bold;
+  display: inline-block;
+  line-height: 0px;
+  padding: 13px 5px;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  z-index: 1002;
+}
+
+.boxclose:hover {
+  background: #13a8bc;
+}
+
+.boxclose:before {
+  content: "×";
+  color: #fff;
+}
+
+.alarmEventVideoFade:hover ~ .boxclose {
+  display: none;
+}
+/*# sourceMappingURL=alarmsEventsVideo.css.map */

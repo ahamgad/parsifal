@@ -1,0 +1,90 @@
+@font-face {
+  font-family: "light";
+  src: url(../fonts/g2k1light.ttf);
+}
+
+@font-face {
+  font-family: "reg";
+  src: url(../fonts/g2k2reg.ttf);
+}
+
+@font-face {
+  font-family: "med";
+  src: url(../fonts/g2k3med.ttf);
+}
+
+.checkC {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.checkI {
+  position: absolute;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.checkI:disabled ~ .checkM, .CheckC {
+  cursor: default;
+  border: 1px solid #063332;
+}
+
+.checkI:disabled ~ span {
+  color: #999;
+  cursor: default;
+}
+
+.checkM {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 16px;
+  width: 16px;
+  background: #042021;
+  border: 1px solid #0c6d72;
+  border-radius: 4px;
+}
+
+.checkM.metco {
+  top: 17px !important;
+  left: 10px;
+}
+
+.checkM.metcoHeader {
+  top: 4px !important;
+}
+
+.checkC .checkI:checked ~ .checkM {
+  box-shadow: 2px 3px 6px -2px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 2px 3px 6px -2px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 2px 3px 6px -2px rgba(0, 0, 0, 0.5);
+  background: #d26f17;
+  border: hidden;
+}
+
+.checkM:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkC .checkI:checked ~ .checkM:after {
+  display: block;
+}
+
+.checkC .checkM:after {
+  left: 5px;
+  top: .5px;
+  width: 6px;
+  height: 13px;
+  border: solid #fff;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+/*# sourceMappingURL=checkBoxDark.css.map */

@@ -1,0 +1,85 @@
+@font-face {font-family: "light";
+	src: url("../fonts/g2k1Light.ttf"); }
+@font-face {font-family: "reg";
+	src: url("../fonts/g2k2Reg.ttf"); }
+@font-face {font-family: "med";
+  src: url("../fonts/g2k3Med.ttf"); }
+
+$head: #072d30;
+$foot: #042021;
+$inact: #063332;
+$act: #0c6d72;
+$hov: #13a8bc;
+$curt: #d26f17;
+$dim: #999;
+$dan: #e52033;
+$suc: #58e02b;
+$bg: #060c0c;
+$dbg: #021111;
+$cbg: #010707;
+$secbg: #141719;
+$subsecbg: #0C0C0C;
+
+@mixin shadow {
+	box-shadow: 2px 3px 6px -2px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 2px 3px 6px -2px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 2px 3px 6px -2px rgba(0, 0, 0, 0.5);
+}
+
+.alarmEventVideoFade {
+  display: none;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background: rgba(#000, .8);
+  z-index: 9999999;
+  filter: alpha(opacity=80);
+}
+
+.alarmEventVideoFadeLight {
+	@include shadow;
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-width: 700px;
+  max-height: 460px;
+  margin-left: -300px;
+  margin-top: -180px;
+  border: 1px solid $act;
+	border-radius: 20px;
+  z-index: 99999991;
+  overflow: hidden!important;
+}	
+
+.boxclose {
+  float: right;
+  cursor: pointer;
+  border: hidden;
+  border-radius: 15px;
+  background: $act;
+  font-size: 31px;
+  font-weight: bold;
+  display: inline-block;
+  line-height: 0px;
+  padding: 13px 5px;
+	width: 30px;
+	height: 30px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  z-index: 1002;
+	&:hover {
+		background: $hov;
+	}
+	&:before {
+		content: "×";
+  	color: #fff;
+	}
+}
+
+.alarmEventVideoFade:hover ~ .boxclose {
+  display:none;
+}

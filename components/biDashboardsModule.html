@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<div class="rowG2K">
+  <section class="containerG2K">
+    <div class="rowG2K">
+      <section class="sideIcons">
+        <button class="sideIconBtn openNav" data-toggle="tooltip" data-placement="right" title="Menu">
+        </button>
+        <div>
+          <button class="sideIconBtn openChat" data-toggle="tooltip" data-placement="right" title="Chat">
+          </button>
+          <button class="sideIconBtn openCall" data-toggle="tooltip" data-placement="right" title="Call">
+          </button>
+          <button class="sideIconBtn openShortcuts" data-toggle="tooltip" data-placement="right" title="Shortcuts">
+          </button>
+      </div>
+      </section>
+    </div>
+  </section>
+  <section class="mainGenContainer ">
+    <section class="containerG2K">
+      <div class="rowG2K">
+        <div class="moduleSection" id="biDashboardsContainer">
+          <!-- Tabs -->
+          <div class="moduleSectionHeader tabs">
+          <div class="subModuleTabCol BIDashboard active" id="alarmsOverviewDashboard">
+            <div class="subModuleTabBtn DIDashboardTab" onclick="openDashboardTab(event,'BIDashboardStyle8')">
+              <i class="BIDAlarms"></i> Alarms Overview
+            </div>
+          </div>
+          <div class="subModuleTabCol BIDashboard" id="propertyAlarmsDashboard">
+            <div class="subModuleTabBtn DIDashboardTab" onclick="openDashboardTab(event,'BIDashboardStyle1')">
+              <i class="BIDAlarms"></i> Top Alarms
+            </div>
+          </div>
+          <div class="subModuleTabCol BIDashboard" id="alarmsAnalyticsDashboard">
+            <div class="subModuleTabBtn DIDashboardTab" onclick="openDashboardTab(event,'BIDashboardStyle4')">
+              <i class="BIDAlarmsAnalytics"></i> Alarms Analytics
+            </div>
+          </div>
+          <div class="subModuleTabCol BIDashboard" id="peopleCountDashboard">
+            <div class="subModuleTabBtn DIDashboardTab" onclick="openDashboardTab(event,'BIDashboardStyle2')">
+              <i class="BIDPeopleCount"></i> Visitors Insights
+            </div>
+          </div>
+          <div class="subModuleTabCol BIDashboard" id="visitorsAnalyticsDashboard">
+            <div class="subModuleTabBtn DIDashboardTab" onclick="openDashboardTab(event,'BIDashboardStyle3')">
+              <i class="BIDVisitorsAnalytics"></i> Visitors Analytics
+            </div>
+          </div>
+          
+            <div class="subModuleTabCol BIDashboard " id="historicalAnalysis">
+              <div class="subModuleTabBtn DIDashboardTab" onclick="openDashboardTab(event,'BIDashboardStyle12')">
+                <i class="genIconDashboard"></i> Electricity Consumption
+              </div>
+            </div>
+            <div class="subModuleTabCol BIDashboard " id="historicalAnalysis">
+              <div class="subModuleTabBtn DIDashboardTab" onclick="openDashboardTab(event,'BIDashboardStyle13')">
+                <i class="genIconDashboard"></i> Water Consumption
+              </div>
+            </div>
+
+            <div class="subModuleTabCol BIDashboard" id="historicalAnalysis">
+              <div class="subModuleTabBtn DIDashboardTab" onclick="openDashboardTab(event,'BIDashboardStyle9')">
+                <i class="genIconDashboard"></i> Airlines Historical
+              </div>
+            </div>
+            <div class="subModuleTabCol BIDashboard" id="predictiveAnalysis">
+              <div class="subModuleTabBtn DIDashboardTab" onclick="openDashboardTab(event,'BIDashboardStyle10')">
+                <i class="genIconDashboard"></i> Airlines Prediction
+              </div>
+            </div>
+            <div class="subModuleTabCol BIDashboard" id="pollutantsAnalysis">
+              <div class="subModuleTabBtn DIDashboardTab" onclick="openDashboardTab(event,'BIDashboardStyle11')">
+                <i class="genIconDashboard"></i> Pollutants Analysis
+              </div>
+            </div>
+            
+            <div class="containerControls">
+              <button class="containerControlsBtn minimizeScreen">
+              </button>
+              <button class="containerControlsBtn fullScreen" id="biDFullScreenBtn">
+              </button>
+            </div>
+          </div>
+          <!-- Dashboards Content -->
+          <div class="moduleSectionContent scrollAct inside biDashboard">
+            <div class="BIDashboardiFrame BIDashboardStyle" id="BIDashboardStyle9">
+              <iframe  class="biDashboardDark" src="https://app.powerbi.com/view?r=eyJrIjoiZjI4NzA0NjItNmYzZS00ZmVkLThjOWYtNmQwODVkNjRjNTMxIiwidCI6IjE1NDExOWI4LTA1NDMtNGE0OC1iYTA1LTJlMDQwNGJlMjlmOCIsImMiOjl9" frameborder="0" allowFullScreen="true"></iframe>
+            </div>
+            <div class="BIDashboardiFrame BIDashboardStyle" id="BIDashboardStyle10">
+              <iframe  class="biDashboardDark" src="https://app.powerbi.com/view?r=eyJrIjoiZjYzZmU5OWUtNTJlNy00MmQ4LWEyNjItMmMzMWI5ODU3MTYxIiwidCI6IjE1NDExOWI4LTA1NDMtNGE0OC1iYTA1LTJlMDQwNGJlMjlmOCIsImMiOjl9" frameborder="0" allowFullScreen="true"></iframe>
+            </div>
+            <div class="BIDashboardiFrame BIDashboardStyle" id="BIDashboardStyle11">
+              <iframe  class="biDashboardDark" src="https://app.powerbi.com/view?r=eyJrIjoiYmVhYWFiMjYtZTRmYS00YWIwLTlkNzQtZjU2NmQxZjM4NmVhIiwidCI6IjE1NDExOWI4LTA1NDMtNGE0OC1iYTA1LTJlMDQwNGJlMjlmOCIsImMiOjl9" frameborder="0" allowFullScreen="true"></iframe>
+            </div>
+            <div class="BIDashboardiFrame BIDashboardStyle" id="BIDashboardStyle1">
+              <iframe  class="biDashboardDark" src="https://app.powerbi.com/view?r=eyJrIjoiNjM3OWU4ZGUtY2RmNS00ZjY2LWJkNDctYzI5OTVlOGUwZTNjIiwidCI6IjE1NDExOWI4LTA1NDMtNGE0OC1iYTA1LTJlMDQwNGJlMjlmOCIsImMiOjl9&pageName=ReportSectionf82797de3354ad8f68a7&pageName=ReportSectionf82797de3354ad8f68a7" frameborder="0" allowFullScreen="true"></iframe>
+            </div>
+            <div class="BIDashboardiFrame static BIDashboardStyle scrollAct inside" id="BIDashboardStyle8" style="display: block;">
+              <img src="../imgs/dashboards/alarmsOverview.JPG" alt="">
+            </div>
+            <div class="BIDashboardiFrame BIDashboardStyle" id="BIDashboardStyle2">
+              <iframe class="biDashboardDark" src="https://app.powerbi.com/view?r=eyJrIjoiYWUzMTNjZjQtZDE0Mi00YzJjLWI4YzgtMTdkZGE4M2QxYmExIiwidCI6IjE1NDExOWI4LTA1NDMtNGE0OC1iYTA1LTJlMDQwNGJlMjlmOCIsImMiOjl9" frameborder="0" allowFullScreen="true"></iframe>
+            </div>
+            <div class="BIDashboardiFrame BIDashboardStyle" id="BIDashboardStyle3">
+              <iframe  class="biDashboardDark" src="https://app.powerbi.com/view?r=eyJrIjoiYjliZThjYTctMmJmYS00Y2QyLWI1ZjUtNzRlZmQxNmU2NTBiIiwidCI6IjE1NDExOWI4LTA1NDMtNGE0OC1iYTA1LTJlMDQwNGJlMjlmOCIsImMiOjl9" frameborder="0" allowFullScreen="true"></iframe>
+            </div>
+            <div class="BIDashboardiFrame BIDashboardStyle" id="BIDashboardStyle4">
+              <iframe  class="biDashboardDark" src="https://app.powerbi.com/view?r=eyJrIjoiZDA5YzgwNzktNDAxZC00NjI2LTk3NmItMTYyYTc0YWM1NTA1IiwidCI6IjE1NDExOWI4LTA1NDMtNGE0OC1iYTA1LTJlMDQwNGJlMjlmOCIsImMiOjl9" frameborder="0" allowFullScreen="true"></iframe>
+            </div>
+            <div class="BIDashboardiFrame static BIDashboardStyle scrollAct inside" id="BIDashboardStyle12">
+              <img src="../imgs/dashboards/ElectricityConsumption.png" alt="">
+            </div>
+            <div class="BIDashboardiFrame static BIDashboardStyle scrollAct inside" id="BIDashboardStyle13">
+              <img src="../imgs/dashboards/WaterConsumption.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+</div>
+<script src="js/components/biDashboardsModule/icons.js"></script>
+<script src="js/components/biDashboardsModule/scripts.js"></script>
+<script src="js/components/biDashboardsModule/biDashboardsModule.js"></script>
